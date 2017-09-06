@@ -32,6 +32,7 @@ public class Menu {
                     // Statystyki ilosci stacji rowerowych w danym miescie
                     break;
                 default:
+                    //prosze wybrac komende
 
 
             }
