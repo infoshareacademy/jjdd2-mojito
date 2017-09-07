@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 //asci art rowery
 public class Menu {
@@ -12,29 +13,39 @@ public class Menu {
             System.out.println("5.Statystyki ilosci stacji rowerowych w danym panstwie.");
             System.out.println("6.Statystyki ilosci stacji rowerowych w danym miescie");
             int input = scanner.nextInt();
-            switch(input){
-                case 1:
-                   // wyszukiwanieNajStacji;
+            while(true){
+                try{
+                    input = scanner.nextInt();
                     break;
-                case 2:
+                }
+                catch (InputMismatchException e) {
+                    System.out.print("Invalid input. Please reenter: ");
+
+            }
+                switch(input){
+                case 1:input=1;
+                    System.out.println("jeden");
+                    // wyszukiwanieNajStacji;
+                    break;
+                case 2:input=2;
                     // Wyszukanie stacji w danym kraju.
                     break;
-                case 3:
+                case 3:input=3;
                     //Wyszukanie stacji w danym miescie.
                     break;
-                case 4:
+                case 4:input=4;
+                    System.out.println("cztery");
                     // Wyszukanie stacji rowerowerej na danym obszarze
                     break;
-                case 5:
+                case 5:input=5;
                     //Statystyki ilosci stacji rowerowych w danym panstwie.
                     break;
-                case 6:
+                case 6:input=6;
                     // Statystyki ilosci stacji rowerowych w danym miescie
                     break;
                 default:
                     //prosze wybrac komende
                     //koniec
-
 
             }
         }
