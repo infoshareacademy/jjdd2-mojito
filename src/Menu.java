@@ -16,11 +16,11 @@ public class Menu {
         System.out.println("7.Wyjscie z Progarmu");
         int input = 0;
 
-        while (input <= 6) {
+        while (input <= 7) {
             try {
                 input = Integer.valueOf(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-6 ");
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
                 continue;
             }
             switch (input) {
