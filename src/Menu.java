@@ -15,12 +15,13 @@ public class Menu {
         System.out.println("6.Statystyki ilosci stacji rowerowych w danym miescie");
         System.out.println("7.Wyjscie z Progarmu");
         int input = 0;
+
         while (input <= 6) {
             try {
-                input = scanner.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.print("Wybierz jedna z opcji Menu wpisujac liczby od 1-6 ");
-
+                input = Integer.valueOf(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-6 ");
+                continue;
             }
             switch (input) {
                 case 1:
