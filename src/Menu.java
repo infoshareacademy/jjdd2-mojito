@@ -33,6 +33,7 @@ public class Menu {
                     break;
                 default:
                     //prosze wybrac komende
+                    //koniec
 
 
             }
