@@ -1,3 +1,12 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+
 public class Miasto {
     private String nazwa;
     private Double szerokosc;
@@ -26,4 +35,7 @@ public class Miasto {
     public void setDlugosc(Double dlugosc) {
         this.dlugosc = dlugosc;
     }
+
+
 }
+
