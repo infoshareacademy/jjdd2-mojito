@@ -4,11 +4,11 @@ public class UserInputReader {
 
     private final Scanner scanner;
 
-    public UserInputReader() {
+    protected UserInputReader() {
         scanner = new Scanner(System.in);
     }
 
-    public String readLine() {
+    protected String readLine() {
         return scanner.nextLine();
     }
 }
