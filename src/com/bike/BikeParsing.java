@@ -46,10 +46,13 @@ public class BikeParsing {
                     Node placeNode = placeNodeList.item(j);
                     if (placeNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element placeElement = (Element)placeNode;
+
                         //dodanie parsowania dwoch nowych pol - lng i lat
                         //tak samo jako "name" i przekazanie ich do konstruktora
                         String placeName = placeElement.getAttribute("name");
-                        Place place = new Place(placeName);
+//                        String placeLat = placeElement.getAttribute("lat");
+//                        String placeLng = placeElement.getAttribute("lng");
+//                        Place place = new Place(placeName, placeLat);
                         city.getPlaceList().add(place);
 
                     }
