@@ -5,6 +5,9 @@ import java.util.List;
 
 public class City {
 
+
+    private String countryName;
+
     private String latitude;
 
     private String longitude;
@@ -13,10 +16,11 @@ public class City {
 
     private List<Place> placeList;
 
-    public City(String latitude, String longitude, String name) {
+    public City(String latitude, String longitude, String name, String country) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
+        this.countryName = country;
         this.placeList = new ArrayList<Place>();
     }
 
@@ -35,4 +39,6 @@ public class City {
     public List<Place> getPlaceList() {
         return placeList;
     }
+
+    public String getCountryName() { return countryName;  }
 }

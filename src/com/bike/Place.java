@@ -7,14 +7,29 @@ public class Place {
 
     private String name;
 
-    public Place(String name) {
+    public Place(String name,String latitiudePlace, String longitudePlace) {
+
         this.name = name;
+        this.latitiudePlace = latitiudePlace;
+        this.longitudePlace = longitudePlace;
     }
 
     public String getName() {
         return name;
     }
 
-    private String
+    public String getLatitiudePlace() {
+        return latitiudePlace;
+    }
+
+    public String getLongitudePlace() {
+        return longitudePlace;
+    }
+
+    public String latitiudePlace;
+
+    public String longitudePlace;
+
+//    private String place;
 
 }
