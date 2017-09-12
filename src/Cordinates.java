@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Cordinates {
 
-    protected static String[] stationCordinate(){
+    protected static Double[] stationCordinate(){
         return stationCordinate();
 
     }

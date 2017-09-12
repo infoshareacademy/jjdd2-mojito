@@ -6,4 +6,5 @@ public class ClosestStation {
         return Arrays.equals(UserCordinates.cordinates(),Cordinates.stationCordinate());
 
     }
+
 }
