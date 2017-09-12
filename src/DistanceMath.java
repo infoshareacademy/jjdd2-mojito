@@ -10,12 +10,12 @@ public class DistanceMath {
     protected static String countDistance() {
         double distance;
 
-        Double[] userCords = UserCordinates.cordinates();
-        Double x = userCords[0];
-        Double y = userCords[1];
+        double[] userCords = UserCordinates.cordinates();
+        double x = userCords[0];
+        double y = userCords[1];
 
-        Double k = Cordinates.stationCordinate()[0];
-        Double j = Cordinates.stationCordinate()[1];
+        double k = Cordinates.stationCordinate()[0];
+        double j = Cordinates.stationCordinate()[1];
 
 
         distance = Math.sqrt(Math.pow((x - k), 2.0)
