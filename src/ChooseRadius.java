@@ -17,7 +17,7 @@ public class ChooseRadius {
             try {
                 input = Integer.valueOf(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
                 continue;
             }
             switch (input) {
@@ -33,6 +33,7 @@ public class ChooseRadius {
                 case 4:
                     // Wyszukanie stacji rowerowerej na danym obszarze
                     break;
+                default:
 
 
             }
