@@ -25,4 +25,7 @@ public class DistanceMath {
         return ("Odległość wynosi: " + Math.rint(distance));
 
     }
+    protected static String RadiusMath(){
+        return null;
+    }
 }

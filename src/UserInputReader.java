@@ -8,7 +8,7 @@ public class UserInputReader {
         scanner = new Scanner(System.in);
     }
 
-    protected Double readLine() {
-        return scanner.nextDouble();
+    protected int readLine() {
+        return scanner.nextInt();
     }
 }
