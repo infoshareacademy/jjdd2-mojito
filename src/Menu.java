@@ -3,10 +3,13 @@ import java.util.Scanner;
 
 
 public class Menu {
+
+
     public static void main(String[] args) {
 
-        MenuText.text();
-        UserChooseFromMenu.userChooseFromMenu();
-
+        MenuText menuText= new MenuText();
+        menuText.text();
+        UserChooseFromMenu choose = new UserChooseFromMenu();
+        choose.userChooseFromMenu();
     }
 }
