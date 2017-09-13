@@ -7,7 +7,7 @@ public class Place {
 
     private String name;
 
-    public Place(String name,String latitiudePlace, String longitudePlace) {
+    public Place(String name,double latitiudePlace, double longitudePlace) {
 
         this.name = name;
         this.latitiudePlace = latitiudePlace;
@@ -18,17 +18,17 @@ public class Place {
         return name;
     }
 
-    public String getLatitiudePlace() {
+    public double getLatitiudePlace() {
         return latitiudePlace;
     }
 
-    public String getLongitudePlace() {
+    public double getLongitudePlace() {
         return longitudePlace;
     }
 
-    public String latitiudePlace;
+    private double latitiudePlace;
 
-    public String longitudePlace;
+    private double longitudePlace;
 
 //    private String place;
 
