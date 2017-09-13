@@ -1,4 +1,4 @@
-package com.bike;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class City {
 
     private String name;
 
-    private List<Place> placeList;
+    protected List<Place> placeList;
 
     public City(String latitude, String longitude, String name, String country) {
         this.latitude = latitude;

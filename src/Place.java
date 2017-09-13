@@ -1,4 +1,4 @@
-package com.bike;
+
 
 //dodanie dwoch nowych pol - latitude, longtitude
 //modyfikacja konstruktora o te dwa nowe pola
