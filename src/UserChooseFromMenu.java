@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class UserChooseFromMenu {
-    protected static void userChooseFromMenu(){
+    protected void userChooseFromMenu() {
         Scanner scanner = new Scanner(System.in);
         int input = 0;
         while (input <= 7) {

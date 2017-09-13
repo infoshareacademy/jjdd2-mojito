@@ -1,5 +1,5 @@
 public class MenuText {
-    protected static void text(){
+    protected void text() {
         System.out.println("Witaj w Wyszukiwarce rowerowej");
         System.out.println("czym jestes zainteresowany ?");
         System.out.println("1.Wyszukanie najblizszej stacji rowerowej.");
