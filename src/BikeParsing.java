@@ -21,6 +21,11 @@ public class BikeParsing {
     private List<City> cityList;
     // konstruktor tworzy listę miast i przypisuje nazwę pliku który będzie parsowany
 
+
+    public List<City> getCityList() {
+        return cityList;
+    }
+
     public BikeParsing(String fileName) {
         this.fileName = fileName;
         this.cityList = new ArrayList<City>();

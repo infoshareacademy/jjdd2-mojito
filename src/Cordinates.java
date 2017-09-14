@@ -1,15 +1,23 @@
 public class Cordinates {
     double Longitude;
     double Latitude;
+    String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public double getLongitude() {
         return Longitude;
     }
 
     public Cordinates(double v, double v1) {
-        Longitude = longitude;
-        Latitude = latitude;
+        Longitude = getLongitude();
+        Latitude = getLatitude();
     }
 
     @Override
@@ -44,6 +52,7 @@ public class Cordinates {
     }
 
     public void setLongitude(double longitude) {
+
         Longitude = longitude;
     }
 
@@ -52,6 +61,7 @@ public class Cordinates {
     }
 
     public void setLatitude(double latitude) {
+
         Latitude = latitude;
     }
 }

@@ -8,9 +8,9 @@ public class City {
 
     private String countryName;
 
-    private String latitude;
+    protected String latitude;
 
-    private String longitude;
+    protected String longitude;
 
     private String name;
 
