@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class UserChooseFromMenu {
     protected static void userChooseFromMenu(){
-        Scanner scanner = new Scanner(System.in);
+        UserInputReader scanner = new UserInputReader();
+
         int input = 0;
         while (input <= 7) {
             try {
-                input = Integer.valueOf(scanner.nextLine());
+                input = Integer.valueOf(scanner.readLine());
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
                 continue;

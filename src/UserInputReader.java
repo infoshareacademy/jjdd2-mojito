@@ -8,8 +8,8 @@ public class UserInputReader {
         scanner = new Scanner(System.in);
     }
 
-    protected Double readLine() {
-        return scanner.nextDouble();
-        //input uzytkownika jest typem Double
+    protected String readLine() {
+        return scanner.nextLine();
+
     }
 }
