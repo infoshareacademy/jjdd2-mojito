@@ -37,8 +37,7 @@ public class UserChooseFromMenu {
                     break;
 
                 default:
-                    //prosze wybrac komende
-                    //koniec
+                    System.out.println("niepoprawny numer podaj liczbe od 1-7");
             }
         }
     }
