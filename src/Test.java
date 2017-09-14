@@ -1,9 +1,7 @@
-import com.sun.xml.internal.bind.v2.runtime.Coordinator;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Test {
@@ -21,7 +19,7 @@ public class Test {
                 cordinates.add(new Cordinates(city.getLatitude(), city.getLongitude(),city.getName()));
 
                 for (Place place:city.getPlaceList()) {
-                    cordinates.add(new Cordinates(place.getLatitiudePlace(), place.getLongitudePlace()));
+                    cordinates.add(new Cordinates());
                 }
             }
 

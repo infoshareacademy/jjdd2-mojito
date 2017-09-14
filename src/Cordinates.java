@@ -15,7 +15,7 @@ public class Cordinates {
         return Longitude;
     }
 
-    public Cordinates(double v, double v1) {
+    public Cordinates() {
         Longitude = getLongitude();
         Latitude = getLatitude();
     }
@@ -63,5 +63,18 @@ public class Cordinates {
     public void setLatitude(double latitude) {
 
         Latitude = latitude;
+    }
+    protected  double[] userCordinates() {
+        double[] wspolrzedne = new double[2];
+        System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
+        System.out.println("podaj pierwsza wspolrzedna ");
+        Double pierwsza = new UserInputReader().readLine();
+        System.out.println("podaj druga wspolrzedna ");
+        double druga = new UserInputReader().readLine();
+        wspolrzedne[0] = pierwsza;
+        wspolrzedne[1] = druga;
+        return wspolrzedne;
+
+
     }
 }
