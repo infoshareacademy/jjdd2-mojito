@@ -19,26 +19,32 @@ public class BikeParsing {
     private String fileName;
 
     private List<City> cityList;
+    // konstruktor tworzy listę miast i przypisuje nazwę pliku który będzie parsowany
 
     public BikeParsing(String fileName) {
         this.fileName = fileName;
-        cityList = new ArrayList<City>();
+        this.cityList = new ArrayList<City>();
     }
-
+// parsdata - wczytanie xml i parsowanie
+    //
     public void parseData() throws ParserConfigurationException, SAXException, IOException {
+        //tworzymy obiekt file na podstawie nazwy xml
         File inputFile = new File(fileName);
+        //buidery konwertują plik tekstowy do obiektu typu dokument który służy do wyciągniecia informacji z xml w łatwy sposób
         DocumentBuilderFactory dbFaktory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dbBuilder = dbFaktory.newDocumentBuilder();
         Document doc = dbBuilder.parse(inputFile);
-
+//getElementsByTagName pobiera wszystkie elementyo podanej nazwie zaczynając od ewlementu zadeklarowanego
         NodeList countryNodeList = doc.getElementsByTagName("country");
+        System.out.println("Coutnry size: " + countryNodeList.getLength());
         for (int i = 0; i < countryNodeList.getLength(); i++) {
             Node countryNode = countryNodeList.item(i);
             if (countryNode.getNodeType() == Node.ELEMENT_NODE) {
+                //rzutowanie obiektu Node na Obiekt element
                 Element countryElement = (Element) countryNode;
                 String countryName = countryElement.getAttribute("country_name");
 
-                NodeList cityNodeList = doc.getElementsByTagName("city");
+                NodeList cityNodeList = countryElement.getElementsByTagName("city");
                 for (int k = 0; k < cityNodeList.getLength(); k++) {
                     Node cityNode = cityNodeList.item(k);
                     if (cityNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -61,7 +67,17 @@ public class BikeParsing {
                                 String placeName = placeElement.getAttribute("name");
                                 String placeLat = placeElement.getAttribute("lat");
                                 String placeLng = placeElement.getAttribute("lng");
-                                Place place = new Place(placeName, placeLat, placeLng);
+                                // spraedzenie czy elementy lat long istnieją w xml, jeżeli tak to konwersja na double
+                                // jeżeli elementy nie istnieją, to domyślnie 00
+                                double placeLatDouble = 0.0;
+                                double placeLngDouble = 0.0;
+                                if (!placeLat.isEmpty()) {
+                                    placeLatDouble = Double.parseDouble(placeLat);
+                                }
+                                if (!placeLng.isEmpty()) {
+                                    placeLngDouble = Double.parseDouble(placeLng);
+                                }
+                                Place place = new Place(placeName, placeLatDouble, placeLngDouble);
                                 city.getPlaceList().add(place);
 
                             }
