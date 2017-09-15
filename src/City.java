@@ -8,15 +8,15 @@ public class City {
 
     private String countryName;
 
-    protected String latitude;
+    protected Double latitude;
 
-    protected String longitude;
+    protected Double longitude;
 
     private String name;
 
     protected List<Place> placeList;
 
-    public City(String latitude, String longitude, String name, String country) {
+    public City(Double latitude, Double longitude, String name,String country) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
@@ -24,11 +24,19 @@ public class City {
         this.placeList = new ArrayList<Place>();
     }
 
-    public String getLatitude() {
+    @Override
+    public String toString() {
+        return name + "[" +
+                latitude +
+                "/" + longitude +
+                ']';
+    }
+
+    public Double getLatitude() {
         return latitude;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 

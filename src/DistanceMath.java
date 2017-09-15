@@ -1,3 +1,4 @@
+import java.util.Date;
 
 public class DistanceMath {
 
@@ -6,18 +7,14 @@ public class DistanceMath {
 
 
 
-    protected static Double countDistance() {
+    protected  Double countDistance(Place place, GeoLocation geoLocation) {
         double distance;
 
-        double[] stationcordin = new double[2];
+        double x = geoLocation.latitiudeUser;
+        double y = geoLocation.longitudeUser;
 
-        double[] userCords = new Cordinates().userCordinates();
-
-        double x = userCords[0];
-        double y = userCords[1];
-
-        double k = stationcordin[0];
-        double j = stationcordin[1];
+        double k = place.getLatitiudePlace();
+        double j = place.getLongitudePlace();
 
 
         distance = Math.sqrt(Math.pow((x - k), 2.0)
