@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class UserChooseFromMenu {
-    protected static void userChooseFromMenu(){
+    protected  void userChooseFromMenu(){
         UserInputReader scanner = new UserInputReader();
 
         int input = 0;
