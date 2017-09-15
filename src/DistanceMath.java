@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class DistanceMath {
 
@@ -7,12 +6,12 @@ public class DistanceMath {
 
 
 
-    protected static String countDistance() {
+    protected static Double countDistance() {
         double distance;
 
         double[] stationcordin = new double[2];
 
-        double[] userCords = UserCordinates.cordinates();
+        double[] userCords = new Cordinates().userCordinates();
 
         double x = userCords[0];
         double y = userCords[1];
@@ -25,7 +24,7 @@ public class DistanceMath {
                 + Math.pow((Math.cos((x * Math.PI) / 180.0)
                 * (j - y)), 2.0)) * (40075.704 / 360.0);
 
-        return ("Odległość wynosi: " + Math.rint(distance));
+        return Double.valueOf(("Odległość wynosi: " + Math.rint(distance)));
 
     }
 }
