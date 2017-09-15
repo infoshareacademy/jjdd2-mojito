@@ -7,18 +7,21 @@ public class DistanceMath {
 
 
 
-    protected static String countDistance() {
+    protected  Double countDistance(Place place, GeoLocation myLocation) {
         double distance;
-
-        double[] stationcordin = new double[2];
+        double[] stationCordin = new double[2];
 
         double[] userCords = UserCordinates.cordinates();
 
         double x = userCords[0];
         double y = userCords[1];
 
-        double k = stationcordin[0];
-        double j = stationcordin[1];
+        double k = stationCordin[0];
+        double j = stationCordin[1];
+
+        place.getLatitiudePlace();
+        place.getLongitudePlace();
+
 
 
         distance = Math.sqrt(Math.pow((x - k), 2.0)

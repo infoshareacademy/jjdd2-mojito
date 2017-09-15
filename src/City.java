@@ -24,6 +24,14 @@ public class City {
         this.placeList = new ArrayList<Place>();
     }
 
+    @Override
+    public String toString() {
+        return name + "[" +
+                latitude +
+                "/" + longitude +
+                ']';
+    }
+
     public Double getLatitude() {
         return latitude;
     }

@@ -15,7 +15,7 @@ public class Test {
             bikeParsing.parseData();
             bikeParsing.showData();
 
-//
+
             ArrayList<City> cityCordinates = new ArrayList<>();
             for (City city : bikeParsing.getCityList()) {
                 cityCordinates.add(new City(city.getLatitude(), city.getLongitude(), city.getName(), city.getCountryName()));
@@ -23,10 +23,12 @@ public class Test {
                 ArrayList<City> placeCordinates = new ArrayList<>();
                 for (Place place : city.getPlaceList()) {
                     placeCordinates.add(new City(place.getLatitiudePlace(), place.getLongitudePlace(), city.getName(), city.getCountryName()));
+//
                 }
-                System.out.println(cityCordinates);
-                System.out.println(placeCordinates);
+
+
             }
+            UserCordinates.cordinates();
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {
