@@ -58,7 +58,19 @@ public class BikeParsing {
                         String cityName = cityElement.getAttribute("name");
                         String cityLat = cityElement.getAttribute("lat");
                         String cityLong = cityElement.getAttribute("lng");
-                        City city = new City(cityLat, cityLong, cityName, countryName);
+
+                        double cityLatDouble = 1.2 ;
+                        double cityLngDouble = 2.2;
+                        if (!cityLat.isEmpty()) {
+                            cityLatDouble = Double.parseDouble(cityLat);
+                        }
+                        if (!cityLong.isEmpty()) {
+                            cityLngDouble = Double.parseDouble(cityLong);
+                        }
+                        City city = new City( cityLatDouble, cityLngDouble, cityName,countryName);
+                        cityList.add(city);
+
+
 
                         NodeList placeNodeList = cityElement.getElementsByTagName("place");
                         for (int j = 0; j < placeNodeList.getLength(); j++) {
@@ -74,8 +86,8 @@ public class BikeParsing {
                                 String placeLng = placeElement.getAttribute("lng");
                                 // spraedzenie czy elementy lat long istnieją w xml, jeżeli tak to konwersja na double
                                 // jeżeli elementy nie istnieją, to domyślnie 00
-                                double placeLatDouble = 0.0;
-                                double placeLngDouble = 0.0;
+                                double placeLatDouble = 2.2;
+                                double placeLngDouble = 1.1;
                                 if (!placeLat.isEmpty()) {
                                     placeLatDouble = Double.parseDouble(placeLat);
                                 }
@@ -87,7 +99,6 @@ public class BikeParsing {
 
                             }
                         }
-                        cityList.add(city);
                     }
                 }
             }

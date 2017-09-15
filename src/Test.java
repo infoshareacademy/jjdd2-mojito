@@ -15,23 +15,36 @@ public class Test {
             bikeParsing.parseData();
             bikeParsing.showData();
 
+//
+            ArrayList<City> cityCordinates = new ArrayList<>();
+            for (City city : bikeParsing.getCityList()) {
+                cityCordinates.add(new City(city.getLatitude(), city.getLongitude(), city.getName(), city.getCountryName()));
 
-            ArrayList<Cordinates> cordinates = new ArrayList<>();
-            for (City city:bikeParsing.getCityList()) {
-                cordinates.add(new Cordinates(city.getLatitude(), city.getLongitude(),city.getName()));
-
-                for (Place place:city.getPlaceList()) {
-                    cordinates.add(new Cordinates(place.getLatitiudePlace(), place.getLongitudePlace()));
+                ArrayList<City> placeCordinates = new ArrayList<>();
+                for (Place place : city.getPlaceList()) {
+                    placeCordinates.add(new City(place.getLatitiudePlace(), place.getLongitudePlace(), city.getName(), city.getCountryName()));
                 }
+                System.out.println(cityCordinates);
+                System.out.println(placeCordinates);
             }
-
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
-            //wypisuje gdzie był wyjatek
-        } catch (SAXException e) {
-            e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
             e.printStackTrace();
         }
     }
 }
+
+
+
+
+
+
+//} catch(ParserConfigurationException e){
+//                e.printStackTrace();
+//                //wypisuje gdzie był wyjatek} catch(SAXException e){
+//                e.printStackTrace();
+//            } catch(IOException e){
+//                e.printStackTrace();
