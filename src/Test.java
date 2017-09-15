@@ -13,10 +13,9 @@ public class Test {
             bikeParsing.parseData();
             bikeParsing.showData();
 
-
             ArrayList<Cordinates> cordinates = new ArrayList<>();
             for (City city:bikeParsing.getCityList()) {
-                cordinates.add(new Cordinates(city.getLatitude(), city.getLongitude(),city.getName()));
+                cordinates.add(city.latitude);
 
                 for (Place place:city.getPlaceList()) {
                     cordinates.add(new Cordinates());
