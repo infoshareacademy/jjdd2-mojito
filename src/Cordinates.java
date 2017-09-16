@@ -1,6 +1,6 @@
 public class Cordinates {
-    double Longitude;
-    double Latitude;
+    double longitude;
+    double latitude;
     String name;
 
     public String getName() {
@@ -14,12 +14,7 @@ public class Cordinates {
 
 
     public double getLongitude() {
-        return Longitude;
-    }
-
-    public Cordinates() {
-        Longitude = getLongitude();
-        Latitude = getLatitude();
+        return longitude;
     }
 
     @Override
@@ -29,17 +24,17 @@ public class Cordinates {
 
         Cordinates that = (Cordinates) o;
 
-        if (Double.compare(that.Longitude, Longitude) != 0) return false;
-        return Double.compare(that.Latitude, Latitude) == 0;
+        if (Double.compare(that.longitude, longitude) != 0) return false;
+        return Double.compare(that.latitude, latitude) == 0;
     }
 
     @Override
     public int hashCode() {
         int result;
         long temp;
-        temp = Double.doubleToLongBits(Longitude);
+        temp = Double.doubleToLongBits(longitude);
         result = (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(Latitude);
+        temp = Double.doubleToLongBits(latitude);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -48,23 +43,9 @@ public class Cordinates {
 
     public String toString() {
         return "Cordinates{" +
-                "Longitude=" + Longitude +
-                ", Latitude=" + Latitude +
+                "Longitude=" + longitude +
+                ", Latitude=" + latitude +
                 '}';
-    }
-
-    public void setLongitude(double longitude) {
-
-        Longitude = longitude;
-    }
-
-    public double getLatitude() {
-        return Latitude;
-    }
-
-    public void setLatitude(double latitude) {
-
-        Latitude = latitude;
     }
 
 }

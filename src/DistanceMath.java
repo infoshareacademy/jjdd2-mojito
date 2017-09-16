@@ -1,11 +1,5 @@
-import java.util.Date;
 
 public class DistanceMath {
-
-    ///współrzędne punku oraz położenia użytkownika
-    // double userCoordinateN, getUserCoordinateE, pointCoordinateN, getPointCoordinateE;
-
-
 
     protected  Double countDistance(Place place, GeoLocation geoLocation) {
         double distance;

@@ -15,4 +15,8 @@ public class UserInputReader {
     protected Integer readlineInteager(){
         return scanner.nextInt();
     }
+
+    protected String readlineString(){
+        return scanner.nextLine();
+    }
 }

@@ -52,8 +52,8 @@ public class BikeParsing {
                         String cityLat = cityElement.getAttribute("lat");
                         String cityLong = cityElement.getAttribute("lng");
 
-                        double cityLatDouble = 1.2 ;
-                        double cityLngDouble = 2.2;
+                        double cityLatDouble = 0.0 ;
+                        double cityLngDouble = 0.0;
                         if (!cityLat.isEmpty()) {
                             cityLatDouble = Double.parseDouble(cityLat);
                         }
@@ -73,8 +73,8 @@ public class BikeParsing {
                                 String placeLat = placeElement.getAttribute("lat");
                                 String placeLng = placeElement.getAttribute("lng");
 
-                                double placeLatDouble = 2.2;
-                                double placeLngDouble = 1.1;
+                                double placeLatDouble = 0.0;
+                                double placeLngDouble = 0.0;
                                 if (!placeLat.isEmpty()) {
                                     placeLatDouble = Double.parseDouble(placeLat);
                                 }

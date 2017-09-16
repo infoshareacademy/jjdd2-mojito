@@ -8,13 +8,13 @@ public class City {
 
     private String countryName;
 
-    protected Double latitude;
+    private Double latitude;
 
-    protected Double longitude;
+    private Double longitude;
 
     private String name;
 
-    protected List<Place> placeList;
+    private List<Place> placeList;
 
     public City(Double latitude, Double longitude, String name,String country) {
         this.latitude = latitude;
@@ -32,21 +32,21 @@ public class City {
                 ']';
     }
 
-    public Double getLatitude() {
+    protected Double getLatitude() {
         return latitude;
     }
 
-    public Double getLongitude() {
+    protected Double getLongitude() {
         return longitude;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public List<Place> getPlaceList() {
+    protected List<Place> getPlaceList() {
         return placeList;
     }
 
-    public String getCountryName() { return countryName;  }
+    protected String getCountryName() { return countryName;  }
 }
