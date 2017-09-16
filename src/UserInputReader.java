@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//klasa skanera
 public class UserInputReader {
 
     private final Scanner scanner;
@@ -8,7 +8,8 @@ public class UserInputReader {
         scanner = new Scanner(System.in);
     }
 
-    protected int readLine() {
-        return scanner.nextInt();
+    protected String readLine() {
+        return scanner.nextLine();
+
     }
 }
