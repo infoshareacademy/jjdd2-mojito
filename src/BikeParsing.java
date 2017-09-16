@@ -28,6 +28,7 @@ public class BikeParsing {
         this.fileName = fileName;
         this.cityList = new ArrayList<City>();
     }
+
     public void parseData() throws ParserConfigurationException, SAXException, IOException {
 
         File inputFile = new File(fileName);
@@ -35,7 +36,6 @@ public class BikeParsing {
         DocumentBuilder dbBuilder = dbFaktory.newDocumentBuilder();
         Document doc = dbBuilder.parse(inputFile);
         NodeList countryNodeList = doc.getElementsByTagName("country");
-        System.out.println("Coutnry size: " + countryNodeList.getLength());
         for (int i = 0; i < countryNodeList.getLength(); i++) {
             Node countryNode = countryNodeList.item(i);
             if (countryNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -52,7 +52,7 @@ public class BikeParsing {
                         String cityLat = cityElement.getAttribute("lat");
                         String cityLong = cityElement.getAttribute("lng");
 
-                        double cityLatDouble = 0.0 ;
+                        double cityLatDouble = 0.0;
                         double cityLngDouble = 0.0;
                         if (!cityLat.isEmpty()) {
                             cityLatDouble = Double.parseDouble(cityLat);
@@ -60,7 +60,7 @@ public class BikeParsing {
                         if (!cityLong.isEmpty()) {
                             cityLngDouble = Double.parseDouble(cityLong);
                         }
-                        City city = new City( cityLatDouble, cityLngDouble, cityName,countryName);
+                        City city = new City(cityLatDouble, cityLngDouble, cityName, countryName);
                         cityList.add(city);
 
                         NodeList placeNodeList = cityElement.getElementsByTagName("place");
@@ -91,17 +91,4 @@ public class BikeParsing {
             }
         }
     }
-
-//    public void showData() {
-//
-//        for (int i = 0; i < cityList.size(); i++) {
-//            City city = cityList.get(i);
-//            System.out.println("Państwo: "+city.getCountryName() + "  Miasto: " + city.getName() + " " + city.getLatitude() + " " + city.getLongitude());
-//            for (int j = 0; j < city.getPlaceList().size(); j++) {
-//                Place place = city.getPlaceList().get(j);
-//                //wyswietlenie nowych danych - lat i lng
-//                System.out.println("\t" + "Miejsce: " + place.getName() + "  Współrzędne: " + place.getLatitiudePlace() + " " + place.getLongitudePlace());
-//            }
-//        }
-//    }
 }
