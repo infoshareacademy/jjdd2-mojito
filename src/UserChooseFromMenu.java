@@ -1,8 +1,21 @@
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class UserChooseFromMenu {
     protected static void userChooseFromMenu(){
         UserInputReader scanner = new UserInputReader();
+        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        try {
+            bikeParsing.parseData();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         String input = "0";
         while (true) {
@@ -14,7 +27,10 @@ public class UserChooseFromMenu {
             }
             switch (input) {
                 case "1":
-                    // wyszukiwanie najblizszej stacji;
+                    GeoLocation geoLocation = new GeoLocation();
+                    geoLocation.geoLocation();
+                    NearestPlace nearestPlace = new NearestPlace();
+                    nearestPlace.findNearestPlace(geoLocation,bikeParsing);
                     break;
                 case "2":
                     // Wyszukanie stacji w danym kraju.

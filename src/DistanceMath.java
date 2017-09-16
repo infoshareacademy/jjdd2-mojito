@@ -15,7 +15,7 @@ public class DistanceMath {
                 + Math.pow((Math.cos((x * Math.PI) / 180.0)
                 * (j - y)), 2.0)) * (40075.704 / 360.0);
 
-        return Double.valueOf(("Odległość wynosi: " + Math.rint(distance)));
+        return (distance);
 
     }
 }
