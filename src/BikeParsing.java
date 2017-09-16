@@ -92,16 +92,16 @@ public class BikeParsing {
         }
     }
 
-    public void showData() {
-
-        for (int i = 0; i < cityList.size(); i++) {
-            City city = cityList.get(i);
-            System.out.println("Państwo: "+city.getCountryName() + "  Miasto: " + city.getName() + " " + city.getLatitude() + " " + city.getLongitude());
-            for (int j = 0; j < city.getPlaceList().size(); j++) {
-                Place place = city.getPlaceList().get(j);
-                //wyswietlenie nowych danych - lat i lng
-                System.out.println("\t" + "Miejsce: " + place.getName() + "  Współrzędne: " + place.getLatitiudePlace() + " " + place.getLongitudePlace());
-            }
-        }
-    }
+//    public void showData() {
+//
+//        for (int i = 0; i < cityList.size(); i++) {
+//            City city = cityList.get(i);
+//            System.out.println("Państwo: "+city.getCountryName() + "  Miasto: " + city.getName() + " " + city.getLatitude() + " " + city.getLongitude());
+//            for (int j = 0; j < city.getPlaceList().size(); j++) {
+//                Place place = city.getPlaceList().get(j);
+//                //wyswietlenie nowych danych - lat i lng
+//                System.out.println("\t" + "Miejsce: " + place.getName() + "  Współrzędne: " + place.getLatitiudePlace() + " " + place.getLongitudePlace());
+//            }
+//        }
+//    }
 }
