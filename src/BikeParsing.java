@@ -35,7 +35,8 @@ public class BikeParsing {
         DocumentBuilder dbBuilder = dbFaktory.newDocumentBuilder();
         Document doc = dbBuilder.parse(inputFile);
         NodeList countryNodeList = doc.getElementsByTagName("country");
-        System.out.println("Coutnry size: " + countryNodeList.getLength());
+//        System.out.println("Coutnry size: " + countryNodeList.getLength());
+//        System.out.println("Liczba punktów w mieście: " + countryNodeList.getLength());
         for (int i = 0; i < countryNodeList.getLength(); i++) {
             Node countryNode = countryNodeList.item(i);
             if (countryNode.getNodeType() == Node.ELEMENT_NODE) {

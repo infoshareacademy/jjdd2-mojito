@@ -27,9 +27,11 @@ public class UserChooseFromMenu {
                     userChooseRadius.Radius();
                     break;
                 case "5":
+                    StatCountry.getCountryStat();
                     //Statystyki ilosci stacji rowerowych w danym panstwie.
                     break;
                 case "6":
+                    StatCountry.getCityStat();
                     // Statystyki ilosci stacji rowerowych w danym miescie
                     break;
                 case "7":

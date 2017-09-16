@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class UserChooseRadius {
+public class /*4*/UserChooseRadius {
     protected  void Radius() {
 
         UserInputReader scanner = new UserInputReader();

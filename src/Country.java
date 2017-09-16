@@ -7,9 +7,9 @@ public class Country {
 
     private Double longitude;
 
-    public City(Double latitude, Double longitude, String name,String country) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.name = country;
-    }
+//    public City(Double latitude, Double longitude, String name,String country) {
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//        this.name = country;
+//    }
 }
