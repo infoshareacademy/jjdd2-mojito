@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) {
-        //test try catch-
-        try { //wyjątek
+
+        try {
             BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
             bikeParsing.parseData();
             bikeParsing.showData();
@@ -43,13 +43,3 @@ public class Test {
 }
 
 
-
-
-
-
-//} catch(ParserConfigurationException e){
-//                e.printStackTrace();
-//                //wypisuje gdzie był wyjatek} catch(SAXException e){
-//                e.printStackTrace();
-//            } catch(IOException e){
-//                e.printStackTrace();

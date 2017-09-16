@@ -4,11 +4,11 @@ public class GeoLocation {
 
     protected double longitudeUser;
 
-    public double getLatitiudePlace() {
+    public double getLatitiudeUser() {
         return latitiudeUser;
     }
 
-    public double getLongitudePlace() {
+    public double getLongitudeUser() {
         return longitudeUser;
     }
 
@@ -16,9 +16,9 @@ public class GeoLocation {
         double[] wspolrzedne = new double[2];
         System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
         System.out.println("podaj pierwsza wspolrzedna ");
-        Double  pierwsza = new UserInputReader().readLine();
+        Double  pierwsza = new UserInputReader().readLineDouble();
         System.out.println("podaj druga wspolrzedna ");
-        double druga = new UserInputReader().readLine();
+        double druga = new UserInputReader().readLineDouble();
         wspolrzedne[0] = pierwsza;
         wspolrzedne[1] = druga;
         this.latitiudeUser = wspolrzedne[0];

@@ -7,7 +7,7 @@ public class UserChooseFromMenu {
         int input = 0;
         while (input <= 7) {
             try {
-                input = Integer.valueOf(scanner.readLine());
+                input =(scanner.readlineInteager());
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
                 continue;
@@ -23,7 +23,8 @@ public class UserChooseFromMenu {
                     //Wyszukanie stacji w danym miescie.
                     break;
                 case 4:
-                    // Wyszukanie stacji rowerowerej na danym obszarze
+                    UserChooseRadius userChooseRadius = new UserChooseRadius();
+                    userChooseRadius.Radius();
                     break;
                 case 5:
                     //Statystyki ilosci stacji rowerowych w danym panstwie.

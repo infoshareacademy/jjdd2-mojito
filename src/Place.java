@@ -1,8 +1,4 @@
 
-
-//dodanie dwoch nowych pol - latitude, longtitude
-//modyfikacja konstruktora o te dwa nowe pola
-//dodanie getterow do tych pol
 public class Place {
 
     private String name;
@@ -31,7 +27,5 @@ public class Place {
     private double latitiudePlace;
 
     private double longitudePlace;
-
-//    private String place;
 
 }

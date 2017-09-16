@@ -8,8 +8,11 @@ public class UserInputReader {
         scanner = new Scanner(System.in);
     }
 
-    protected String readLine() {
-        return scanner.nextLine();
+    protected Double readLineDouble() {
+        return scanner.nextDouble();
+    }
 
+    protected Integer readlineInteager(){
+        return scanner.nextInt();
     }
 }
