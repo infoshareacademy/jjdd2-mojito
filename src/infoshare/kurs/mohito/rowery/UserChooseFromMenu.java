@@ -7,6 +7,7 @@ import java.io.IOException;
 public class UserChooseFromMenu {
     protected  void userChooseFromMenu(){
         UserInputReader scanner = new UserInputReader();
+        AfterTask aftertask=new AfterTask();
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
@@ -32,28 +33,34 @@ public class UserChooseFromMenu {
                     geoLocation.geoLocation();
                     NearestPlace nearestPlace = new NearestPlace();
                     nearestPlace.findNearestPlace(geoLocation,bikeParsing);
+                    aftertask.aftertask();
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
                     countryStations.countryStation();
+                    aftertask.aftertask();
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
                     cityStations.cityStation();
+                    aftertask.aftertask();
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
                     userChooseRadius.Radius();
+                    aftertask.aftertask();
                     break;
                 case "5":
                     StatCountry.getCountryStat();
+                    aftertask.aftertask();
                     break;
                 case "6":
                     StatCountry.getCityStat();
+                    aftertask.aftertask();
                     break;
                 case "7":
                     System.exit(0);
-                    break;
+                break;
 
                 default:
                     System.out.println("niepoprawny numer podaj liczbe od 1-7");

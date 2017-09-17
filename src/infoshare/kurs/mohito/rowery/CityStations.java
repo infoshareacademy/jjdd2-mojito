@@ -14,6 +14,8 @@ public class CityStations {
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwe interesujacego cie miasta.");
+        boolean done=false;
+        while (!done){
         UserInputReader inputCity = new UserInputReader();
         String inputdata = inputCity.readlineString();
 
@@ -25,12 +27,13 @@ public class CityStations {
                 for (Place place : city.getPlaceList()) {
                     System.out.println(place.getName());
                 }
-            }
+                done=true;
+        }
+
         }
         if (i == 0){
-            System.out.println("Nie znaleziono takiego miasta w bazie.");
-        }
+            System.out.println("Nie znaleziono takiego miasta w bazie, wprowadz nazwe miasta ponownie.");
+        }}
     }
 }
-
 
