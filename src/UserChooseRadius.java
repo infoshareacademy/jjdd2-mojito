@@ -1,8 +1,17 @@
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class /*4*/UserChooseRadius {
+public class UserChooseRadius {
     protected  void Radius() {
-
+        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        try {
+            bikeParsing.parseData();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
         UserInputReader scanner = new UserInputReader();
         System.out.println("Prosze wybierz promien poszukiwan w km .");
         System.out.println("1.szukaj w odleg1osci 5 km");
@@ -22,20 +31,31 @@ public class /*4*/UserChooseRadius {
             }
             switch (input) {
                 case 1:
-                    //wyszukanie staci w odleglosci 5km.
+                    GeoLocation geoLocation5 = new GeoLocation();
+                    geoLocation5.geoLocation();
+                    NearestPlace nearestPlace = new NearestPlace();
+                    nearestPlace.findPlace(geoLocation5,bikeParsing,5.0);
                     break;
                 case 2:
                     //wyszukanie staci w odleglosci 10km.
+                    GeoLocation geoLocation10 = new GeoLocation();
+                    geoLocation10.geoLocation();
+                    NearestPlace nearestPlace10 = new NearestPlace();
+                    nearestPlace10.findPlace(geoLocation10,bikeParsing,10.0);
                     break;
                 case 3:
                     //wyszukanie staci w odleglosci 15km.
+                    GeoLocation geoLocation15 = new GeoLocation();
+                    geoLocation15.geoLocation();
+                    NearestPlace nearestPlace15 = new NearestPlace();
+                    nearestPlace15.findPlace(geoLocation15,bikeParsing,15.0);
                     break;
                 case 4:
-                    // Wyszukanie stacji rowerowerej na danym obszarze
+                    UserChooseFromMenu returnMenu = new UserChooseFromMenu();
+                    returnMenu.userChooseFromMenu();
                     break;
                 default:
-
-
+                    System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
 
             }
         }

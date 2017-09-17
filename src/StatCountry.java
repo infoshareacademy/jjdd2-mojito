@@ -6,44 +6,50 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StatCountry {
-    public static void getCityStat (){
+    public static void getCityStat() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
-            System.out.println("Liczba punktów w mieście");
-            for(City city : bikeParsing.getCityList()){
-                System.out.println(city.getName());
-                System.out.println("liczba punktów: " + city.getPlaceList().size());
-//                for (Place place: city.getPlaceList()){
-//                    System.out.println(place.getName());
-//                }
+            for (City city : bikeParsing.getCityList()) {
+                System.out.println("liczba stacji rowerowych w miescie " + city.getName() +" : "+ city.getPlaceList().size());
+
             }
-        } catch (ParserConfigurationException e) {
+        } catch (
+                ParserConfigurationException e)
+
+        {
             e.printStackTrace();
-        } catch (SAXException e) {
+        } catch (
+                SAXException e)
+
+        {
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch (
+                IOException e)
+
+        {
             e.printStackTrace();
         }
+
     }
-    public static void getCountryStat(){
+
+    public static void getCountryStat() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
-            System.out.println("Liczba punktów w kraju");
-            Map<String,Integer> countryStats = new HashMap<>();
-            for (City city: bikeParsing.getCityList()) {
-                if(countryStats.get(city.getCountryName()) == null){
+            System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
+            Map<String, Integer> countryStats = new HashMap<>();
+            for (City city : bikeParsing.getCityList()) {
+                if (countryStats.get(city.getCountryName()) == null) {
                     countryStats.put(city.getCountryName(), city.getPlaceList().size());
-                }else{
+                } else {
                     int currentPointCount = countryStats.get(city.getCountryName());
-                    countryStats.put(city.getCountryName(),currentPointCount+city.getPlaceList().size() );
+                    countryStats.put(city.getCountryName(), currentPointCount + city.getPlaceList().size());
                 }
             }
 
-            for(Map.Entry country : countryStats.entrySet()){
-                System.out.println(country.getKey());
-                System.out.println("LIczba punktów w kraju: " + country.getValue());
+            for (Map.Entry country : countryStats.entrySet()) {
+                System.out.println("Liczba stacji rowerowych w " + country.getKey() + ": " + country.getValue());
             }
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

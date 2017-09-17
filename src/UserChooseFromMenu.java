@@ -4,7 +4,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class UserChooseFromMenu {
-    protected static void userChooseFromMenu(){
+    protected  void userChooseFromMenu(){
         UserInputReader scanner = new UserInputReader();
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
@@ -33,10 +33,12 @@ public class UserChooseFromMenu {
                     nearestPlace.findNearestPlace(geoLocation,bikeParsing);
                     break;
                 case "2":
-                    // Wyszukanie stacji w danym kraju.
+                    CountryStations countryStations = new CountryStations();
+                    countryStations.countryStation();
                     break;
                 case "3":
-                    //Wyszukanie stacji w danym miescie.
+                    CityStations cityStations = new CityStations();
+                    cityStations.cityStation();
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
@@ -44,15 +46,12 @@ public class UserChooseFromMenu {
                     break;
                 case "5":
                     StatCountry.getCountryStat();
-                    //Statystyki ilosci stacji rowerowych w danym panstwie.
                     break;
                 case "6":
                     StatCountry.getCityStat();
-                    // Statystyki ilosci stacji rowerowych w danym miescie
                     break;
                 case "7":
                     System.exit(0);
-                    //wyjscie z programu
                     break;
 
                 default:

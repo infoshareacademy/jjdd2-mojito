@@ -1,7 +1,7 @@
 
 public class DistanceMath {
 
-    protected  Double countDistance(Place place, GeoLocation geoLocation) {
+    protected  double countDistance(Place place, GeoLocation geoLocation) {
         double distance;
 
         double x = geoLocation.latitiudeUser;

@@ -16,7 +16,7 @@ public class GeoLocation {
         double[] wspolrzedne = new double[2];
         System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
         System.out.println("podaj pierwsza wspolrzedna ");
-        Double pierwsza = new UserInputReader().readLineDouble();
+        double pierwsza = new UserInputReader().readLineDouble();
         System.out.println("podaj druga wspolrzedna ");
         double druga = new UserInputReader().readLineDouble();
         wspolrzedne[0] = pierwsza;
