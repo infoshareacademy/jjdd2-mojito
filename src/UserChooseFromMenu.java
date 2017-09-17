@@ -2,11 +2,12 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.List;
 
 public class UserChooseFromMenu {
-    protected  void userChooseFromMenu(){
+    protected  void userChooseFromMenu(List<City> cityList){
         UserInputReader scanner = new UserInputReader();
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        /*BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException e) {
@@ -15,7 +16,7 @@ public class UserChooseFromMenu {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         String input = "0";
         while (true) {
@@ -29,8 +30,8 @@ public class UserChooseFromMenu {
                 case "1":
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
-                    NearestPlace nearestPlace = new NearestPlace();
-                    nearestPlace.findNearestPlace(geoLocation,bikeParsing);
+                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    nearestPlace.findNearestPlace(geoLocation);
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();

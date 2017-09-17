@@ -33,26 +33,26 @@ public class UserChooseRadius {
                 case 1:
                     GeoLocation geoLocation5 = new GeoLocation();
                     geoLocation5.geoLocation();
-                    NearestPlace nearestPlace = new NearestPlace();
-                    nearestPlace.findPlace(geoLocation5,bikeParsing,5.0);
+                    NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
+                    nearestPlace.findPlace(geoLocation5,5.0);
                     break;
                 case 2:
                     //wyszukanie staci w odleglosci 10km.
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
-                    NearestPlace nearestPlace10 = new NearestPlace();
-                    nearestPlace10.findPlace(geoLocation10,bikeParsing,10.0);
+                    NearestPlace nearestPlace10 = new NearestPlace(bikeParsing.getCityList());
+                    nearestPlace10.findPlace(geoLocation10,10.0);
                     break;
                 case 3:
                     //wyszukanie staci w odleglosci 15km.
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
-                    NearestPlace nearestPlace15 = new NearestPlace();
-                    nearestPlace15.findPlace(geoLocation15,bikeParsing,15.0);
+                    NearestPlace nearestPlace15 = new NearestPlace(bikeParsing.getCityList());
+                    nearestPlace15.findPlace(geoLocation15,15.0);
                     break;
                 case 4:
                     UserChooseFromMenu returnMenu = new UserChooseFromMenu();
-                    returnMenu.userChooseFromMenu();
+                    returnMenu.userChooseFromMenu(bikeParsing.getCityList());
                     break;
                 default:
                     System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
