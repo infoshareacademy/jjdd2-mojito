@@ -12,6 +12,8 @@ public class CountryStations {
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwe interesujacego cie kraju.");
+        boolean done=false;
+            while (!done){
         UserInputReader inputcountry = new UserInputReader();
         String inputdata = inputcountry.readlineString();
 
@@ -23,11 +25,15 @@ public class CountryStations {
                 for (Place place : city.getPlaceList()) {
                     System.out.println(place.getName());
                 }
+                done=true;
             }
+
 
         }
         if (i == 0) {
-            System.out.println("Nie znaleziono takiego Kraju w bazie.");
+            System.out.println("Nie znaleziono takiego Kraju w bazie, wprowadź nazwę ponownie.");
+        }
+
         }
     }
 }
