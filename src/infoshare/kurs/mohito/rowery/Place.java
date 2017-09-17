@@ -28,5 +28,4 @@ public class Place {
     private double latitiudePlace;
 
     private double longitudePlace;
-
 }

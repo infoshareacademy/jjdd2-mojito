@@ -5,7 +5,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class CountryStations {
-    public void countryStation() {
+    protected void countryStation() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();

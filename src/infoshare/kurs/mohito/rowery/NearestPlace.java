@@ -6,7 +6,7 @@ import java.util.List;
 public class NearestPlace {
     private String name;
 
-    public void findNearestPlace(GeoLocation geoLocation, BikeParsing data) {
+    protected void findNearestPlace(GeoLocation geoLocation, BikeParsing data) {
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
 
@@ -22,7 +22,7 @@ public class NearestPlace {
                 , lowestDistance, this.name);
     }
 
-    public void findPlace(GeoLocation geoLocation, BikeParsing data,double distance) {
+    protected void findPlace(GeoLocation geoLocation, BikeParsing data, double distance) {
         DistanceMath distanceMath = new DistanceMath();
         List<Place> placelist = new ArrayList<>();
         for (City city : data.getCityList()) {

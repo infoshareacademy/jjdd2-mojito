@@ -14,7 +14,7 @@ public class GeoLocation {
         return longitudeUser;
     }
 
-    public double[] geoLocation() {
+    protected double[] geoLocation() {
         double[] wspolrzedne = new double[2];
         System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
 

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class CityStations {
 
-    public void cityStation() {
+    protected void cityStation() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
