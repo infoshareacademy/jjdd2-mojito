@@ -1,5 +1,6 @@
-import org.xml.sax.SAXException;
+package infoshare.kurs.mohito.rowery;
 
+import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public class UserChooseFromMenu {
             try {
                 input =(scanner.readlineString());
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
+                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-7 ");
                 continue;
             }
             switch (input) {

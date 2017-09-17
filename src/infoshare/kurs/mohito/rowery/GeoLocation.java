@@ -1,3 +1,5 @@
+package infoshare.kurs.mohito.rowery;
+
 public class GeoLocation {
 
     protected double latitiudeUser;

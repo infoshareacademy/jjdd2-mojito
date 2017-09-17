@@ -1,7 +1,9 @@
+package infoshare.kurs.mohito.rowery;
+
 public class Cordinates {
-    double longitude;
-    double latitude;
-    String name;
+    private double longitude;
+    private double latitude;
+    private String name;
 
     public String getName() {
         return name;
@@ -10,8 +12,6 @@ public class Cordinates {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public double getLongitude() {
         return longitude;
@@ -42,10 +42,9 @@ public class Cordinates {
     @Override
 
     public String toString() {
-        return "Cordinates{" +
+        return "infoshare.kurs.mohito.rowery.Cordinates{" +
                 "Longitude=" + longitude +
                 ", Latitude=" + latitude +
                 '}';
     }
-
 }

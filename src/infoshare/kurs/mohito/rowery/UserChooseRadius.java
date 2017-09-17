@@ -1,8 +1,9 @@
+package infoshare.kurs.mohito.rowery;
+
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class UserChooseRadius {
     protected  void Radius() {
@@ -17,17 +18,17 @@ public class UserChooseRadius {
         System.out.println("1.szukaj w odleg1osci 5 km");
         System.out.println("2.szukaj w odleg1osci 10 km");
         System.out.println("3.szukaj w odleg1osci 15 km");
-        System.out.println("4.Wróc do Menu .");
+        System.out.println("4.Wróc do infoshare.kurs.mohito.rowery.Menu .");
 
         int input = 0;
         while (input <= 0) {
             try {
                 input = scanner.readlineInteager();
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
                 continue;
             }catch (NullPointerException e){
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
             }
             switch (input) {
                 case 1:
@@ -55,7 +56,7 @@ public class UserChooseRadius {
                     returnMenu.userChooseFromMenu();
                     break;
                 default:
-                    System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                    System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
 
             }
         }

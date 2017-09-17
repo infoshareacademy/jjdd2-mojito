@@ -1,3 +1,4 @@
+package infoshare.kurs.mohito.rowery;
 
 public class DistanceMath {
 
@@ -10,12 +11,10 @@ public class DistanceMath {
         double k = place.getLatitiudePlace();
         double j = place.getLongitudePlace();
 
-
         distance = Math.sqrt(Math.pow((x - k), 2.0)
                 + Math.pow((Math.cos((x * Math.PI) / 180.0)
                 * (j - y)), 2.0)) * (40075.704 / 360.0);
 
         return (distance);
-
     }
 }

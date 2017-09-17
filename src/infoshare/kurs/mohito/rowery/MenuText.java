@@ -1,3 +1,5 @@
+package infoshare.kurs.mohito.rowery;
+
 public class MenuText {
     protected void Text() {
         System.out.println("Witaj w Wyszukiwarce rowerowej");

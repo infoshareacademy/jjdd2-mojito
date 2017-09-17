@@ -1,3 +1,5 @@
+package infoshare.kurs.mohito.rowery;
+
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -6,34 +8,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StatCountry {
-    public static void getCityStat() {
+    protected static void getCityStat() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
             for (City city : bikeParsing.getCityList()) {
                 System.out.println("liczba stacji rowerowych w miescie " + city.getName() +" : "+ city.getPlaceList().size());
-
             }
         } catch (
-                ParserConfigurationException e)
-
-        {
-            e.printStackTrace();
-        } catch (
-                SAXException e)
-
-        {
-            e.printStackTrace();
-        } catch (
-                IOException e)
-
+                ParserConfigurationException | SAXException | IOException e)
         {
             e.printStackTrace();
         }
-
     }
 
-    public static void getCountryStat() {
+    protected static void getCountryStat() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
@@ -51,11 +40,7 @@ public class StatCountry {
             for (Map.Entry country : countryStats.entrySet()) {
                 System.out.println("Liczba stacji rowerowych w " + country.getKey() + ": " + country.getValue());
             }
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
 

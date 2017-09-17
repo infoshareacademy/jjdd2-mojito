@@ -1,3 +1,5 @@
+package infoshare.kurs.mohito.rowery;
+
 import java.util.Scanner;
 //klasa skanera
 public class UserInputReader {

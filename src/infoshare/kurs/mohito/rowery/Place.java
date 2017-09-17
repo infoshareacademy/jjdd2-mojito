@@ -1,3 +1,4 @@
+package infoshare.kurs.mohito.rowery;
 
 public class Place {
 
@@ -12,15 +13,15 @@ public class Place {
         this.longitudePlace = longitudePlace;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public double getLatitiudePlace() {
+    protected double getLatitiudePlace() {
         return latitiudePlace;
     }
 
-    public double getLongitudePlace() {
+    protected double getLongitudePlace() {
         return longitudePlace;
     }
 

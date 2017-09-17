@@ -1,11 +1,10 @@
-
+package infoshare.kurs.mohito.rowery;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -20,24 +19,22 @@ public class BikeParsing {
 
     private List<City> cityList;
 
-    public List<City> getCityList() {
+    protected List<City> getCityList() {
         return cityList;
     }
 
-    public BikeParsing(String fileName) {
+    protected BikeParsing(String fileName) {
         this.fileName = fileName;
         this.cityList = new ArrayList<City>();
     }
 
-    public void parseData() throws ParserConfigurationException, SAXException, IOException {
+    protected void parseData() throws ParserConfigurationException, SAXException, IOException {
 
         File inputFile = new File(fileName);
         DocumentBuilderFactory dbFaktory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dbBuilder = dbFaktory.newDocumentBuilder();
         Document doc = dbBuilder.parse(inputFile);
         NodeList countryNodeList = doc.getElementsByTagName("country");
-//        System.out.println("Coutnry size: " + countryNodeList.getLength());
-//        System.out.println("Liczba punktów w mieście: " + countryNodeList.getLength());
         for (int i = 0; i < countryNodeList.getLength(); i++) {
             Node countryNode = countryNodeList.item(i);
             if (countryNode.getNodeType() == Node.ELEMENT_NODE) {

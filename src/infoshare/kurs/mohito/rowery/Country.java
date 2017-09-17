@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package infoshare.kurs.mohito.rowery;
 
 public class Country {
     private  String name;
