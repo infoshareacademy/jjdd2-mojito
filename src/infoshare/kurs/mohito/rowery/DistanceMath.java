@@ -2,7 +2,7 @@ package infoshare.kurs.mohito.rowery;
 
 public class DistanceMath {
 
-    protected  double countDistance(Place place, GeoLocation geoLocation) {
+    protected double countDistance(Place place, GeoLocation geoLocation) {
         double distance;
 
         double x = geoLocation.latitiudeUser;

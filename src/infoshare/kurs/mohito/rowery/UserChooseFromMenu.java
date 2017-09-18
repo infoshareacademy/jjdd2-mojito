@@ -1,15 +1,16 @@
 package infoshare.kurs.mohito.rowery;
+
 import java.util.List;
 
 public class UserChooseFromMenu {
-    protected  void userChooseFromMenu(List<City> cityList){
+    protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
-        AfterTask aftertask=new AfterTask();
+        AfterTask aftertask = new AfterTask();
 
         String input = "0";
         while (true) {
             try {
-                input =(scanner.readlineString());
+                input = (scanner.readlineString());
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
                 continue;
@@ -47,7 +48,7 @@ public class UserChooseFromMenu {
                     break;
                 case "7":
                     System.exit(0);
-                break;
+                    break;
 
                 default:
                     System.out.println("niepoprawny numer podaj liczbe od 1-7");

@@ -18,7 +18,7 @@ public class GeoLocation {
         double[] wspolrzedne = new double[2];
         System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
 
-        boolean done=false;
+        boolean done = false;
         while (!done) {
 
             //sprawdzenie, czy wpisana współrzędna jest liczbą
@@ -28,7 +28,7 @@ public class GeoLocation {
                 String pierwszastring = new UserInputReader().readlineString();
                 pierwszastring = pierwszastring.replace(",", ".");// zamienia kropki na przecinki
                 double pierwsza = Double.parseDouble(pierwszastring);//parsowanie z string na double
-                pierwsza=Math.abs(pierwsza);//zwraca wartość bezwzględną, w przypadku gdy ktoś wpisze z minusem
+                pierwsza = Math.abs(pierwsza);//zwraca wartość bezwzględną, w przypadku gdy ktoś wpisze z minusem
                 wspolrzedne[0] = pierwsza;
                 this.latitiudeUser = wspolrzedne[0];
                 this.longitudeUser = wspolrzedne[1];
@@ -39,7 +39,7 @@ public class GeoLocation {
 
             }
         }
-         done=false;
+        done = false;
 
         while (!done) {
 
@@ -49,10 +49,10 @@ public class GeoLocation {
                 String drugastring = new UserInputReader().readlineString();
                 drugastring = drugastring.replace(",", ".");// zamienia kropki na przecinki
                 double druga = Double.parseDouble(drugastring);//parsowanie z string na double
-                druga=Math.abs(druga);
+                druga = Math.abs(druga);
                 wspolrzedne[1] = druga;
                 this.longitudeUser = wspolrzedne[1];
-                done=true;
+                done = true;
 
             } catch (NumberFormatException e) {
                 System.out.println("niepoprawny format, podaj druga wspolrzedna ponownie");
@@ -61,7 +61,7 @@ public class GeoLocation {
 
         }
 
-return wspolrzedne;
+        return wspolrzedne;
 
 
     }

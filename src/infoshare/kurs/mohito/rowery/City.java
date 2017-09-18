@@ -48,5 +48,7 @@ public class City {
         return placeList;
     }
 
-    protected String getCountryName() { return countryName;  }
+    protected String getCountryName() {
+        return countryName;
+    }
 }
