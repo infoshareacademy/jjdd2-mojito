@@ -1,13 +1,14 @@
 package infoshare.kurs.mohito.rowery;
 
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class UserChooseRadius {
-    protected  void Radius() {
+    protected void Radius() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
-        AfterTask afterTask=new AfterTask();
+        AfterTask afterTask = new AfterTask();
 
         try {
             bikeParsing.parseData();
@@ -28,7 +29,7 @@ public class UserChooseRadius {
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
                 continue;
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
             }
             switch (input) {
@@ -36,7 +37,7 @@ public class UserChooseRadius {
                     GeoLocation geoLocation5 = new GeoLocation();
                     geoLocation5.geoLocation();
                     NearestPlace nearestPlace = new NearestPlace();
-                    nearestPlace.findPlace(geoLocation5,bikeParsing,5.0);
+                    nearestPlace.findPlace(geoLocation5, bikeParsing, 5.0);
                     afterTask.aftertask();
                     break;
                 case "2":
@@ -44,7 +45,7 @@ public class UserChooseRadius {
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
                     NearestPlace nearestPlace10 = new NearestPlace();
-                    nearestPlace10.findPlace(geoLocation10,bikeParsing,10.0);
+                    nearestPlace10.findPlace(geoLocation10, bikeParsing, 10.0);
                     afterTask.aftertask();
                     break;
                 case "3":
@@ -52,7 +53,7 @@ public class UserChooseRadius {
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
                     NearestPlace nearestPlace15 = new NearestPlace();
-                    nearestPlace15.findPlace(geoLocation15,bikeParsing,15.0);
+                    nearestPlace15.findPlace(geoLocation15, bikeParsing, 15.0);
                     afterTask.aftertask();
                     break;
                 case "4":

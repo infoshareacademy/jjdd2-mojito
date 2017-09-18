@@ -27,18 +27,18 @@ public class NearestPlace {
         List<Place> placelist = new ArrayList<>();
         for (City city : data.getCityList()) {
             for (Place place : city.getPlaceList()) {
-                double placedistance = distanceMath.countDistance(place,geoLocation);
+                double placedistance = distanceMath.countDistance(place, geoLocation);
                 if (placedistance <= distance) {
                     placelist.add(place);
                 }
             }
         }
-        if (placelist.size()== 0){
-            System.out.format("Nie znaleziono zadnej stacji w odleglosci %.2f km\n",distance);
-        }else {
-        System.out.format("Lista stacji w odległosci %.2f km\n",distance);
-        for (Place place : placelist) {
-            System.out.format("%s \n", place.getName());
+        if (placelist.size() == 0) {
+            System.out.format("Nie znaleziono zadnej stacji w odleglosci %.2f km\n", distance);
+        } else {
+            System.out.format("Lista stacji w odległosci %.2f km\n", distance);
+            for (Place place : placelist) {
+                System.out.format("%s \n", place.getName());
             }
         }
     }

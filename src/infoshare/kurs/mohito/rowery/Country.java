@@ -1,7 +1,7 @@
 package infoshare.kurs.mohito.rowery;
 
 public class Country {
-    private  String name;
+    private String name;
 
     private Double latitude;
 

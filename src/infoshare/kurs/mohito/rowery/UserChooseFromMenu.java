@@ -1,13 +1,14 @@
 package infoshare.kurs.mohito.rowery;
 
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class UserChooseFromMenu {
-    protected  void userChooseFromMenu(){
+    protected void userChooseFromMenu() {
         UserInputReader scanner = new UserInputReader();
-        AfterTask aftertask=new AfterTask();
+        AfterTask aftertask = new AfterTask();
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
@@ -22,7 +23,7 @@ public class UserChooseFromMenu {
         String input = "0";
         while (true) {
             try {
-                input =(scanner.readlineString());
+                input = (scanner.readlineString());
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-7 ");
                 continue;
@@ -32,7 +33,7 @@ public class UserChooseFromMenu {
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
                     NearestPlace nearestPlace = new NearestPlace();
-                    nearestPlace.findNearestPlace(geoLocation,bikeParsing);
+                    nearestPlace.findNearestPlace(geoLocation, bikeParsing);
                     aftertask.aftertask();
                     break;
                 case "2":
@@ -60,7 +61,7 @@ public class UserChooseFromMenu {
                     break;
                 case "7":
                     System.exit(0);
-                break;
+                    break;
 
                 default:
                     System.out.println("niepoprawny numer podaj liczbe od 1-7");

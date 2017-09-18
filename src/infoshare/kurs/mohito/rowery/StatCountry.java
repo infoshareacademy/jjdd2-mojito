@@ -13,11 +13,10 @@ public class StatCountry {
         try {
             bikeParsing.parseData();
             for (City city : bikeParsing.getCityList()) {
-                System.out.println("liczba stacji rowerowych w miescie " + city.getName() +" : "+ city.getPlaceList().size());
+                System.out.println("liczba stacji rowerowych w miescie " + city.getName() + " : " + city.getPlaceList().size());
             }
         } catch (
-                ParserConfigurationException | SAXException | IOException e)
-        {
+                ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
     }

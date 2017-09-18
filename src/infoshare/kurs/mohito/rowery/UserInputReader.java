@@ -1,6 +1,7 @@
 package infoshare.kurs.mohito.rowery;
 
 import java.util.Scanner;
+
 //klasa skanera
 public class UserInputReader {
 
@@ -14,11 +15,11 @@ public class UserInputReader {
         return scanner.nextDouble();
     }
 
-    protected Integer readlineInteager(){
+    protected Integer readlineInteager() {
         return scanner.nextInt();
     }
 
-    protected String readlineString(){
+    protected String readlineString() {
         return scanner.nextLine();
     }
 }
