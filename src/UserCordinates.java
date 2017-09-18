@@ -1,6 +1,4 @@
 public class UserCordinates {
-
-
         protected  double[] cordinates() {
             double[] wspolrzedne = new double[2];
             System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
@@ -11,7 +9,7 @@ public class UserCordinates {
             wspolrzedne[0] = pierwsza;
             wspolrzedne[1] = druga;
             return wspolrzedne;
-            
+
 
     }
 
