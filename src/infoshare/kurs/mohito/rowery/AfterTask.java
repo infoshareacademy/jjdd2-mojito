@@ -1,7 +1,9 @@
 package infoshare.kurs.mohito.rowery;
 
+import java.util.List;
+
 public class AfterTask {
-    protected void aftertask(){
+    protected void aftertask(List<City> cityList){
         String input="0";
         UserInputReader userInputReader=new UserInputReader();
         while (true){
@@ -13,7 +15,7 @@ public class AfterTask {
                 AfterTask afterTask=new AfterTask();
                 afterTask.chooseAfterTask();
                 UserChooseFromMenu userChooseFromMenu=new UserChooseFromMenu();
-                userChooseFromMenu.userChooseFromMenu();
+                userChooseFromMenu.userChooseFromMenu(cityList);
                 break;
                 case "2":
                     System.exit(0);

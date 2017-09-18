@@ -20,30 +20,30 @@ public class UserChooseFromMenu {
                     geoLocation.geoLocation();
                     NearestPlace nearestPlace = new NearestPlace(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
                     countryStations.countryStation();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
                     cityStations.cityStation();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
                     userChooseRadius.Radius();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "5":
                     StatCountry.getCountryStat();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "6":
                     StatCountry.getCityStat();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "7":
                     System.exit(0);

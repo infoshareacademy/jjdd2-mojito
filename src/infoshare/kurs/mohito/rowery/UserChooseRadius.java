@@ -3,6 +3,7 @@ package infoshare.kurs.mohito.rowery;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.List;
 
 public class UserChooseRadius {
     protected  void Radius() {
@@ -37,23 +38,21 @@ public class UserChooseRadius {
                     geoLocation5.geoLocation();
                     NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
                     nearestPlace.findPlace(geoLocation5,5.0);
-                    afterTask.aftertask();
+                    afterTask.aftertask(bikeParsing.getCityList());
                     break;
                 case "2":
-                    //wyszukanie staci w odleglosci 10km.
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
                     NearestPlace nearestPlace10 = new NearestPlace(bikeParsing.getCityList());
                     nearestPlace10.findPlace(geoLocation10,10.0);
-                    afterTask.aftertask();
+                    afterTask.aftertask(bikeParsing.getCityList());
                     break;
                 case "3":
-                    //wyszukanie staci w odleglosci 15km.
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
                     NearestPlace nearestPlace15 = new NearestPlace(bikeParsing.getCityList());
                     nearestPlace15.findPlace(geoLocation15,15.0);
-                    afterTask.aftertask();
+                    afterTask.aftertask(bikeParsing.getCityList());
                     break;
                 case "4":
                     UserChooseFromMenu returnMenu = new UserChooseFromMenu();
