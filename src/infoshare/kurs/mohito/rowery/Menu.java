@@ -13,7 +13,7 @@ public class Menu {
             MenuText menuText = new MenuText();
             menuText.Text();
             UserChooseFromMenu choose = new UserChooseFromMenu();
-            choose.userChooseFromMenu();
+            choose.userChooseFromMenu(bikeParsing.getCityList());
 
             DistanceMath distanceMath = new DistanceMath();
             String placename = "";
