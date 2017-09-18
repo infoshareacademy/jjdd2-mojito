@@ -19,17 +19,17 @@ public class UserChooseRadius {
         System.out.println("1.szukaj w odleg1osci 5 km");
         System.out.println("2.szukaj w odleg1osci 10 km");
         System.out.println("3.szukaj w odleg1osci 15 km");
-        System.out.println("4.Wróc do infoshare.kurs.mohito.rowery.Menu .");
+        System.out.println("4.Wróc do Menu .");
 
         String input = "0";
         while (true) {
             try {
                 input = scanner.readlineString();
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
                 continue;
             }catch (NullPointerException e){
-                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
             }
             switch (input) {
                 case "1":
@@ -40,7 +40,6 @@ public class UserChooseRadius {
                     afterTask.aftertask();
                     break;
                 case "2":
-                    //wyszukanie staci w odleglosci 10km.
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
                     NearestPlace nearestPlace10 = new NearestPlace();
@@ -48,7 +47,6 @@ public class UserChooseRadius {
                     afterTask.aftertask();
                     break;
                 case "3":
-                    //wyszukanie staci w odleglosci 15km.
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
                     NearestPlace nearestPlace15 = new NearestPlace();
@@ -56,12 +54,11 @@ public class UserChooseRadius {
                     afterTask.aftertask();
                     break;
                 case "4":
-                    UserChooseFromMenu returnMenu = new UserChooseFromMenu();
-                    returnMenu.userChooseFromMenu();
                     afterTask.chooseAfterTask();
                     break;
                 default:
-                    System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-4 ");
+                    afterTask.chooseAfterTask();
+
 
             }
         }
