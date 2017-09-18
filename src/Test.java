@@ -28,7 +28,10 @@ public class Test {
 
 
             }
-            UserCordinates.cordinates();
+            GeoLocation userLocation = new GeoLocation();
+            DistanceMath math1 = new DistanceMath();
+
+
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {
