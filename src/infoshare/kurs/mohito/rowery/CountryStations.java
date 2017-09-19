@@ -20,7 +20,7 @@ public class CountryStations {
             String inputdata = inputcountry.readlineString();
 
             int i = 0;
-            System.out.format("Stacje rowerower znajdujace sie w %s :\n", inputdata);
+            System.out.format("Stacje rowerowe znajdujace sie w %s :\n", inputdata);
             for (City city : bikeParsing.getCityList()) {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
