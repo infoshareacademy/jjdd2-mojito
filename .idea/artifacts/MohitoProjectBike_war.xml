@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MohitoProjectBike:war">
+    <output-path>$PROJECT_DIR$/MohitoProjectBike/target</output-path>
+    <root id="archive" name="MohitoProjectBike.war">
+      <element id="artifact" artifact-name="MohitoProjectBike:war exploded" />
+    </root>
+  </artifact>
+</component>
