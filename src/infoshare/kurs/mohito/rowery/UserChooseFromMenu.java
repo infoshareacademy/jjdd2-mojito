@@ -1,63 +1,50 @@
 package infoshare.kurs.mohito.rowery;
 
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
+import java.util.List;
 
 public class UserChooseFromMenu {
-    protected void userChooseFromMenu() {
+    protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
         AfterTask aftertask = new AfterTask();
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
-        try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         String input = "0";
         while (true) {
             try {
                 input = (scanner.readlineString());
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji infoshare.kurs.mohito.rowery.Menu wpisujac liczby od 1-7 ");
+                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
                 continue;
             }
             switch (input) {
                 case "1":
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
-                    NearestPlace nearestPlace = new NearestPlace();
-                    nearestPlace.findNearestPlace(geoLocation, bikeParsing);
-                    aftertask.aftertask();
+                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    nearestPlace.findNearestPlace(geoLocation);
+                    aftertask.aftertask(cityList);
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
                     countryStations.countryStation();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
                     cityStations.cityStation();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
                     userChooseRadius.Radius();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "5":
                     StatCountry.getCountryStat();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "6":
                     StatCountry.getCityStat();
-                    aftertask.aftertask();
+                    aftertask.aftertask(cityList);
                     break;
                 case "7":
                     System.exit(0);

@@ -4,13 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NearestPlace {
+
+    List<City> cityList;
+
+    public NearestPlace(List<City> city) {
+        this.cityList = city;
+    }
+
     private String name;
 
-    protected void findNearestPlace(GeoLocation geoLocation, BikeParsing data) {
+    public void findNearestPlace(GeoLocation geoLocation) {
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
 
-        for (City city : data.getCityList()) {
+        for (City city : cityList) {
             for (Place place : city.getPlaceList()) {
                 if (lowestDistance > distanceMath.countDistance(place, geoLocation)) {
                     lowestDistance = distanceMath.countDistance(place, geoLocation);
@@ -22,10 +29,10 @@ public class NearestPlace {
                 , lowestDistance, this.name);
     }
 
-    protected void findPlace(GeoLocation geoLocation, BikeParsing data, double distance) {
+    public void findPlace(GeoLocation geoLocation, double distance) {
         DistanceMath distanceMath = new DistanceMath();
         List<Place> placelist = new ArrayList<>();
-        for (City city : data.getCityList()) {
+        for (City city : cityList) {
             for (Place place : city.getPlaceList()) {
                 double placedistance = distanceMath.countDistance(place, geoLocation);
                 if (placedistance <= distance) {
