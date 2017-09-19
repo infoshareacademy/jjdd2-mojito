@@ -25,17 +25,15 @@ public class CountryStations {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        System.out.println(place.getName());
+                        System.out.println(place.getName() +"  /  "+city.getName());
                     }
-                    done = true;
                 }
-
-
+                done = true;
             }
             if (i == 0) {
                 System.out.println("Nie znaleziono takiego Kraju w bazie, wprowadź nazwę ponownie.");
             }
-
         }
     }
 }
+
