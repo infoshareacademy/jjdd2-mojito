@@ -9,8 +9,8 @@
         <module name="MohitoProjectBike" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MohitoProjectBike" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="MohitoProjectBike" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
