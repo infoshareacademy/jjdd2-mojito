@@ -21,7 +21,7 @@ public class GeoLocation {
         boolean done = false;
         while (!done) {
             try {
-                System.out.println("podaj pierwsza wspolrzedna ");
+                System.out.println("podaj pierwsza wspolrzedna Geograficzna \n wzór XXXX.XXXX");
                 String pierwszastring = new UserInputReader().readlineString();
                 pierwszastring = pierwszastring.replace(",", ".");
                 double pierwsza = Double.parseDouble(pierwszastring);
@@ -40,7 +40,7 @@ public class GeoLocation {
         while (!done) {
             try {
 
-                System.out.println("podaj druga wspolrzedna ");
+                System.out.println("podaj druga wspolrzedna Geograficzna \n wzór XXXX.XXXX");
                 String drugastring = new UserInputReader().readlineString();
                 drugastring = drugastring.replace(",", ".");
                 double druga = Double.parseDouble(drugastring);//parsowanie z string na double
