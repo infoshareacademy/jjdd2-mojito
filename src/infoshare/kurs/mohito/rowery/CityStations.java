@@ -14,14 +14,14 @@ public class CityStations {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Wpisz nazwe interesujacego cie miasta.");
+        System.out.println("Wpisz nazwę interesującego Cię miasta.");
         boolean done = false;
         while (!done) {
             UserInputReader inputCity = new UserInputReader();
             String inputdata = inputCity.readlineString();
 
             int i = 0;
-            System.out.format("Stacje rowerowe znajdujace sie w %s :\n", inputdata);
+            System.out.format("Stacje rowerowe znajdujące sie w %s :\n", inputdata);
             for (City city : bikeParsing.getCityList()) {
                 if (city.getName().equals(inputdata)) {
                     i++;
@@ -33,7 +33,7 @@ public class CityStations {
 
             }
             if (i == 0) {
-                System.out.println("Nie znaleziono takiego miasta w bazie, wprowadz nazwe miasta ponownie.");
+                System.out.println("Nie znaleziono miasta w bazie, wprowadź nazwę miasta ponownie.");
             }
         }
     }
