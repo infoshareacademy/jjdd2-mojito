@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Menu {
     public static void main(String[] args) {
         try {
-            BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+            BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
             bikeParsing.parseData();
 
             MenuText menuText = new MenuText();
