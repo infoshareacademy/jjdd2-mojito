@@ -1,4 +1,4 @@
-package infoshare.kurs.mohito.rowery;
+package infoshareKurs;
 
 public class DistanceMath {
 

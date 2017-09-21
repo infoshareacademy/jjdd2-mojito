@@ -1,4 +1,4 @@
-package infoshare.kurs.mohito.rowery;
+package infoshareKurs;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

@@ -1,39 +1,36 @@
-package infoshare.kurs.mohito.rowery;
-
+package infoshareKurs;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class CityStations {
-
-    protected void cityStation() {
+public class CountryStations {
+    protected void countryStation() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Wpisz nazwe interesujacego cie miasta.");
+        System.out.println("Wpisz nazwe interesujacego cie kraju.");
         boolean done = false;
         while (!done) {
-            UserInputReader inputCity = new UserInputReader();
-            String inputdata = inputCity.readlineString();
+            UserInputReader inputcountry = new UserInputReader();
+            String inputdata = inputcountry.readlineString();
 
             int i = 0;
             System.out.format("Stacje rowerowe znajdujace sie w %s :\n", inputdata);
             for (City city : bikeParsing.getCityList()) {
-                if (city.getName().equals(inputdata)) {
+                if (city.getCountryName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        System.out.println(place.getName());
+                        System.out.println(place.getName() +"  /  "+city.getName());
                     }
-                    done = true;
                 }
-
+                done = true;
             }
             if (i == 0) {
-                System.out.println("Nie znaleziono takiego miasta w bazie, wprowadz nazwe miasta ponownie.");
+                System.out.println("Nie znaleziono takiego Kraju w bazie, wprowadź nazwę ponownie.");
             }
         }
     }
