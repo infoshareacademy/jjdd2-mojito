@@ -1,6 +1,9 @@
 package infoshareKurs;
 
+import java.util.logging.Logger;
+
 public class GeoLocation {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
 
     protected double latitiudeUser;
 

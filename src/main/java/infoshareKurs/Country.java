@@ -1,6 +1,9 @@
 package infoshareKurs;
 
+import java.util.logging.Logger;
+
 public class Country {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
     private String name;
 
     private Double latitude;

@@ -1,6 +1,9 @@
 package infoshareKurs;
 
+import java.util.logging.Logger;
+
 public class DistanceMath {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
 
     protected double countDistance(Place place, GeoLocation geoLocation) {
         double distance;

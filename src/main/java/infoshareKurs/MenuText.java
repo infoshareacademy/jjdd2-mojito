@@ -1,6 +1,9 @@
 package infoshareKurs;
 
+import java.util.logging.Logger;
+
 public class MenuText {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
     protected void Text() {
         System.out.println("Witaj w wyszukiwarce rowerowej");
         System.out.println("Czym jestes zainteresowany?");

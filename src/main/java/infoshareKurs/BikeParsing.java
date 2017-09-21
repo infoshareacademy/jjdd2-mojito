@@ -13,8 +13,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class BikeParsing {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
 
     private String fileName;
 

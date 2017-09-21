@@ -5,8 +5,10 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class StatCountry {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
     protected static void getCityStat() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {

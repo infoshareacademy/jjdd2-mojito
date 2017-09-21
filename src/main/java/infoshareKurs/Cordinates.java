@@ -1,6 +1,9 @@
 package infoshareKurs;
 
+import java.util.logging.Logger;
+
 public class Cordinates {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
     private double longitude;
     private double latitude;
     private String name;

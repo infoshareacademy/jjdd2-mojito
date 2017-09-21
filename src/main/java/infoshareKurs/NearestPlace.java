@@ -2,8 +2,10 @@ package infoshareKurs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class NearestPlace {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
 
     List<City> cityList;
 

@@ -1,8 +1,10 @@
 package infoshareKurs;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class UserChooseFromMenu {
+    protected final Logger logger = Logger.getLogger(getClass().getName());
     protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
         AfterTask aftertask = new AfterTask();
@@ -13,6 +15,7 @@ public class UserChooseFromMenu {
                 input = (scanner.readlineString());
             } catch (NumberFormatException e) {
                 System.out.println("Wybierz jedną z opcji Menu wpisując liczby od 1-7 ");
+                logger.warning("Użytkownik wpisal niepoprawny numer wyboru menu.");
                 continue;
             }
             switch (input) {
@@ -52,6 +55,7 @@ public class UserChooseFromMenu {
 
                 default:
                     System.out.println("Niepoprawny numer, podaj liczbę od 1-7");
+                    logger.warning("Użytkownik wpisal niepoprawny numer wyboru menu.");
             }
         }
     }
