@@ -12,14 +12,14 @@ public class CountryStations {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Wpisz nazwe interesujacego cie kraju.");
+        System.out.println("Wpisz nazwę interesującego Cię państwa.");
         boolean done = false;
         while (!done) {
             UserInputReader inputcountry = new UserInputReader();
             String inputdata = inputcountry.readlineString();
 
             int i = 0;
-            System.out.format("Stacje rowerowe znajdujace sie w %s :\n", inputdata);
+            System.out.format("Stacje rowerowe znajdujące sie w %s :\n", inputdata);
             for (City city : bikeParsing.getCityList()) {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
@@ -30,7 +30,7 @@ public class CountryStations {
                 done = true;
             }
             if (i == 0) {
-                System.out.println("Nie znaleziono takiego Kraju w bazie, wprowadź nazwę ponownie.");
+                System.out.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
             }
         }
     }

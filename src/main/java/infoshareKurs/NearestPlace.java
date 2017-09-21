@@ -25,7 +25,7 @@ public class NearestPlace {
                 }
             }
         }
-        System.out.format("Najblisza stacja rowerowa znajduje sie %.2f km od ciebie . Stacja nazywa sie %s"
+        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s"
                 , lowestDistance, this.name);
     }
 
@@ -41,9 +41,9 @@ public class NearestPlace {
             }
         }
         if (placelist.size() == 0) {
-            System.out.format("Nie znaleziono zadnej stacji w odleglosci %.2f km\n", distance);
+            System.out.format("Nie znaleziono żadnej stacji w odległości %.2f km\n", distance);
         } else {
-            System.out.format("Lista stacji w odległosci %.2f km\n", distance);
+            System.out.format("Lista stacji w odległości %.2f km\n", distance);
             for (Place place : placelist) {
                 System.out.format("%s \n", place.getName());
             }
