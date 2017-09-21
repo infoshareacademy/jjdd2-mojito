@@ -1,4 +1,4 @@
-package infoshare.kurs.mohito.rowery;
+package infoshareKurs;
 
 import java.util.ArrayList;
 import java.util.List;

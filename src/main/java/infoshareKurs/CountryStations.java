@@ -1,5 +1,4 @@
-package infoshare.kurs.mohito.rowery;
-
+package infoshareKurs;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
