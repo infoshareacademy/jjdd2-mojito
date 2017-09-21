@@ -11,7 +11,9 @@ public class UserChooseRadius {
     protected final Logger logger = Logger.getLogger(getClass().getName());
     protected void Radius() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        logger.log(Level.INFO,"Pasrowanie danych z pliku xml");
         AfterTask afterTask = new AfterTask();
+        logger.log(Level.INFO,"implementacja obiektu klasy afterTask");
 
         try {
             bikeParsing.parseData();
@@ -67,17 +69,18 @@ public class UserChooseRadius {
                 case "3":
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
-                    logger.info("Stworzenie geo lokacji uzytkownika");
+                    logger.log(Level.INFO,"Stworzenie geo lokacji uzytkownika");
                     NearestPlace nearestPlace15 = new NearestPlace(bikeParsing.getCityList());
-                    logger.info("Zaimplementowanie klasy szukajacej stacji");
+                    logger.log(Level.INFO,"Zaimplementowanie klasy szukajacej stacji");
                     nearestPlace15.findPlace(geoLocation15, 15.0);
-                    logger.info("Wiadomosc z danymi o najlizszej stacji badz jej braku");
+                    logger.log(Level.INFO,"Wiadomosc z danymi o najlizszej stacji badz jej braku");
                     afterTask.aftertask(bikeParsing.getCityList());
                     logger.log(Level.INFO,"Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseFromMenu returnMenu = new UserChooseFromMenu();
+                    logger.log(Level.INFO,"Implementacja Menu");
                     returnMenu.userChooseFromMenu(bikeParsing.getCityList());
                     afterTask.chooseAfterTask();
                     logger.log(Level.INFO,"Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
