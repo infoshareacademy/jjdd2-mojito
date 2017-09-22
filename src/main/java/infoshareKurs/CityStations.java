@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class CityStations {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(CityStations.class);
 
     protected void cityStation() {
         BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");

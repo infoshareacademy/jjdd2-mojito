@@ -8,7 +8,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class UserChooseRadius {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(UserChooseRadius.class);
     protected void Radius() {
         BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         logger.info("Pasrowanie danych z pliku xml");

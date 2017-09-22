@@ -2,7 +2,7 @@ package infoshareKurs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class MenuText {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(MenuText.class);
     protected void Text() {
         logger.info("wypisanie tekstu menu");
         System.out.println("Witaj w wyszukiwarce rowerowej");

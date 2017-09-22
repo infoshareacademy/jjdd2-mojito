@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class NearestPlace {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(NearestPlace.class);
 
     List<City> cityList;
 

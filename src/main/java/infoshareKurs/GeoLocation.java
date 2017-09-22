@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class GeoLocation {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(GeoLocation.class);
 
     protected double latitiudeUser;
 

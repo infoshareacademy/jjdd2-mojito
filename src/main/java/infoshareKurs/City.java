@@ -7,8 +7,6 @@ import org.apache.logging.log4j.Logger;
 
 public class City {
 
-
-
     private String countryName;
 
     private Double latitude;

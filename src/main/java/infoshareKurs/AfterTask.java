@@ -5,7 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class AfterTask {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(AfterTask.class);
 
     protected void aftertask(List<City> cityList) {
         String input = "0";

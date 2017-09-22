@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class UserChooseFromMenu {
-    private final Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger(UserChooseFromMenu.class);
     protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
         AfterTask aftertask = new AfterTask();
