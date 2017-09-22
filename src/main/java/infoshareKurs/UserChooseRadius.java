@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserChooseRadius {
-    protected final Logger logger = Logger.getLogger(getClass().getName());
+    private final Logger logger = Logger.getLogger(getClass().getName());
     protected void Radius() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         logger.log(Level.INFO,"Pasrowanie danych z pliku xml");

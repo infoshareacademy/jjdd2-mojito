@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 //klasa skanera
 public class UserInputReader {
-    protected final Logger logger = Logger.getLogger(getClass().getName());
+    private final Logger logger = Logger.getLogger(getClass().getName());
 
     private final Scanner scanner;
 
