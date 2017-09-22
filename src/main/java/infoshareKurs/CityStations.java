@@ -4,10 +4,11 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CityStations {
-    protected final Logger logger = Logger.getLogger(getClass().getName());
+    private final Logger logger = LogManager.getLogger();
 
     protected void cityStation() {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");

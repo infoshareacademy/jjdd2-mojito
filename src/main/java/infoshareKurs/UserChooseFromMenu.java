@@ -27,30 +27,30 @@ public class UserChooseFromMenu {
                     logger.info("Stworzenie geo lokacji uzytkownika");
                     NearestPlace nearestPlace = new NearestPlace(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
-                    logger.log(.INFO,"znalezienie najblizszej stacji od uzytkownika");
+                    logger.info("znalezienie najblizszej stacji od uzytkownika");
                     aftertask.aftertask(cityList);
-                    logger.log(.INFO,"Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
                     countryStations.countryStation();
-                    logger.log(.INFO,"wypisanie stacji w kraju");
+                    logger.info("wypisanie stacji w kraju");
                     aftertask.aftertask(cityList);
-                    logger.log(.INFO,"Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
                     cityStations.cityStation();
                     aftertask.aftertask(cityList);
-                    logger.log(.INFO,"Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
                     userChooseRadius.Radius();
-                    logger.log(.INFO,"przekierowanie do submenu userchoose radius");
+                    logger.info("przekierowanie do submenu userchoose radius");
                     aftertask.aftertask(cityList);
                     logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
