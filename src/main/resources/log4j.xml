@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import org.apache.logging.log4j.core.config.Configuration?>
 <Configuration>
     <Appenders>
         <Console name="Console">
