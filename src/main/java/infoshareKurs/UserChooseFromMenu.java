@@ -10,6 +10,8 @@ public class UserChooseFromMenu {
     protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
         AfterTask aftertask = new AfterTask();
+        logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                "po wykonanej czynnosci");
 
         String input = "0";
         while (true) {

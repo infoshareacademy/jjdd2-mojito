@@ -11,12 +11,14 @@ public class NearestPlace {
     List<City> cityList;
 
     public NearestPlace(List<City> city) {
+        logger.info("");
         this.cityList = city;
     }
 
     private String name;
 
     public void findNearestPlace(GeoLocation geoLocation) {
+        logger.info("znalezienie najblizszej stacji od uzytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
 
@@ -33,6 +35,7 @@ public class NearestPlace {
     }
 
     public void findPlace(GeoLocation geoLocation, double distance) {
+        logger.info("znalezienie stacji w danym promieniu od uzytkownika");
         DistanceMath distanceMath = new DistanceMath();
         List<Place> placelist = new ArrayList<>();
         for (City city : cityList) {

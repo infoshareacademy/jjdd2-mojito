@@ -8,6 +8,7 @@ public class DistanceMath {
     private final Logger logger = LogManager.getLogger();
 
     protected double countDistance(Place place, GeoLocation geoLocation) {
+        logger.debug("Przeliczanie odleglosci od uzytkownik/stacja rowerowa",place,geoLocation);
         double distance;
 
         double x = geoLocation.latitiudeUser;

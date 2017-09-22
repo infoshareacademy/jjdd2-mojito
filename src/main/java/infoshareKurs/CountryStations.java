@@ -12,6 +12,7 @@ public class CountryStations {
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.fatal("bladu parsowania pliku xml");
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię państwa.");
@@ -27,12 +28,14 @@ public class CountryStations {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         System.out.println(place.getName() +"  /  "+city.getName());
+                        logger.info("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
                 done = true;
             }
             if (i == 0) {
                 System.out.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
+                logger.info("nie znaleziono kraju w bazie danych ");
             }
         }
     }

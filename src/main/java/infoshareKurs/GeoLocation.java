@@ -29,6 +29,7 @@ public class GeoLocation {
                 String pierwszastring = new UserInputReader().readlineString();
                 pierwszastring = pierwszastring.replace(",", ".");
                 double pierwsza = Double.parseDouble(pierwszastring);
+                logger.info("Uzytkownik podaje swoja szerokosc geograficzna");
                 pierwsza = Math.abs(pierwsza);
                 wspolrzedne[0] = pierwsza;
                 this.latitiudeUser = wspolrzedne[0];
@@ -36,6 +37,8 @@ public class GeoLocation {
                 done = true;
             } catch (NumberFormatException e) {
                 System.out.println("Niepoprawny format, podaj szerokość geograficzną ponownie");
+                logger.warn("Użytkownik wpisal niepoprawny format podczas podawawania szerokosc geograficznej");
+
 
             }
         }
@@ -47,6 +50,7 @@ public class GeoLocation {
                 System.out.println("Podaj długość geograficzną \n wzór XXXX.XXXX");
                 String drugastring = new UserInputReader().readlineString();
                 drugastring = drugastring.replace(",", ".");
+                logger.info("Uzytkownik podaje swoja długość geograficzna");
                 double druga = Double.parseDouble(drugastring);//parsowanie z string na double
                 druga = Math.abs(druga);
                 wspolrzedne[1] = druga;
@@ -54,6 +58,7 @@ public class GeoLocation {
                 done = true;
 
             } catch (NumberFormatException e) {
+                logger.warn("Użytkownik wpisal niepoprawny format podczas podawawania długosci geograficznej");
                 System.out.println("Niepoprawny format, podaj długość geograficzną ponownie");
 
             }

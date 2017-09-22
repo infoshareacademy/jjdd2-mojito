@@ -7,11 +7,12 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class Menu {
-    private final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
     public static void main(String[] args) {
         try {
             BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
             bikeParsing.parseData();
+            logger.info("Parsowanie pliku xml");
 
             MenuText menuText = new MenuText();
             menuText.Text();

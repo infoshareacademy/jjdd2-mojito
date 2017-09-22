@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 public class MenuText {
     private final Logger logger = LogManager.getLogger();
     protected void Text() {
+        logger.info("wypisanie tekstu menu");
         System.out.println("Witaj w wyszukiwarce rowerowej");
         System.out.println("Czym jestes zainteresowany?");
         System.out.println("1.Wyszukanie najbliższej stacji rowerowej.");

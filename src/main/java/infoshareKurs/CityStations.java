@@ -15,6 +15,7 @@ public class CityStations {
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.fatal("bladu parsowania pliku xml");
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię miasta.");
@@ -30,6 +31,7 @@ public class CityStations {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         System.out.println(place.getName());
+                        logger.info("wypisanie stacji znajdujacych sie w danym miescie");
                     }
                     done = true;
                 }
