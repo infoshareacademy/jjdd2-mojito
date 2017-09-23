@@ -27,7 +27,7 @@ public class AfterTask {
                     break;
                 default:
                     System.out.println("Niepoprawny numer, podaj liczbę 1 lub 2.");
-                    logger.warn("Użytkownik wpisal niepoprawny numer wyboru menu.");
+                    logger.debug("Użytkownik wpisal niepoprawny numer wyboru menu.");
             }
         }
     }

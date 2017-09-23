@@ -4,17 +4,25 @@
         <Console name="Console">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+
+        <File name="File" filename="logApki.log" append="true" bufferedIO="true" bufferSize="8192">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
     </Appenders>
+
+
+
+
     <Loggers>
         <Root level="trace">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
         </Root>
-        <Logger name="com" level="fatal">
-        </Logger>
-        <Logger name="com.infoshareacademy.slf4j.Slf4jDemo" level="trace">
-        </Logger>
-        <Logger name="com.infoshareacademy.log4j2.IOStreams" level="trace" additivity="false">
-            <AppenderRef ref="Console"/>
-        </Logger>
+        <!--<Logger name="com" level="fatal">-->
+        <!--</Logger>-->
+        <!--<Logger name="com.infoshareacademy.slf4j.Slf4jDemo" level="trace">-->
+        <!--</Logger>-->
+        <!--<Logger name="com.infoshareacademy.log4j2.IOStreams" level="trace" additivity="false">-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</Logger>-->
     </Loggers>
 </Configuration>

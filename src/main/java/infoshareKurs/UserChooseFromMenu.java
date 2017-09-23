@@ -9,7 +9,7 @@ public class UserChooseFromMenu {
     protected void userChooseFromMenu(List<City> cityList) {
         UserInputReader scanner = new UserInputReader();
         AfterTask aftertask = new AfterTask();
-        logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+        logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                 "po wykonanej czynnosci");
 
         String input = "0";
@@ -25,49 +25,51 @@ public class UserChooseFromMenu {
                 case "1":
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
-                    logger.info("Stworzenie geo lokacji uzytkownika");
+                    logger.debug("Stworzenie geo lokacji uzytkownika");
                     NearestPlace nearestPlace = new NearestPlace(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
-                    logger.info("znalezienie najblizszej stacji od uzytkownika");
+                    logger.debug("znalezienie najblizszej stacji od uzytkownika");
                     aftertask.aftertask(cityList);
-                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
                     countryStations.countryStation();
-                    logger.info("wypisanie stacji w kraju");
+                    logger.debug("wypisanie stacji w kraju");
                     aftertask.aftertask(cityList);
-                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
                     cityStations.cityStation();
                     aftertask.aftertask(cityList);
-                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
                     userChooseRadius.Radius();
-                    logger.info("przekierowanie do submenu userchoose radius");
+                    logger.debug("przekierowanie do submenu userchoose radius");
                     aftertask.aftertask(cityList);
-                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "5":
                     StatCountry.getCountryStat();
                     aftertask.aftertask(cityList);
-                    logger.info("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
+                    logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "6":
                     StatCountry.getCityStat();
                     aftertask.aftertask(cityList);
+                    logger.debug("wyswietlenie statystyk o państiwe");
                     break;
                 case "7":
                     System.exit(0);
+                    logger.debug("Użytkownik wychodzi w aplikacji ");
                     break;
 
                 default:

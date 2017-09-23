@@ -10,10 +10,12 @@ import java.util.*;
 
 
 public class StatCountry {
-    final Logger logger = LogManager.getLogger();
+    final static Logger logger = LogManager.getLogger();
     protected static void getCityStat() {
+        logger.debug("Stworzenie statystyk państwa");
 
         BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+        logger.error("blad parsowania pliku xml");
         try {
             bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
