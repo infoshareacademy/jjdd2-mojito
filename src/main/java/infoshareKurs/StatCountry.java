@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class StatCountry {
-    protected static void getCityStat() {
+    public static void getCityStat() {
         BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
         try {
             bikeParsing.parseData();
@@ -31,8 +31,8 @@ public class StatCountry {
         }
     }
 
-    protected static void getCountryStat() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+    public static void getCountryStat() {
+        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
         try {
             bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");

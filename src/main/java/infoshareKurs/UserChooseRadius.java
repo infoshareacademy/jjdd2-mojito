@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class UserChooseRadius {
     protected void Radius() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
         AfterTask afterTask = new AfterTask();
 
         try {

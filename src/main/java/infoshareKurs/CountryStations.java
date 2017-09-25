@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class CountryStations {
     protected void countryStation() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
