@@ -23,7 +23,7 @@ public class StatCountry {
                 }
             });
             for (City city : bikeParsing.getCityList()) {
-                System.out.println("liczba stacji rowerowych w miescie " + city.getName() + " : " + city.getPlaceList().size());
+                System.out.println("Liczba stacji rowerowych w mieście " + city.getName() + " : " + city.getPlaceList().size());
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
@@ -35,7 +35,7 @@ public class StatCountry {
         BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
         try {
             bikeParsing.parseData();
-            System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
+            System.out.println("LICZBA STACJI ROWEROWYCH W DANYM PAŃSTWIE.");
             SortedMap<String, Integer> countryStats = new TreeMap<>();
             for (City city : bikeParsing.getCityList()) {
                 if (countryStats.get(city.getCountryName()) == null) {

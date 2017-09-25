@@ -16,21 +16,21 @@ public class UserChooseRadius {
             e.printStackTrace();
         }
         UserInputReader scanner = new UserInputReader();
-        System.out.println("Prosze wybierz promien poszukiwan w km .");
-        System.out.println("1.szukaj w odleg1osci 5 km");
-        System.out.println("2.szukaj w odleg1osci 10 km");
-        System.out.println("3.szukaj w odleg1osci 15 km");
-        System.out.println("4.Wróc do Menu .");
+        System.out.println("Prosze wybierz promień poszukiwań w km .");
+        System.out.println("1.szukaj w odległosci 5 km");
+        System.out.println("2.szukaj w odległosci 10 km");
+        System.out.println("3.szukaj w odległosci 15 km");
+        System.out.println("4.Wróć do Menu .");
 
         String input = "0";
         while (true) {
             try {
                 input = scanner.readlineString();
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedną z opcji Menu wpisując liczby od 1-4 ");
                 continue;
             } catch (NullPointerException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                System.out.println("Wybierz jedną z opcji Menu wpisując liczby od 1-4 ");
             }
             switch (input) {
                 case "1":
@@ -60,7 +60,7 @@ public class UserChooseRadius {
                     afterTask.chooseAfterTask();
                     break;
                 default:
-                    System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-4 ");
+                    System.out.println("Wybierz jedną z opcji Menu wpisując liczby od 1-4 ");
 
             }
         }

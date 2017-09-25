@@ -16,12 +16,12 @@ public class GeoLocation {
 
     protected double[] geoLocation() {
         double[] wspolrzedne = new double[2];
-        System.out.println("Prosze podaj swoje wspolrzedne geograficzne.");
+        System.out.println("Proszę podaj swoje współrzędne geograficzne.");
 
         boolean done = false;
         while (!done) {
             try {
-                System.out.println("podaj pierwsza wspolrzedna Geograficzna \n wzór XXXX.XXXX");
+                System.out.println("Podaj szerokość geograficzną \n wzór XXXX.XXXX");
                 String pierwszastring = new UserInputReader().readlineString();
                 pierwszastring = pierwszastring.replace(",", ".");
                 double pierwsza = Double.parseDouble(pierwszastring);
@@ -30,7 +30,7 @@ public class GeoLocation {
                 this.longitudeUser = wspolrzedne[1];
                 done = true;
             } catch (NumberFormatException e) {
-                System.out.println("niepoprawny format, podaj pierwsza wspolrzedna ponownie");
+                System.out.println("Niepoprawny format, podaj szerokość geograficzną ponownie");
 
             }
         }
@@ -39,7 +39,7 @@ public class GeoLocation {
         while (!done) {
             try {
 
-                System.out.println("podaj druga wspolrzedna Geograficzna \n wzór XXXX.XXXX");
+                System.out.println("Podaj długość geograficzną \n wzór XXXX.XXXX");
                 String drugastring = new UserInputReader().readlineString();
                 drugastring = drugastring.replace(",", ".");
                 double druga = Double.parseDouble(drugastring);//parsowanie z string na double
@@ -48,7 +48,7 @@ public class GeoLocation {
                 done = true;
 
             } catch (NumberFormatException e) {
-                System.out.println("niepoprawny format, podaj druga wspolrzedna ponownie");
+                System.out.println("Niepoprawny format, podaj długość geograficzną ponownie");
 
             }
 
