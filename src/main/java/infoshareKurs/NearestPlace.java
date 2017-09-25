@@ -17,7 +17,7 @@ public class NearestPlace {
     private String name;
 
     public void findNearestPlace(GeoLocation geoLocation) {
-        logger.debug("znalezienie najblizszej stacji od uzytkownika");
+        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
 

@@ -11,7 +11,7 @@ public class UserChooseRadius {
     private final Logger logger = LogManager.getLogger(UserChooseRadius.class);
     protected void Radius() {
         BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
-        logger.error("Pasrowanie danych z pliku xml");
+        logger.debug("Pasrowanie danych z pliku xml");
         AfterTask afterTask = new AfterTask();
         logger.debug("implementacja obiektu klasy afterTask");
 
@@ -20,6 +20,7 @@ public class UserChooseRadius {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
+            logger.error("Pasrowanie danych z pliku xml");
         }
         UserInputReader scanner = new UserInputReader();
         logger.debug("Implementacja skanera");
@@ -31,7 +32,7 @@ public class UserChooseRadius {
 
         String input = "0";
         while (true) {
-            try {
+            try{
                 input = scanner.readlineString();
                 logger.debug("Wczystanie stringa podanego przez użytkownika");
             } catch (NumberFormatException e) {

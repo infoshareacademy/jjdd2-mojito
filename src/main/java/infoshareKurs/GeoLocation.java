@@ -26,9 +26,9 @@ public class GeoLocation {
         while (!done) {
             try {
                 System.out.println("Podaj szerokość geograficzną \n wzór XXXX.XXXX");
-                String pierwszastring = new UserInputReader().readlineString();
-                pierwszastring = pierwszastring.replace(",", ".");
-                double pierwsza = Double.parseDouble(pierwszastring);
+                String pierwszaString = new UserInputReader().readlineString();
+                pierwszaString = pierwszaString.replace(",", ".");
+                double pierwsza = Double.parseDouble(pierwszaString);
                 logger.info("Uzytkownik podaje swoja szerokosc geograficzna");
                 pierwsza = Math.abs(pierwsza);
                 wspolrzedne[0] = pierwsza;
@@ -47,10 +47,10 @@ public class GeoLocation {
             try {
 
                 System.out.println("Podaj długość geograficzną \n wzór XXXX.XXXX");
-                String drugastring = new UserInputReader().readlineString();
-                drugastring = drugastring.replace(",", ".");
+                String drugaString = new UserInputReader().readlineString();
+                drugaString = drugaString.replace(",", ".");
                 logger.info("Uzytkownik podaje swoja długość geograficzna");
-                double druga = Double.parseDouble(drugastring);//parsowanie z string na double
+                double druga = Double.parseDouble(drugaString);//parsowanie z string na double
                 druga = Math.abs(druga);
                 wspolrzedne[1] = druga;
                 this.longitudeUser = wspolrzedne[1];

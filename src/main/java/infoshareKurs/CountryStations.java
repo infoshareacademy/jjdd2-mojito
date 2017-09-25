@@ -8,11 +8,11 @@ import org.apache.logging.log4j.Logger;
 public class CountryStations {
     private final Logger logger = LogManager.getLogger(CountryStations.class);
     protected void countryStation() {
-        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("bladu parsowania pliku xml");
+            logger.error("blad parsowania pliku xml");
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię państwa.");
