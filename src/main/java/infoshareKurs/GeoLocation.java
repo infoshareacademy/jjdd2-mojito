@@ -14,8 +14,16 @@ public class GeoLocation {
         return latitiudeUser;
     }
 
+    public void setLatitiudeUser(double latitiudeUser) {
+        this.latitiudeUser = latitiudeUser;
+    }
+
     public double getLongitudeUser() {
         return longitudeUser;
+    }
+
+    public void setLongitudeUser(double longitudeUser) {
+        this.longitudeUser = longitudeUser;
     }
 
     protected double[] geoLocation() {

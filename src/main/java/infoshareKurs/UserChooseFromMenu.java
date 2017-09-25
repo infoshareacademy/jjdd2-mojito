@@ -26,7 +26,7 @@ public class UserChooseFromMenu {
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    NearestPlaceFinder nearestPlace = new NearestPlaceFinder(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
                     logger.debug("znalezienie najblizszej stacji od uzytkownika");
                     aftertask.aftertask(cityList);
