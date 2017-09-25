@@ -39,7 +39,6 @@ public class GeoLocation {
                 System.out.println("Niepoprawny format, podaj szerokość geograficzną ponownie");
                 logger.warn("Użytkownik wpisal niepoprawny format podczas podawawania szerokosc geograficznej");
 
-
             }
         }
         done = false;
@@ -62,11 +61,7 @@ public class GeoLocation {
                 System.out.println("Niepoprawny format, podaj długość geograficzną ponownie");
 
             }
-
         }
-
         return wspolrzedne;
-
-
     }
 }
