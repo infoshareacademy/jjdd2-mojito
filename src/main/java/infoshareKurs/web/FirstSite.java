@@ -27,6 +27,9 @@ public class FirstSite extends HttpServlet {
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userinput\"/>");
         writer.println("<button type=\"submit\" />Submit</button>");
+        writer.println("<form action=\"generator\" method=\"post\" enctype=\"multipart/form-data\">");
+        writer.println("<input type=\"file\" name=\"file\"/>");
+        writer.println("<button type=\"submit\" />Upload file</button>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");
