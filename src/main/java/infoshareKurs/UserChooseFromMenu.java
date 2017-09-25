@@ -12,7 +12,7 @@ public class UserChooseFromMenu {
             try {
                 input = (scanner.readlineString());
             } catch (NumberFormatException e) {
-                System.out.println("Wybierz jedna z opcji Menu wpisujac liczby od 1-7 ");
+                System.out.println("Wybierz jedną z opcji Menu wpisując liczby od 1-7 ");
                 continue;
             }
             switch (input) {
@@ -51,7 +51,7 @@ public class UserChooseFromMenu {
                     break;
 
                 default:
-                    System.out.println("niepoprawny numer podaj liczbe od 1-7");
+                    System.out.println("Niepoprawny numer, podaj liczbę od 1-7");
             }
         }
     }

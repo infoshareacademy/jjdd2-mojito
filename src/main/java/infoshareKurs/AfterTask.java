@@ -8,7 +8,7 @@ public class AfterTask {
         UserInputReader userInputReader = new UserInputReader();
         while (true) {
             System.out.println("Wybierz dalsze działanie:");
-            System.out.println("1.Powrot do glownego menu.");
+            System.out.println("1.Powrót do głównego menu.");
             System.out.println("2.Zakończ program.");
             input = userInputReader.readlineString();
             switch (input) {
@@ -28,12 +28,12 @@ public class AfterTask {
     }
 
     protected void chooseAfterTask() {
-        System.out.println("1.Wyszukanie najblizszej stacji rowerowej.");
+        System.out.println("1.Wyszukanie najbliższej stacji rowerowej.");
         System.out.println("2.Wyszukanie stacji w danym kraju.");
-        System.out.println("3.Wyszukanie stacji w danym miescie.");
-        System.out.println("4.Wyszukanie stacji rowerowerej na danym obszarze.");
-        System.out.println("5.Statystyki ilosci stacji rowerowych w danym panstwie.");
-        System.out.println("6.Statystyki ilosci stacji rowerowych w danym miescie");
-        System.out.println("7.Wyjscie z Progarmu");
+        System.out.println("3.Wyszukanie stacji w danym mieście.");
+        System.out.println("4.Wyszukanie stacji rowerowej w konkretnej odległości.");
+        System.out.println("5.Statystyki ilości stacji rowerowych w danym państwie.");
+        System.out.println("6.Statystyki ilości stacji rowerowych w danym mieście");
+        System.out.println("7.Wyjście z programu");
     }
 }
