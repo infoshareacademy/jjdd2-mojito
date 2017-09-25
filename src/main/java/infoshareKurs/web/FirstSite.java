@@ -23,11 +23,12 @@ public class FirstSite extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
-        writer.println("<body text=\"green\">");
+        writer.println("<body>");
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userinput\"/>");
         writer.println("<button type=\"submit\" />Submit</button>");
-        writer.println("<form action=\"generator\" method=\"post\" enctype=\"multipart/form-data\">");
+        writer.println("</form>");
+        writer.println("<form action=\"Menu\" method=\"post\" enctype=\"multipart/form-data\">");
         writer.println("<input type=\"file\" name=\"file\"/>");
         writer.println("<button type=\"submit\" />Upload file</button>");
         writer.println("</form>");
