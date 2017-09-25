@@ -35,7 +35,7 @@ public class UserChooseFromMenu {
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
-                    countryStations.countryStation();
+                    countryStations.countryStation(cityList);
                     logger.debug("wypisanie stacji w kraju");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
@@ -43,27 +43,27 @@ public class UserChooseFromMenu {
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
-                    cityStations.cityStation();
+                    cityStations.cityStation(cityList);
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
-                    userChooseRadius.Radius();
+                    userChooseRadius.Radius(cityList);
                     logger.debug("przekierowanie do submenu userchoose radius");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "5":
-                    StatCountry.getCountryStat();
+                    StatCountry.getCountryStat(cityList);
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "6":
-                    StatCountry.getCityStat();
+                    StatCountry.getCityStat(cityList);
                     aftertask.aftertask(cityList);
                     logger.debug("wyswietlenie statystyk o państiwe");
                     break;
