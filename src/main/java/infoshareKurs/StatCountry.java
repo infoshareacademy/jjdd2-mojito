@@ -8,7 +8,7 @@ import java.util.*;
 
 public class StatCountry {
     protected static void getCityStat() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
         try {
             bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
