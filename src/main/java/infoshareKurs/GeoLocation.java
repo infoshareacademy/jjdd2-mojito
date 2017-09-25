@@ -1,6 +1,10 @@
 package infoshareKurs;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class GeoLocation {
+    private final Logger logger = LogManager.getLogger(GeoLocation.class);
 
     protected double latitiudeUser;
 
@@ -22,9 +26,10 @@ public class GeoLocation {
         while (!done) {
             try {
                 System.out.println("Podaj szerokość geograficzną \n wzór XXXX.XXXX");
-                String pierwszastring = new UserInputReader().readlineString();
-                pierwszastring = pierwszastring.replace(",", ".");
-                double pierwsza = Double.parseDouble(pierwszastring);
+                String pierwszaString = new UserInputReader().readlineString();
+                pierwszaString = pierwszaString.replace(",", ".");
+                double pierwsza = Double.parseDouble(pierwszaString);
+                logger.info("Uzytkownik podaje swoja szerokosc geograficzna");
                 pierwsza = Math.abs(pierwsza);
                 wspolrzedne[0] = pierwsza;
                 this.latitiudeUser = wspolrzedne[0];
@@ -32,6 +37,7 @@ public class GeoLocation {
                 done = true;
             } catch (NumberFormatException e) {
                 System.out.println("Niepoprawny format, podaj szerokość geograficzną ponownie");
+                logger.warn("Użytkownik wpisal niepoprawny format podczas podawawania szerokosc geograficznej");
 
             }
         }
@@ -41,23 +47,21 @@ public class GeoLocation {
             try {
 
                 System.out.println("Podaj długość geograficzną \n wzór XXXX.XXXX");
-                String drugastring = new UserInputReader().readlineString();
-                drugastring = drugastring.replace(",", ".");
-                double druga = Double.parseDouble(drugastring);//parsowanie z string na double
+                String drugaString = new UserInputReader().readlineString();
+                drugaString = drugaString.replace(",", ".");
+                logger.info("Uzytkownik podaje swoja długość geograficzna");
+                double druga = Double.parseDouble(drugaString);//parsowanie z string na double
                 druga = Math.abs(druga);
                 wspolrzedne[1] = druga;
                 this.longitudeUser = wspolrzedne[1];
                 done = true;
 
             } catch (NumberFormatException e) {
+                logger.warn("Użytkownik wpisal niepoprawny format podczas podawawania długosci geograficznej");
                 System.out.println("Niepoprawny format, podaj długość geograficzną ponownie");
 
             }
-
         }
-
         return wspolrzedne;
-
-
     }
 }

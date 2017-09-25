@@ -4,14 +4,18 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CityStations {
+    private final Logger logger = LogManager.getLogger(CityStations.class);
 
     protected void cityStation() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("błędu parsowania pliku xml");
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię miasta.");
@@ -27,6 +31,7 @@ public class CityStations {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         System.out.println(place.getName());
+                        logger.info("wypisanie stacji znajdujacych sie w danym miescie");
                     }
                     done = true;
                 }

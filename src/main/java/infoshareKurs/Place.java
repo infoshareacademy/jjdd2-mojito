@@ -1,5 +1,6 @@
 package infoshareKurs;
 
+
 public class Place {
 
     private String name;

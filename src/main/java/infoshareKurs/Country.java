@@ -1,6 +1,8 @@
 package infoshareKurs;
 
+
 public class Country {
+
     private String name;
 
     private Double latitude;
