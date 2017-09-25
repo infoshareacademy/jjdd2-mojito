@@ -3,13 +3,16 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class CountryStations {
+    private final Logger logger = LogManager.getLogger(CountryStations.class);
     protected void countryStation() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("błąd parsowania pliku xml");
             e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię państwa.");
@@ -25,12 +28,14 @@ public class CountryStations {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         System.out.println(place.getName() +"  /  "+city.getName());
+                        logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
                 done = true;
             }
             if (i == 0) {
                 System.out.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
+                logger.info("nie znaleziono kraju w bazie danych ");
             }
         }
     }

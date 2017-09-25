@@ -1,14 +1,20 @@
 package infoshareKurs;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.*;
 
+
 public class StatCountry {
+    final static Logger logger = LogManager.getLogger();
     protected static void getCityStat() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        logger.debug("Stworzenie statystyk państwa");
+
+        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+        logger.error("blad parsowania pliku xml");
         try {
             bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {

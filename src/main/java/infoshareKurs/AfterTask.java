@@ -1,8 +1,12 @@
 package infoshareKurs;
 
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class AfterTask {
+    private final Logger logger = LogManager.getLogger(AfterTask.class);
+
     protected void aftertask(List<City> cityList) {
         String input = "0";
         UserInputReader userInputReader = new UserInputReader();
@@ -23,6 +27,7 @@ public class AfterTask {
                     break;
                 default:
                     System.out.println("Niepoprawny numer, podaj liczbę 1 lub 2.");
+                    logger.debug("Użytkownik wpisal niepoprawny numer wyboru menu.");
             }
         }
     }

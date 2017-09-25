@@ -5,7 +5,6 @@ import java.util.List;
 
 public class City {
 
-
     private String countryName;
 
     private Double latitude;
