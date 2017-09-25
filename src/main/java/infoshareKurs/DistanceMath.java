@@ -2,7 +2,7 @@ package infoshareKurs;
 
 public class DistanceMath {
 
-    protected double countDistance(Place place, GeoLocation geoLocation) {
+    public double countDistance(Place place, GeoLocation geoLocation) {
         double distance;
 
         double x = geoLocation.latitiudeUser;

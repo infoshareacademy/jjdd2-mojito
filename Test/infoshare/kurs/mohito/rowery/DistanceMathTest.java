@@ -135,6 +135,7 @@ public class DistanceMathTest {
 
         double x=distance;
 
+
         distance = ((int)((x * 0.01) + ((x < 0.0) ? -0.5 : 0.5))) / 0.01;
 
         double delta =0;
@@ -162,7 +163,7 @@ public class DistanceMathTest {
         double delta =0;
         assertEquals(1500,distance,delta);
     }
-//sprawdzić≤ bo jest jakiś błąd
+
     @Test
     public void geolocationNegativePlacePositive() {
 
@@ -175,7 +176,6 @@ public class DistanceMathTest {
         DistanceMath distanceMath = new DistanceMath();
 
         double distance = distanceMath.countDistance(place,geoLocation);
-
         double x=distance;
 
         distance = ((int)((x * 0.01) + ((x < 0.0) ? -0.5 : 0.5))) / 0.01;
