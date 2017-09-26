@@ -6,8 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.servlet.http.Part;
+import java.io.*;
 
 @WebServlet("/Welcome")
 @MultipartConfig
@@ -24,13 +24,39 @@ public class WelcomeServlet extends HttpServlet {
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
         writer.println("<body>");
-
-        writer.println("<form action=\"generator\" method=\"post\" enctype=\"multipart/form-data\">");
-        writer.println("<input type=\"file\" name=\"file\"/>");
+        writer.println("<h1>Witaj w wyszukiwarce stacji rowerowych. </h1>");
+        writer.println("<h2>Wczytaj plik Xml do bazy danych. </h2>");
+        writer.println("<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">");
+        writer.println("<input type=\"file\" name=\"userFile\"/>");
         writer.println("<button type=\"submit\" />Upload file</button>");
         writer.println("</form>");
 
         writer.println("</body>");
         writer.println("</html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        try {
+            Part userfile = null;
+            userfile = req.getPart("userFile");
+            InputStream inputStream = null;
+            inputStream = userfile.getInputStream();
+            String tmpDir = System.getProperty("java.io.tmpdir");
+            tmpDir = tmpDir + "/plik";
+            OutputStream outputStream = null;
+            outputStream = new FileOutputStream(new File(tmpDir));
+            int read = 0;
+            byte[] bytes = new byte[1024];
+            while ((read = inputStream.read(bytes)) != -1) {
+                outputStream.write(bytes, 0, read);
+            }
+            resp.getWriter().println("done");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
     }
 }
