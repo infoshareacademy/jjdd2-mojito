@@ -40,7 +40,7 @@ public class City {
         return longitude;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 

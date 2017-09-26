@@ -39,11 +39,13 @@ public class UserChooseFromMenu {
                     aftertask.aftertask(cityList);
                     break;
                 case "5":
-                    StatCountry.getCountryStat();
+                    StatCountry statCountry=new StatCountry();
+                    statCountry.getCountryStat();
                     aftertask.aftertask(cityList);
                     break;
                 case "6":
-                    StatCountry.getCityStat();
+                    StatCountry statCountry2 =new StatCountry();
+                    statCountry2.getCityStat();
                     aftertask.aftertask(cityList);
                     break;
                 case "7":

@@ -7,8 +7,20 @@ import java.io.IOException;
 import java.util.*;
 
 public class StatCountry {
-    public static void getCityStat() {
-        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
+
+    private String filePath;
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public List<String>  getCityStat() {
+        BikeParsing bikeParsing = new BikeParsing(getFilePath());
+        List<String> cityStats=new ArrayList<>();
         try {
             bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
@@ -24,19 +36,23 @@ public class StatCountry {
             });
             for (City city : bikeParsing.getCityList()) {
                 System.out.println("liczba stacji rowerowych w miescie " + city.getName() + " : " + city.getPlaceList().size());
+                cityStats.add(city.getName());
+
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
+        return cityStats;
     }
 
-    public static void getCountryStat() {
-        BikeParsing bikeParsing = new BikeParsing("testdata/nextbike-live.xml");
+    public Map<String, Integer> getCountryStat() {
+        BikeParsing bikeParsing = new BikeParsing(getFilePath());
+        SortedMap<String, Integer> countryStats = new TreeMap<>();
         try {
             bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
-            SortedMap<String, Integer> countryStats = new TreeMap<>();
+
             for (City city : bikeParsing.getCityList()) {
                 if (countryStats.get(city.getCountryName()) == null) {
                     countryStats.put(city.getCountryName(), city.getPlaceList().size());
@@ -51,7 +67,7 @@ public class StatCountry {
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
-        }
+        }return countryStats;
 
     }
 }
