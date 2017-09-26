@@ -23,7 +23,7 @@ public class BikeParsing {
         return cityList;
     }
 
-    protected BikeParsing(String fileName) {
+    public BikeParsing(String fileName) {
         this.fileName = fileName;
         this.cityList = new ArrayList<City>();
     }
