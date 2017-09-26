@@ -30,7 +30,8 @@ public class MenuServlet extends HttpServlet {
         writer.println("<a href=\"nearest_station\"/>1.Wyszukanie najbliższej stacji rowerowej.</a>");
         writer.println("</form>");
         writer.println("<form action=\"country_stations\" method=\"get\">");
-        writer.println("<a href=\"country_stations\"/>2.Wyszukanie stacji w danym kraju.</a>");
+//        writer.println("<a href=\"country_stations\"/>2.Wyszukanie stacji w danym kraju.</a>");
+        writer.println("<button type=\"submit\" />Znajdz Stacjie</button>");
         writer.println("</form>");
         writer.println("<form action=\"Menu\" method=\"get\">");
         writer.println("<a href=\"city_stations\"/>3.Wyszukanie stacji w danym mieście.");

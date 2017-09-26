@@ -19,7 +19,7 @@ public class BikeParsing {
 
     private List<City> cityList;
 
-    protected List<City> getCityList() {
+    public List<City> getCityList() {
         return cityList;
     }
 
