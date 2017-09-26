@@ -52,10 +52,16 @@ public class WelcomeServlet extends HttpServlet {
             while ((read = inputStream.read(bytes)) != -1) {
                 outputStream.write(bytes, 0, read);
             }
-            resp.getWriter().println("done");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ServletException e) {
+            resp.getWriter().println("<!DOCTYPE html>");
+            resp.getWriter().println("<html>");
+            resp.getWriter().println("<body>");
+            resp.getWriter().println("<h1>Twoj plik zostal wczytany </h1>");
+            resp.getWriter().println("<form action=\"Menu\" method=\"get\">");
+            resp.getWriter().println("<button type=\"submit\" />Przejdz do menu</button>");
+            resp.getWriter().println("</form>");
+            resp.getWriter().println("</body>");
+            resp.getWriter().println("</html>");
+        } catch (IOException | ServletException e) {
             e.printStackTrace();
         }
     }

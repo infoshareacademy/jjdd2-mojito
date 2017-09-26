@@ -47,10 +47,6 @@ public class MenuServlet extends HttpServlet {
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<a href=\"Submit\"/>7.Wyjście z progarmu</a>");
         writer.println("</form>");
-        writer.println("<form action=\"Menu\" method=\"post\" enctype=\"multipart/form-data\">");
-        writer.println("<input type=\"file\" name=\"file\"/>");
-        writer.println("<button=\"submit\" />Upload file</button>");
-        writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");
     }
