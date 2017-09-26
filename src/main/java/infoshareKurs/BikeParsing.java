@@ -19,7 +19,7 @@ public class BikeParsing {
 
     private List<City> cityList;
 
-    protected List<City> getCityList() {
+    public List<City> getCityList() {
         return cityList;
     }
 
@@ -28,7 +28,7 @@ public class BikeParsing {
         this.cityList = new ArrayList<City>();
     }
 
-    protected void parseData() throws ParserConfigurationException, SAXException, IOException {
+    public void parseData() throws ParserConfigurationException, SAXException, IOException {
 
         File inputFile = new File(fileName);
         DocumentBuilderFactory dbFaktory = DocumentBuilderFactory.newInstance();
