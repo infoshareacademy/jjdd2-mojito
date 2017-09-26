@@ -38,7 +38,7 @@ public class StatCountry {
     }
 
     protected static void getCountryStat() {
-        BikeParsing bikeParsing = new BikeParsing("nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM PAŃSTWIE.");
