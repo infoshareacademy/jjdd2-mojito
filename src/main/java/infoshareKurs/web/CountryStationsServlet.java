@@ -26,7 +26,7 @@ public class CountryStationsServlet extends HttpServlet {
         writer.println("<body>");
         writer.println("<h1>\"Wpisz nazwę interesującego Cię państwa. </h1>");
         writer.println("</form>");
-        writer.println("<form action=\"generator\" method=\"post\">");
+        writer.println("<form action=\"country_stations\" method=\"get\">");
         writer.println("<input type=\"text\" name=\"userCountry\"/>");
         writer.println("<button type=\"submit\" />Send</button>");
         writer.println("</form>");
@@ -50,7 +50,7 @@ public class CountryStationsServlet extends HttpServlet {
         while (!done) {
             String inputdata = "userCountry";
             int i = 0;
-            System.out.format("Stacje rowerowe znajdujące sie w %s :\n", inputdata);
+            writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
             for (City city : bikeParsing.getCityList()) {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
