@@ -33662,3 +33662,17 @@
 16:41:29.711 [main] DEBUG infoshareKurs.UserInputReader - Zaimpletowanie skanera
 16:41:29.725 [main] DEBUG infoshareKurs.UserChooseFromMenu - Implementacja klasy aftertask zajmujaca sie obsluga uzytkownikapo wykonanej czynnosci
 16:41:29.725 [main] DEBUG infoshareKurs.UserInputReader - Użytkownik wpisal cos w konsole/strone
+16:30:07.022 [main] INFO  log4j.xml - This is logger with file appender
+16:30:07.719 [main] INFO  log4j.xml - Parsowanie pliku xml
+16:30:07.720 [main] DEBUG infoshareKurs.MenuText - wypisanie tekstu menu
+16:30:07.723 [main] DEBUG infoshareKurs.UserInputReader - Zaimpletowanie skanera
+16:30:07.727 [main] DEBUG infoshareKurs.UserChooseFromMenu - Implementacja klasy aftertask zajmujaca sie obsluga uzytkownikapo wykonanej czynnosci
+16:30:07.728 [main] DEBUG infoshareKurs.UserInputReader - Użytkownik wpisal cos w konsole/strone
+16:30:11.445 [main] DEBUG infoshareKurs.UserChooseRadius - Pasrowanie danych z pliku xml
+16:30:11.448 [main] DEBUG infoshareKurs.UserChooseRadius - implementacja obiektu klasy afterTask
+16:30:11.632 [main] DEBUG infoshareKurs.UserInputReader - Zaimpletowanie skanera
+16:30:11.632 [main] DEBUG infoshareKurs.UserChooseRadius - Implementacja skanera
+16:30:11.633 [main] DEBUG infoshareKurs.UserInputReader - Użytkownik wpisal cos w konsole/strone
+16:30:13.787 [main] DEBUG infoshareKurs.UserChooseRadius - Wczystanie stringa podanego przez użytkownika
+16:30:13.790 [main] DEBUG infoshareKurs.UserInputReader - Zaimpletowanie skanera
+16:30:13.790 [main] DEBUG infoshareKurs.UserInputReader - Użytkownik wpisal cos w konsole/strone
