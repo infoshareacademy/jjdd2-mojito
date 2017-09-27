@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class DistanceMath {
     private final Logger logger = LogManager.getLogger(DistanceMath.class);
 
-    protected double countDistance(Place place, GeoLocation geoLocation) {
+    public double countDistance(Place place, GeoLocation geoLocation) {
         logger.debug("Przeliczanie odleglosci od uzytkownik/stacja rowerowa", place,geoLocation);
         double distance;
 

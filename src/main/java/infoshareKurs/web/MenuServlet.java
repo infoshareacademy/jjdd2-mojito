@@ -15,14 +15,13 @@ import java.io.PrintWriter;
 @WebServlet("/Menu")
 public class MenuServlet extends HttpServlet {
 
-    private Menu menu = new Menu();
-    private MenuText menuText = new MenuText();
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         resp.setContentType("text/html;charset=UTF-8");
+
         PrintWriter writer = resp.getWriter();
+
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
         writer.println("<body>");
@@ -50,10 +49,4 @@ public class MenuServlet extends HttpServlet {
         writer.println("</body>");
         writer.println("</html>");
     }
-
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String x = "lubie frytki";
-//        resp.getWriter().print(x);
-//    }
 }

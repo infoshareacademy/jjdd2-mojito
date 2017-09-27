@@ -24,6 +24,7 @@ public class CityStationsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.setContentType("text/html;charset=UTF-8");
+
         PrintWriter writer = resp.getWriter();
 
         writer.println("<!DOCTYPE html>");
@@ -43,10 +44,13 @@ public class CityStationsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.setContentType("text/html;charset=UTF-8");
+
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(CountryStations.class);
+        final Logger logger = LogManager.getLogger(CityStationsServlet.class);
+
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
@@ -55,6 +59,7 @@ public class CityStationsServlet extends HttpServlet {
         }
 
         boolean done = false;
+
         while (!done) {
             String inputdata = req.getParameter("userCity");
             int i = 0;
