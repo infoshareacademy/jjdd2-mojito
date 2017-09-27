@@ -19,6 +19,8 @@ public class CountryStationsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
 
         writer.println("<!DOCTYPE html>");
@@ -26,7 +28,7 @@ public class CountryStationsServlet extends HttpServlet {
         writer.println("<body>");
         writer.println("<h1>\"Wpisz nazwę interesującego Cię państwa. </h1>");
         writer.println("</form>");
-        writer.println("<form action=\"country_stations\" method=\"get\">");
+        writer.println("<form action=\"country_stations\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userCountry\"/>");
         writer.println("<button type=\"submit\" />Send</button>");
         writer.println("</form>");
@@ -36,9 +38,12 @@ public class CountryStationsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
+
         final Logger logger = LogManager.getLogger(CountryStations.class);
-        final BikeParsing bikeParsing = new BikeParsing("/tmp/hsperfdata_mkoniuszy/plik");
+        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
@@ -48,7 +53,7 @@ public class CountryStationsServlet extends HttpServlet {
 
         boolean done = false;
         while (!done) {
-            String inputdata = "userCountry";
+            String inputdata = req.getParameter("userCountry");
             int i = 0;
             writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
             for (City city : bikeParsing.getCityList()) {
@@ -56,6 +61,7 @@ public class CountryStationsServlet extends HttpServlet {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         writer.println(place.getName() + "  /  " + city.getName());
+                        writer.println("<br>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
@@ -64,6 +70,7 @@ public class CountryStationsServlet extends HttpServlet {
             if (i == 0) {
                 writer.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
                 logger.info("nie znaleziono kraju w bazie danych ");
+                done = true;
             }
         }
     }
