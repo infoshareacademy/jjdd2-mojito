@@ -15,7 +15,7 @@ public class City {
 
     private List<Place> placeList;
 
-    protected City(Double latitude, Double longitude, String name, String country) {
+    public City(Double latitude, Double longitude, String name, String country) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
