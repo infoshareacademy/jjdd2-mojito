@@ -40,8 +40,8 @@ public class MenuServlet extends HttpServlet {
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<a href=\"Submit\"/>5.Statystyki ilości stacji rowerowych w danym państwie.</a>");
         writer.println("</form>");
-        writer.println("<form action=\"Menu\" method=\"post\">");
-        writer.println("<a href=\"Submit\"/>6.Statystyki ilości stacji rowerowych w danym mieście</a>");
+        writer.println("<form action=\"cityStat\" method=\"post\">");
+        writer.println("<a href=\"cityStat\"/>6.Statystyki ilości stacji rowerowych w danym mieście</a>");
         writer.println("</form>");
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<a href=\"Submit\"/>7.Wyjście z progarmu</a>");

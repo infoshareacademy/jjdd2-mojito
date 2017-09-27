@@ -60,23 +60,45 @@ public class NearestStationServlet extends HttpServlet {
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
 
+        try {
+            bikeParsing.parseData();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("błąd parsowania pliku xml");
+            e.printStackTrace();
+        }
+
         double[] userLocation = new double[2];
         userLocation[0] = Double.parseDouble(req.getParameter("latitiudeUser"));
         userLocation[1] = Double.parseDouble(req.getParameter("longitudeUser"));
 
-        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
-        double lowestDistance = 9999999999999999.9;
-        DistanceMath distanceMath = new DistanceMath();
 
-        for (City city : cityList) {
-            for (Place place : city.getPlaceList()) {
-                if (lowestDistance > distanceMath.countDistance(place, userLocation)) {
-                    lowestDistance = distanceMath.countDistance(place, userLocation);
-                    this.name = place.getName();
-                }
-            }
-        }
-        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s"
-                , lowestDistance, this.name);
+        double distance;
+
+        Double x = userLocation[0];
+        Double y = userLocation[1];
+
+
+//        double k = place.getLatitiudePlace();
+//        double j = place.getLongitudePlace();
+
+//        distance = Math.sqrt(Math.pow((x - k), 2.0)
+//                + Math.pow((Math.cos((x * Math.PI) / 180.0)
+//                * (j - y)), 2.0)) * (40075.704 / 360.0);
+
+
+//        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
+//        double lowestDistance = 9999999999999999.9;
+//        DistanceMath distanceMath = new DistanceMath();
+//
+//        for (City city : cityList) {
+//            for (Place place : city.getPlaceList()) {
+//                if (lowestDistance > distanceMath.countDistance(place, userLocation)) {
+//                    lowestDistance = distanceMath.countDistance(place, userLocation);
+//                    this.name = place.getName();
+//                }
+//            }
+////        }
+//        writer.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s"
+//                , lowestDistance, this.name);
     }
 }
