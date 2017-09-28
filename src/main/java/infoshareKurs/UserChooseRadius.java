@@ -25,7 +25,7 @@ public class UserChooseRadius {
 
         String input = "0";
         while (true) {
-            try{
+            try {
                 input = scanner.readlineString();
                 logger.debug("Wczystanie stringa podanego przez użytkownika");
             } catch (NumberFormatException e) {
