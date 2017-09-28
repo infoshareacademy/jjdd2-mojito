@@ -14,6 +14,14 @@ public class GeoLocation {
         return longitudeUser;
     }
 
+    public void setLatitiudeUser(double latitiudeUser) {
+        this.latitiudeUser = latitiudeUser;
+    }
+
+    public void setLongitudeUser(double longitudeUser) {
+        this.longitudeUser = longitudeUser;
+    }
+
     protected double[] geoLocation() {
         double[] wspolrzedne = new double[2];
         System.out.println("Proszę podaj swoje współrzędne geograficzne.");

@@ -16,7 +16,7 @@ public class NearestPlace {
 
     private String name;
 
-    public void findNearestPlace(GeoLocation geoLocation) {
+    public String findNearestPlace(GeoLocation geoLocation) {
         logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
@@ -29,8 +29,8 @@ public class NearestPlace {
                 }
             }
         }
-        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s"
-                , lowestDistance, this.name);
+        return "Najbliższa stacja rowerowa znajduje się " + lowestDistance + " km od Ciebie. Stacja nazywa się " + this.name;
+
     }
 
     public void findPlace(GeoLocation geoLocation, double distance) {

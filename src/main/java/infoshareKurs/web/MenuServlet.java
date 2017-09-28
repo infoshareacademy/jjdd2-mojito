@@ -25,8 +25,8 @@ public class MenuServlet extends HttpServlet {
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
         writer.println("<body>");
-        writer.println("<form action=\"nearest_station\" method=\"get\">");
-        writer.println("<a href=\"nearest_station\"/>1.Wyszukanie najbliższej stacji rowerowej.</a>");
+        writer.println("<form action=\"nearestStation\" method=\"get\">");
+        writer.println("<a href=\"nearestStation\"/>1.Wyszukanie najbliższej stacji rowerowej.</a>");
         writer.println("</form>");
         writer.println("<form action=\"country_stations\" method=\"get\">");
         writer.println("<a href=\"country_stations\"/>2.Wyszukanie stacji w danym kraju.</a>");
