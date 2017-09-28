@@ -13,6 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import infoshareKurs.Place;
 
 @WebServlet("/nearest_station")
 public class NearestStationServlet extends HttpServlet {
@@ -52,40 +53,40 @@ public class NearestStationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.setContentType("text/html;charset=UTF-8");
-
-        PrintWriter writer = resp.getWriter();
-
-        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
-
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
-
-        try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
-        }
-
-        double[] userLocation = new double[2];
-        userLocation[0] = Double.parseDouble(req.getParameter("latitiudeUser"));
-        userLocation[1] = Double.parseDouble(req.getParameter("longitudeUser"));
-
-
-        double distance;
-
-        Double x = userLocation[0];
-        Double y = userLocation[1];
-
-
+//        resp.setContentType("text/html;charset=UTF-8");
+//
+//        PrintWriter writer = resp.getWriter();
+//
+//        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
+//
+//        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+//
+//        try {
+//            bikeParsing.parseData();
+//        } catch (ParserConfigurationException | SAXException | IOException e) {
+//            logger.error("błąd parsowania pliku xml");
+//            e.printStackTrace();
+//        }
+//
+//        double[] userLocation = new double[2];
+//        userLocation[0] = Double.parseDouble(req.getParameter("latitiudeUser"));
+//        userLocation[1] = Double.parseDouble(req.getParameter("longitudeUser"));
+//
+//        Place place = new Place(bikeParsing)
+//        double distance;
+//
+//        Double x = userLocation[0];
+//        Double y = userLocation[1];
+//
+//
 //        double k = place.getLatitiudePlace();
 //        double j = place.getLongitudePlace();
-
+//
 //        distance = Math.sqrt(Math.pow((x - k), 2.0)
 //                + Math.pow((Math.cos((x * Math.PI) / 180.0)
 //                * (j - y)), 2.0)) * (40075.704 / 360.0);
-
-
+//
+//
 //        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
 //        double lowestDistance = 9999999999999999.9;
 //        DistanceMath distanceMath = new DistanceMath();
