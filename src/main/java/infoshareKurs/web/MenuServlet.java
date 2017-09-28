@@ -37,14 +37,11 @@ public class MenuServlet extends HttpServlet {
         writer.println("<form action=\"Menu\" method=\"post\">");
         writer.println("<a href=\"Submit\"/>4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>");
         writer.println("</form>");
-        writer.println("<form action=\"Menu\" method=\"post\">");
-        writer.println("<a href=\"Submit\"/>5.Statystyki ilości stacji rowerowych w danym państwie.</a>");
+        writer.println("<form action=\"countryStat\" method=\"get\">");
+        writer.println("<a href=\"countryStat\"/>5.Statystyki ilości stacji rowerowych w danym państwie.</a>");
         writer.println("</form>");
         writer.println("<form action=\"cityStat\" method=\"get\">");
         writer.println("<a href=\"cityStat\"/>6.Statystyki ilości stacji rowerowych w danym mieście</a>");
-        writer.println("</form>");
-        writer.println("<form action=\"Menu\" method=\"post\">");
-        writer.println("<a href=\"Submit\"/>7.Wyjście z progarmu</a>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");
