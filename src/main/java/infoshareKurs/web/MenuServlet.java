@@ -34,8 +34,8 @@ public class MenuServlet extends HttpServlet {
         writer.println("<form action=\"city_stations\" method=\"get\">");
         writer.println("<a href=\"city_stations\"/>3.Wyszukanie stacji w danym mieście.");
         writer.println("</form>");
-        writer.println("<form action=\"Menu\" method=\"post\">");
-        writer.println("<a href=\"Submit\"/>4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>");
+        writer.println("<form action=\"FindPlaceServlet\" method=\"get\">");
+        writer.println("<a href=\"FindPlaceServlet\"/>4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>");
         writer.println("</form>");
         writer.println("<form action=\"countryStat\" method=\"get\">");
         writer.println("<a href=\"countryStat\"/>5.Statystyki ilości stacji rowerowych w danym państwie.</a>");
