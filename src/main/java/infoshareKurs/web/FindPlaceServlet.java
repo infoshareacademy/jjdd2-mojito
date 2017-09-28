@@ -46,34 +46,36 @@ public class FindPlaceServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
-//        resp.setContentType("text/html;charset=UTF-8");
-//
-//        PrintWriter writer = resp.getWriter();
-//
-//        GeoLocation geoLocation = new GeoLocation();
-//
-//        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
-//
-//        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
-//
-//
-//        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
-//
-//        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
-//
-//        try {
-//            bikeParsing.parseData();
-//        } catch (ParserConfigurationException | SAXException | IOException e) {
-//            logger.error("błąd parsowania pliku xml");
-//            e.printStackTrace();
-//        }
-//
-//        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
-//        nearestPlace.findPlace(geoLocation);
-//
-//
-//        writer.println(nearestPlace.findNearestPlace(geoLocation));
+
+        resp.setContentType("text/html;charset=UTF-8");
+
+        PrintWriter writer = resp.getWriter();
+
+        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
+
+        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+
+        GeoLocation geoLocation = new GeoLocation();
+
+        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+
+        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+
+        double distance = Double.parseDouble(req.getParameter("choosenRadius"));
+
+
+        try {
+            bikeParsing.parseData();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("błąd parsowania pliku xml");
+            e.printStackTrace();
+        }
+
+        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
+        nearestPlace.findPlace(geoLocation ,distance);
+
+
+        writer.println(nearestPlace.findNearestPlace(geoLocation));
 
     }
 }
