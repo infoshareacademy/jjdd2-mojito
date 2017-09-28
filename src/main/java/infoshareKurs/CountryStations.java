@@ -3,18 +3,14 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class CountryStations {
     private final Logger logger = LogManager.getLogger(CountryStations.class);
-    protected void countryStation() {
-        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
-        try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
-        }
+    protected void countryStation(List<City> cityList) {
+
         System.out.println("Wpisz nazwę interesującego Cię państwa.");
         boolean done = false;
         while (!done) {
@@ -23,7 +19,7 @@ public class CountryStations {
 
             int i = 0;
             System.out.format("Stacje rowerowe znajdujące sie w %s :\n", inputdata);
-            for (City city : bikeParsing.getCityList()) {
+            for (City city : cityList) {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
