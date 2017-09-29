@@ -72,10 +72,8 @@ public class FindPlaceServlet extends HttpServlet{
         }
 
         NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
-        nearestPlace.findPlace(geoLocation ,distance);
+        writer.println(nearestPlace.findPlace(geoLocation ,distance));
 
-
-        writer.println(nearestPlace.findNearestPlace(geoLocation));
 
     }
 }

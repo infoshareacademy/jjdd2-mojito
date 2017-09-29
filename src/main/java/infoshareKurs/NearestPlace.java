@@ -33,7 +33,7 @@ public class NearestPlace {
 
     }
 
-    public void findPlace(GeoLocation geoLocation, double distance) {
+    public String findPlace(GeoLocation geoLocation, double distance) {
         logger.debug("znalezienie stacji w danym promieniu od uzytkownika");
         DistanceMath distanceMath = new DistanceMath();
         List<Place> placelist = new ArrayList<>();
@@ -45,13 +45,16 @@ public class NearestPlace {
                 }
             }
         }
+        String resoult = "";
         if (placelist.size() == 0) {
-            System.out.format("Nie znaleziono żadnej stacji w odległości %.2f km\n", distance);
+            String a = "Nie znaleziono żadnej stacji w odległości "+distance + " km\n";
+            return resoult+a;
         } else {
-            System.out.format("Lista stacji w odległości %.2f km\n", distance);
+            String b ="Lista stacji w odległości " + distance + " km\n";
             for (Place place : placelist) {
                 System.out.format("%s \n", place.getName());
             }
+            return resoult+b;
         }
     }
 }
