@@ -16,7 +16,6 @@ public class CityStations {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błędu parsowania pliku xml");
-            e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię miasta.");
         boolean done = false;

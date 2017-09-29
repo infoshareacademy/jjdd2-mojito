@@ -19,8 +19,7 @@ public class UserChooseRadius {
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-            logger.error("Pasrowanie danych z pliku xml");
+            logger.error("Blad pasrowania danych z pliku xml");
         }
         UserInputReader scanner = new UserInputReader();
         logger.debug("Implementacja skanera");
