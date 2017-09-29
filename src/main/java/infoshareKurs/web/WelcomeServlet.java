@@ -28,7 +28,7 @@ public class WelcomeServlet extends HttpServlet {
         writer.println("<h2>Wczytaj plik Xml do bazy danych. </h2>");
         writer.println("<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">");
         writer.println("<input type=\"file\" name=\"userFile\"/>");
-        writer.println("<button type=\"submit\" />Upload file</button>");
+        writer.println("<button type=\"submit\" />Zaladuj plik</button>");
         writer.println("</form>");
 
         writer.println("</body>");
@@ -47,8 +47,11 @@ public class WelcomeServlet extends HttpServlet {
             tmpDir = tmpDir + "/plik";
             OutputStream outputStream = null;
             outputStream = new FileOutputStream(new File(tmpDir));
+
             int read = 0;
+
             byte[] bytes = new byte[1024];
+
             while ((read = inputStream.read(bytes)) != -1) {
                 outputStream.write(bytes, 0, read);
             }
@@ -61,6 +64,7 @@ public class WelcomeServlet extends HttpServlet {
             resp.getWriter().println("</form>");
             resp.getWriter().println("</body>");
             resp.getWriter().println("</html>");
+
         } catch (IOException | ServletException e) {
             e.printStackTrace();
         }

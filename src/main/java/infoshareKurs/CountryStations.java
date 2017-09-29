@@ -13,7 +13,6 @@ public class CountryStations {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
         }
         System.out.println("Wpisz nazwę interesującego Cię państwa.");
         boolean done = false;
