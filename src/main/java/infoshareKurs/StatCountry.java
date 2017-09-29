@@ -10,21 +10,15 @@ import java.util.*;
 
 public class StatCountry {
 
-    private String filePath;
+    BikeParsing bikeParsing;
 
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public StatCountry(BikeParsing bikeParsing) {
+        this.bikeParsing = bikeParsing;
     }
 
     public List<String>  getCityStat() {
-        BikeParsing bikeParsing = new BikeParsing(getFilePath());
         List<String> cityStats=new ArrayList<>();
         try {
-            bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
                 @Override
                 public int compare(City c1, City c2) {
@@ -49,10 +43,9 @@ public class StatCountry {
     }
 
     public Map<String, Integer> getCountryStat() {
-        BikeParsing bikeParsing = new BikeParsing(getFilePath());
+
         SortedMap<String, Integer> countryStats = new TreeMap<>();
         try {
-            bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
 
             for (City city : bikeParsing.getCityList()) {
