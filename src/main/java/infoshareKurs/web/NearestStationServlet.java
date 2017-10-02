@@ -36,11 +36,10 @@ public class NearestStationServlet extends HttpServlet {
         writer.println("<input type=\"text\"name=\"latitiudeUser\"/>");
         writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
         writer.println("<input type=\"text\"name=\"longitudeUser\"/>");
-        writer.println("<button type=\"submit\" />Send</button>");
+        writer.println("<button type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");
-
 
     }
 
@@ -72,8 +71,6 @@ public class NearestStationServlet extends HttpServlet {
         NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
 
-
         writer.println(nearestPlace.findNearestPlace(geoLocation));
-
     }
 }

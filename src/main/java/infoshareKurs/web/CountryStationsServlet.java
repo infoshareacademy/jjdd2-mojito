@@ -31,7 +31,7 @@ public class CountryStationsServlet extends HttpServlet {
         writer.println("</form>");
         writer.println("<form action=\"country_stations\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userCountry\"/>");
-        writer.println("<button type=\"submit\" />Send</button>");
+        writer.println("<button type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");

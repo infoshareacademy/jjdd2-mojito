@@ -28,7 +28,7 @@ public class WelcomeServlet extends HttpServlet {
         writer.println("<h2>Wczytaj plik Xml do bazy danych. </h2>");
         writer.println("<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">");
         writer.println("<input type=\"file\" name=\"userFile\"/>");
-        writer.println("<button type=\"submit\" />Upload file</button>");
+        writer.println("<button type=\"submit\" />Załaduj plik</button>");
         writer.println("</form>");
 
         writer.println("</body>");
