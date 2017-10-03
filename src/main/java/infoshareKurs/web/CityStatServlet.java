@@ -27,7 +27,7 @@ public class CityStatServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(CountryStationsServlet.class);
+        final Logger logger = LogManager.getLogger(CityStatServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
 
@@ -49,7 +49,7 @@ public class CityStatServlet extends HttpServlet {
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
+            logger.warn("blad parsowania pliku");
         }
     }
 }

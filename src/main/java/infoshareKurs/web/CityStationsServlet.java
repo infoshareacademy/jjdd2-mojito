@@ -55,7 +55,6 @@ public class CityStationsServlet extends HttpServlet {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
         }
 
         boolean done = false;
