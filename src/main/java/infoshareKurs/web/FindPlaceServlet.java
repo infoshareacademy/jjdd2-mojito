@@ -1,6 +1,8 @@
 package infoshareKurs.web;
 
-import infoshareKurs.*;
+import infoshareKurs.BikeParsing;
+import infoshareKurs.GeoLocation;
+import infoshareKurs.NearestPlace;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -14,8 +16,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/country_stations")
-public class CountryStationsServlet extends HttpServlet {
+@WebServlet("/FindPlaceServlet")
+public class FindPlaceServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,10 +29,15 @@ public class CountryStationsServlet extends HttpServlet {
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
         writer.println("<body>");
-        writer.println("<h1>\"Wpisz nazwę interesującego Cię państwa. </h1>");
+        writer.println("<h2>\"Wpisz odległosć wyszukiwania stacji . </h2>");
         writer.println("</form>");
-        writer.println("<form action=\"country_stations\" method=\"post\">");
-        writer.println("<input type=\"text\" name=\"userCountry\"/>");
+        writer.println("<form action=\"FindPlaceServlet\" method=\"post\">");
+        writer.println("<input type=\"number\" name=\"choosenRadius\"/>");
+        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<form action=\"nearestStation\" method=\"post\">");
+        writer.println("<input type=\"text\"name=\"latitiudeUser\"/>");
+        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<input type=\"text\"name=\"longitudeUser\"/>");
         writer.println("<button type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
         writer.println("</body>");
@@ -44,39 +51,27 @@ public class CountryStationsServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(CountryStationsServlet.class);
+        final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+
+        GeoLocation geoLocation = new GeoLocation();
+
+        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+
+        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+
+        double distance = Double.parseDouble(req.getParameter("choosenRadius"));
 
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
+
         }
 
-        boolean done = false;
+        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
+        writer.println(nearestPlace.findPlace(geoLocation ,distance));
 
-        while (!done) {
-            String inputdata = req.getParameter("userCountry");
-            int i = 0;
-            writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
-            for (City city : bikeParsing.getCityList()) {
-                if (city.getCountryName().equals(inputdata)) {
-                    i++;
-                    for (Place place : city.getPlaceList()) {
-                        writer.println(place.getName() + "  /  " + city.getName());
-                        writer.println("<br>");
-                        logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
-                    }
-                }
-                done = true;
-            }
-            if (i == 0) {
-                writer.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
-                logger.info("nie znaleziono kraju w bazie danych ");
-                done = true;
-            }
-        }
     }
 }

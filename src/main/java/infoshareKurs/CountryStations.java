@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 public class CountryStations {
     private final Logger logger = LogManager.getLogger(CountryStations.class);
     protected void countryStation() {
-        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {

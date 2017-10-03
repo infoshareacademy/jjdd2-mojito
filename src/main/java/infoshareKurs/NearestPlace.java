@@ -16,7 +16,7 @@ public class NearestPlace {
 
     private String name;
 
-    public void findNearestPlace(GeoLocation geoLocation) {
+    public String findNearestPlace(GeoLocation geoLocation) {
         logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
@@ -29,11 +29,11 @@ public class NearestPlace {
                 }
             }
         }
-        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s"
-                , lowestDistance, this.name);
+        return "Najbliższa stacja rowerowa znajduje się " + lowestDistance + " km od Ciebie. Stacja nazywa się " + this.name;
+
     }
 
-    public void findPlace(GeoLocation geoLocation, double distance) {
+    public String findPlace(GeoLocation geoLocation, double distance) {
         logger.debug("znalezienie stacji w danym promieniu od uzytkownika");
         DistanceMath distanceMath = new DistanceMath();
         List<Place> placelist = new ArrayList<>();
@@ -45,13 +45,16 @@ public class NearestPlace {
                 }
             }
         }
+        String resoult = "";
         if (placelist.size() == 0) {
-            System.out.format("Nie znaleziono żadnej stacji w odległości %.2f km\n", distance);
+            String a = "Nie znaleziono żadnej stacji w odległości "+distance + " km\n";
+            return resoult+a;
         } else {
-            System.out.format("Lista stacji w odległości %.2f km\n", distance);
+            String b ="Lista stacji w odległości " + distance + " km\n";
             for (Place place : placelist) {
                 System.out.format("%s \n", place.getName());
             }
+            return resoult+b;
         }
     }
 }

@@ -18,11 +18,11 @@ public class Place {
         return name;
     }
 
-    protected double getLatitiudePlace() {
+    public double getLatitiudePlace() {
         return latitiudePlace;
     }
 
-    protected double getLongitudePlace() {
+    public double getLongitudePlace() {
         return longitudePlace;
     }
 

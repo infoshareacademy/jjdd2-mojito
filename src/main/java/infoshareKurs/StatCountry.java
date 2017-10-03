@@ -33,7 +33,7 @@ public class StatCountry {
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
+            logger.warn("bład parsowania pliku");
         }
     }
 
