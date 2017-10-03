@@ -51,7 +51,7 @@ public class FindPlaceServlet extends HttpServlet{
 
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
+        final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
 
@@ -67,7 +67,7 @@ public class FindPlaceServlet extends HttpServlet{
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błąd parsowania pliku xml");
-            e.printStackTrace();
+
         }
 
         NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());

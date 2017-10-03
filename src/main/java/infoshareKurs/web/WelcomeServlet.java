@@ -1,5 +1,8 @@
 package infoshareKurs.web;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -38,6 +41,8 @@ public class WelcomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        final Logger logger = LogManager.getLogger(WelcomeServlet.class);
+
         try {
             Part userfile = null;
             userfile = req.getPart("userFile");
@@ -62,7 +67,7 @@ public class WelcomeServlet extends HttpServlet {
             resp.getWriter().println("</body>");
             resp.getWriter().println("</html>");
         } catch (IOException | ServletException e) {
-            e.printStackTrace();
+            logger.warn("bład wczytania pliku");
         }
     }
 }
