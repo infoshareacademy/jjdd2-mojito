@@ -26,6 +26,9 @@ public class CountryStationsServlet extends HttpServlet {
 
         writer.println("<!DOCTYPE html>");
         writer.println("<html>");
+        writer.println("<head>");
+        writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
+        writer.println("</head>");
         writer.println("<body>");
         writer.println("<h1>\"Wpisz nazwę interesującego Cię państwa. </h1>");
         writer.println("</form>");
@@ -60,23 +63,44 @@ public class CountryStationsServlet extends HttpServlet {
         while (!done) {
             String inputdata = req.getParameter("userCountry");
             int i = 0;
+            writer.println("<!DOCTYPE html>");
+            writer.println("<html>");
+            writer.println("<head>");
+            writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
+            writer.println("</head>");
+            writer.println("<body>");
             writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
+            writer.println("<table class=\"table table-hover\">\n" +
+                    "  <thead class=\"thead-inverse\">\n" +
+                    "    <tr>\n" +
+                    "      <th>Stacja</th>\n" +
+                    "      <th>Miasto</th>\n" +
+                    "    </tr>\n" +
+                    "  </thead>\n" +
+                    "  <tbody>");
             for (City city : bikeParsing.getCityList()) {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        writer.println(place.getName() + "  /  " + city.getName());
-                        writer.println("<br>");
+                        writer.println("<tr>");
+                        writer.println("<td>" + place.getName() + "</td><td>" + city.getName()+ "</td>");
+                        writer.println("</tr>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
                 done = true;
             }
+            writer.println("</tbody>" +
+                    "</table>");
+
             if (i == 0) {
                 writer.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
                 logger.info("nie znaleziono kraju w bazie danych ");
                 done = true;
             }
+            writer.println("</body>");
+            writer.print("</html>");
+
         }
     }
 }
