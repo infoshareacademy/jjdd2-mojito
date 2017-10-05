@@ -18,7 +18,7 @@ public class NearestPlace {
 
     public void findNearestPlace(GeoLocation geoLocation) {
         logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
-        double lowestDistance = 9999999999999999.9;
+        double lowestDistance = Double.MAX_VALUE;
         DistanceMath distanceMath = new DistanceMath();
 
         for (City city : cityList) {

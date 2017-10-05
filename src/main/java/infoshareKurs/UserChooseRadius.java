@@ -10,7 +10,10 @@ import java.io.IOException;
 public class UserChooseRadius {
     private final Logger logger = LogManager.getLogger(UserChooseRadius.class);
     protected void Radius() {
-        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         logger.debug("Pasrowanie danych z pliku xml");
         AfterTask afterTask = new AfterTask();
         logger.debug("implementacja obiektu klasy afterTask");

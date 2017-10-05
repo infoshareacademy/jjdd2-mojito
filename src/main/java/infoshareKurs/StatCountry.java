@@ -11,9 +11,12 @@ import java.util.*;
 public class StatCountry {
     final static Logger logger = LogManager.getLogger();
     protected static void getCityStat() {
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
         logger.debug("Stworzenie statystyk państwa");
 
-        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         logger.error("blad parsowania pliku xml");
         try {
             bikeParsing.parseData();
@@ -38,7 +41,10 @@ public class StatCountry {
     }
 
     protected static void getCountryStat() {
-        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         try {
             bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM PAŃSTWIE.");

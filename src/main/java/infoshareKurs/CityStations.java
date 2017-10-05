@@ -11,7 +11,10 @@ public class CityStations {
     private final Logger logger = LogManager.getLogger(CityStations.class);
 
     protected void cityStation() {
-        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        final BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {
