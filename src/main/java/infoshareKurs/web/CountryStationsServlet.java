@@ -62,12 +62,17 @@ public class CountryStationsServlet extends HttpServlet {
                 "  </div>\n" +
                 "</nav>");
         writer.println("<body>");
-        writer.println("<h1>\"Wpisz nazwę interesującego Cię państwa. </h1>");
+        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">");
+        writer.println("<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>");
         writer.println("</form>");
         writer.println("<form action=\"country_stations\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userCountry\"/>");
         writer.println("<button type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
+        writer.println("</div>");
+        writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
     }
@@ -102,7 +107,7 @@ public class CountryStationsServlet extends HttpServlet {
             writer.println("</head>");
             writer.println("<body>");
             writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
-            writer.println("<table class=\"table table-hover\">\n" +
+            writer.println("<table class=\"table table-inverse\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
                     "      <th>Stacja</th>\n" +

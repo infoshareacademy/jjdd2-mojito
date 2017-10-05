@@ -59,7 +59,9 @@ public class MenuServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>");
-
+        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">");
         writer.println("<form action=\"nearestStation\" method=\"get\">");
         writer.println("<a href=\"nearestStation\"/>1.Wyszukanie najbliższej stacji rowerowej.</a>");
         writer.println("</form>");
@@ -78,6 +80,8 @@ public class MenuServlet extends HttpServlet {
         writer.println("<form action=\"cityStat\" method=\"get\">");
         writer.println("<a href=\"cityStat\"/>6.Statystyki ilości stacji rowerowych w danym mieście</a>");
         writer.println("</form>");
+        writer.println("</div>");
+        writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
     }
