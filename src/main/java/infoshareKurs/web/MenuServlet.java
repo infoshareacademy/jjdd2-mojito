@@ -62,24 +62,18 @@ public class MenuServlet extends HttpServlet {
         writer.println("<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">");
-        writer.println("<form action=\"nearestStation\" method=\"get\">");
-        writer.println("<a href=\"nearestStation\"/>1.Wyszukanie najbliższej stacji rowerowej.</a>");
-        writer.println("</form>");
-        writer.println("<form action=\"country_stations\" method=\"get\">");
-        writer.println("<a href=\"country_stations\"/>2.Wyszukanie stacji w danym kraju.</a>");
-        writer.println("</form>");
-        writer.println("<form action=\"city_stations\" method=\"get\">");
-        writer.println("<a href=\"city_stations\"/>3.Wyszukanie stacji w danym mieście.");
-        writer.println("</form>");
-        writer.println("<form action=\"FindPlaceServlet\" method=\"get\">");
-        writer.println("<a href=\"FindPlaceServlet\"/>4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>");
-        writer.println("</form>");
-        writer.println("<form action=\"countryStat\" method=\"get\">");
-        writer.println("<a href=\"countryStat\"/>5.Statystyki ilości stacji rowerowych w danym państwie.</a>");
-        writer.println("</form>");
-        writer.println("<form action=\"cityStat\" method=\"get\">");
-        writer.println("<a href=\"cityStat\"/>6.Statystyki ilości stacji rowerowych w danym mieście</a>");
-        writer.println("</form>");
+        writer.println("<div class=\"list-group d-inline-flex p-2 \">\n" +
+                "  <span type=\"button\" class=\"list-group-item list-group-item-action active\">\n" +
+                "    Menu\n" +
+                "  </span>\n" +
+                "  <a href=\"nearestStation\" class=\"list-group-item list-group-item-action\">1.Wyszukanie najbliższej stacji rowerowej.</a>\n" +
+                "  <a href=\"country_stations\" class=\"list-group-item list-group-item-action\">2.Wyszukanie stacji w danym kraju.</a>\n" +
+                "  <a href=\"city_stations\" class=\"list-group-item list-group-item-action\">3.Wyszukanie stacji w danym mieście.</a>\n" +
+                "  <a href=\"FindPlaceServlet\" class=\"list-group-item list-group-item-action\">4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>\n" +
+                "  <a href=\"countryStat\" class=\"list-group-item list-group-item-action\">5.Statystyki ilości stacji rowerowych w danym państwie.</a>\n" +
+                "  <a href=\"cityStat\" class=\"list-group-item list-group-item-action\">6.Statystyki ilości stacji rowerowych w danym mieście</a>\n" +
+                "</div>");
+        writer.println("</div>");
         writer.println("</div>");
         writer.println("</div>");
         writer.println("</body>");
