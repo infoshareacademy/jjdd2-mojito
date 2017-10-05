@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import infoshareKurs.Place;
 
 @WebServlet("/nearestStation")
 public class NearestStationServlet extends HttpServlet {

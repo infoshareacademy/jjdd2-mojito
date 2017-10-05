@@ -62,22 +62,46 @@ public class CityStationsServlet extends HttpServlet {
         while (!done) {
             String inputdata = req.getParameter("userCity");
             int i = 0;
+            writer.println("<!DOCTYPE html>");
+            writer.println("<html>");
+            writer.println("<head>");
+            writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">");
+            writer.println("</head>");
+            writer.println("<body>");
+            writer.println("<h1>\"Wpisz nazwę interesującego Cię Miasta. </h1>");
+            writer.println("</form>");
+            writer.println("<form action=\"city_stations\" method=\"post\">");
+            writer.println("<input type=\"text\" name=\"userCity\"/>");
+            writer.println("<button type=\"submit\" />Send</button>");
+            writer.println("</form>");
             writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
+            writer.println("<table class=\"table table-hover\">\n" +
+                    "  <thead class=\"thead-inverse\">\n" +
+                    "    <tr>\n" +
+                    "      <th>Stacja</th>\n" +
+                    "    </tr>\n" +
+                    "  </thead>\n" +
+                    "  <tbody>");
             for (City city : bikeParsing.getCityList()) {
                 if (city.getName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        writer.println(place.getName());
-                        writer.println("<br>");
+                        writer.println("<tr>");
+                        writer.println("<td>" + place.getName() + "</td>");
+                        writer.println("</tr>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                     done = true;
                 }
 
             }
+            writer.println("</tbody>" +
+                    "</table>");
             if (i == 0) {
                 writer.println("Nie znaleziono miasta w bazie, wprowadź nazwę miasta ponownie.");
             }
+            writer.println("</body>");
+            writer.print("</html>");
         }
     }
 }
