@@ -34,7 +34,7 @@ public class NearestStationServlet extends HttpServlet {
         writer.println("</head>");
         writer.println("<body class=\"bg-dark\">");
         writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
-                "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
+                "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                 "    <span class=\"navbar-toggler-icon\"></span>\n" +
                 "  </button>\n" +
@@ -61,15 +61,17 @@ public class NearestStationServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>");
-        writer.println("<body>");
-        writer.println("<h1>\"Podaj swoje położenie geograficzną\"  </h1>");
+        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">");
+        writer.println("<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>");
         writer.println("<form action=\"nearestStation\" method=\"post\">");
-        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>");
         writer.println("<form action=\"nearestStation\" method=\"post\">");
         writer.println("<input type=\"text\"name=\"latitiudeUser\"/>");
-        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>");
         writer.println("<input type=\"text\"name=\"longitudeUser\"/>");
-        writer.println("<button type=\"submit\" />Znajdz</button>");
+        writer.println("<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");

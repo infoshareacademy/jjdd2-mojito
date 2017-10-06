@@ -35,7 +35,7 @@ public class MenuServlet extends HttpServlet {
                 "      \n" +
                 "      <div class=\"text-center\">");
         writer.println("<div class=\"list-group d-inline-flex p-2 \">\n" +
-                "  <span type=\"button\" class=\"text-muted\" class=\"list-group-item list-group-item-action active\">\n" +
+                "  <span class=\"btn btn-secondary btn-lg\" class=\"list-group-item list-group-item-action active\">\n" +
                 "    Menu\n" +
                 "  </span>\n" +
                 "  <a href=\"nearestStation\" class=\"list-group-item list-group-item-action\">1.Wyszukanie najbliższej stacji rowerowej.</a>\n" +
