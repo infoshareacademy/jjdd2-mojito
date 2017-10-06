@@ -11,8 +11,8 @@ public class DistanceMath {
         logger.debug("Przeliczanie odleglosci od uzytkownik/stacja rowerowa", place,geoLocation);
         double distance;
 
-        double x = geoLocation.latitiudeUser;
-        double y = geoLocation.longitudeUser;
+        Double x = geoLocation.latitiudeUser;
+        Double y = geoLocation.longitudeUser;
 
         double k = place.getLatitiudePlace();
         double j = place.getLongitudePlace();

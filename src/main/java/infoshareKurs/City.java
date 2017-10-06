@@ -47,11 +47,11 @@ public class City {
         return name;
     }
 
-    protected List<Place> getPlaceList() {
+    public List<Place> getPlaceList() {
         return placeList;
     }
 
-    protected String getCountryName() {
+    public String getCountryName() {
         return countryName;
     }
 }

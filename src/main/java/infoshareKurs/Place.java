@@ -14,15 +14,15 @@ public class Place {
         this.longitudePlace = longitudePlace;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected double getLatitiudePlace() {
+    public double getLatitiudePlace() {
         return latitiudePlace;
     }
 
-    protected double getLongitudePlace() {
+    public double getLongitudePlace() {
         return longitudePlace;
     }
 

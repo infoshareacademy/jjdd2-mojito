@@ -13,6 +13,7 @@ public class StatCountry {
     FilePath filePath = new FilePath();
 
     BikeParsing bikeParsing = new BikeParsing(filePath.getFilepath());
+//    private TestLogger logger;
 
     public Map<String, Integer> getCityStat() {
 
@@ -37,7 +38,7 @@ public class StatCountry {
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
+//            logger.warn("bład parsowania pliku");
         }
         return cityStats;
     }
