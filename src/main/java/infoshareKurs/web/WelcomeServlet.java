@@ -40,7 +40,7 @@ public class WelcomeServlet extends HttpServlet {
         writer.println("<h2 class=\"text-white \">Wczytaj plik Xml do bazy danych. </h2>");
         writer.println("<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">");
         writer.println("<input type=\"file\" name=\"userFile\"/>");
-        writer.println("<button class=\"btn btn-secondary btn-lg btn-block type=\"submit\" />Załaduj plik</button>");
+        writer.println("<button class=\"btn btn-secondary btn-lg\" type=\"submit\" />Załaduj plik</button>");
         writer.println("</form>");
         writer.println("</div>");
         writer.println("</div>");
@@ -85,7 +85,7 @@ public class WelcomeServlet extends HttpServlet {
                     "      <div class=\"text-center\">");
             resp.getWriter().println("<h1 class=\"text-white\">Twoj plik zostal wczytany </h1>");
             resp.getWriter().println("<form action=\"Menu\" method=\"get\">");
-            writer.println("<button class=\"btn btn-secondary btn-lg btn-block type=\"submit\" />Przejdz do menu</button>");
+            writer.println("<button class=\"btn btn-secondary btn-lg\" type=\"submit\" />Przejdz do menu</button>");
             writer.println("</div>");
             writer.println("</div>");
             resp.getWriter().println("</body>");
