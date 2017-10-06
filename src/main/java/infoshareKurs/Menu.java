@@ -13,7 +13,8 @@ public class Menu {
         Logger logger = LogManager.getLogger("log4j.xml");
         logger.info("This is logger with file appender");
         try {
-            BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+            FilePath filePath=new FilePath();
+            BikeParsing bikeParsing = new BikeParsing(filePath.getFilepath());
             bikeParsing.parseData();
             logger.info("Parsowanie pliku xml");
 

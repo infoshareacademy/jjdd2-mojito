@@ -2,13 +2,7 @@ package infoshareKurs;
 
 public class FilePath {
     public String getFilepath() {
-        return filepath;
+        return "data/nextbike-live.xml";
     }
-
-    public void setFilepath(String filepath) {
-        this.filepath = filepath;
-    }
-
-    private String filepath;
 
 }

@@ -3,22 +3,22 @@ package infoshareKurs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.*;
 
 
 public class StatCountry {
+    FilePath filePath = new FilePath();
 
-    BikeParsing bikeParsing;
+    BikeParsing bikeParsing = new BikeParsing(filePath.getFilepath());
 
-    public StatCountry(BikeParsing bikeParsing) {
-        this.bikeParsing = bikeParsing;
-    }
+    public Map<String, Integer> getCityStat() {
 
-    public List<String>  getCityStat() {
-        List<String> cityStats=new ArrayList<>();
+        Map<String, Integer> cityStats = new TreeMap<>();
         try {
+            bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
                 @Override
                 public int compare(City c1, City c2) {
@@ -32,7 +32,7 @@ public class StatCountry {
             });
             for (City city : bikeParsing.getCityList()) {
                 System.out.println("liczba stacji rowerowych w miescie " + city.getName() + " : " + city.getPlaceList().size());
-                cityStats.add(city.getName());
+                cityStats.put(city.getName(), city.getPlaceList().size());
 
             }
         } catch (
@@ -44,8 +44,10 @@ public class StatCountry {
 
     public Map<String, Integer> getCountryStat() {
 
+
         SortedMap<String, Integer> countryStats = new TreeMap<>();
         try {
+            bikeParsing.parseData();
             System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
 
             for (City city : bikeParsing.getCityList()) {
@@ -62,7 +64,8 @@ public class StatCountry {
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
-        }return countryStats;
+        }
+        return countryStats;
 
     }
 }

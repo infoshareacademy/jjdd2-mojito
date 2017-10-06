@@ -17,11 +17,8 @@ public class BikeParsingTest {
         bikeParsing.parseData();
 
         assertEquals (8, bikeParsing.getCityList().size());
-//        assertEquals("leipzig", city());
+
         assertArrayEquals("Leipzig", bikeParsing);
-//      Place place = new Place("Leipzig");
-
-
 
     }
 
