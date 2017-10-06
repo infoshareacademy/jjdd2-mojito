@@ -139,7 +139,7 @@ public class CityStationsServlet extends HttpServlet {
             writer.println("</form>");
             writer.println("<form action=\"city_stations\" method=\"post\">");
             writer.println("<input type=\"text\" name=\"userCity\"/>");
-            writer.println("<button type=\"submit\" />Send</button>");
+            writer.println("<button type=\"submit\" />Znajdz</button>");
             writer.println("</form>");
             writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
             writer.println("<table class=\"table table-hover\">\n" +
@@ -166,6 +166,7 @@ public class CityStationsServlet extends HttpServlet {
                     "</table>");
             if (i == 0) {
                 writer.println("Nie znaleziono miasta w bazie, wprowadź nazwę miasta ponownie.");
+                done = true;
             }
             writer.println("</body>");
             writer.print("</html>");
