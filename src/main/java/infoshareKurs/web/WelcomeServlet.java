@@ -83,7 +83,7 @@ public class WelcomeServlet extends HttpServlet {
             writer.println("<div style=\"margin-top:15%;\">\n" +
                     "      \n" +
                     "      <div class=\"text-center\">");
-            resp.getWriter().println("<h1>Twoj plik zostal wczytany </h1>");
+            resp.getWriter().println("<h1 class=\"text-white\">Twoj plik zostal wczytany </h1>");
             resp.getWriter().println("<form action=\"Menu\" method=\"get\">");
             writer.println("<button class=\"btn btn-secondary btn-lg btn-block type=\"submit\" />Przejdz do menu</button>");
             writer.println("</div>");
