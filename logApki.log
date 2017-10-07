@@ -2875,3 +2875,5 @@
 2017-10-03 10:39:55,282 INFO l.xml [main] Parsowanie pliku xml
 2017-10-03 10:39:59,668 INFO l.xml [main] This is logger with file appender
 2017-10-03 10:40:00,083 INFO l.xml [main] Parsowanie pliku xml
+2017-10-07 20:24:02,929 INFO l.xml [main] This is logger with file appender
+2017-10-07 20:24:03,374 INFO l.xml [main] Parsowanie pliku xml

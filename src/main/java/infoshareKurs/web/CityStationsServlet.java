@@ -127,7 +127,11 @@ public class CityStationsServlet extends HttpServlet {
                     " crossorigin=\"anonymous\"></script>" +
                     "</head>" +
                     "<body class=\"bg-dark\">" +
-                    "<nav class=\"navbar navbar-dark bg-dark\">\n" +
+                    "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    width: 100%;\n" +
+                    "    border-bottom: 1px solid #666;" +
+                    "    z-index: 1;>\n" +
                     "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
                     "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
                     " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\"" +
@@ -157,18 +161,20 @@ public class CityStationsServlet extends HttpServlet {
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +
-                    "<div style=\"margin-top:15%;\">\n" +
+                    "<div style=\"margin-top:5%;\">\n" +
                     "      \n" +
                     "      <div class=\"text-center\">" +
                     "<h1 class=\"text-white\"> Wpisz nazwę interesującego Cię Miasta. </h1>" +
                     "</form>" +
-                    "<form action=\"city_stations\" method=\"post\">" +
+                    "<form action=\"city_stations\" method=\"post\" class=\"mb-4\">" +
                     "<input type=\"text\" name=\"userCity\"/>" +
                     "<button type=\"submit\" />Znajdz</button>" +
                     "</form>" +
                     "<span class=\"text-white\"> <h4><b> Stacje rowerowe znajdujące sie w " + inputdata +
-                    "</h4></b></span>" +
-                    "<table class=\"table table-hover\">\n" +
+                    "</h4></b></span> " +
+                    "<div class=\"row justify-content-md-center\">" +
+                    "<div class=\"col-5\">" +
+                    "<table class=\"table table-striped mt-4 table-inverse table-hover\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
                     "    </tr>\n" +
@@ -185,7 +191,8 @@ public class CityStationsServlet extends HttpServlet {
                 }
             }
             writer.println("</tbody>" +
-                    "</table>");
+                    "</table>" +
+                    "</div>" );
             if (i == 0) {
                 writer.println("<span class=\"text-white\"> <h4><b> Nie znaleziono miasta w bazie, wprowadź nazwę " +
                         "miasta ponownie. </h4></b></span>");
