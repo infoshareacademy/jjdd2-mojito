@@ -14,7 +14,7 @@ import java.util.List;
 public class NearestPlaceFinderTest {
 
     @Test
-    public void nearestPlaceFinderIsRight () {
+    public void nearestPlaceFinderIsRight() {
 
         //given
         Place place = new Place("place1", 43.0, 17.0);
@@ -39,8 +39,6 @@ public class NearestPlaceFinderTest {
 
         //then
         assertEquals("place2", result);
-
-
     }
 
 }

@@ -16,13 +16,7 @@ public class BikeParsingTest {
         BikeParsing bikeParsing = new BikeParsing("data/nextbike-test.xml");
         bikeParsing.parseData();
 
-        assertEquals (8, bikeParsing.getCityList().size());
-
-        assertArrayEquals("Leipzig", bikeParsing);
-
-    }
-
-    private void assertArrayEquals(String leipzig, Object p1) {
+        assertEquals(8, bikeParsing.getCityList().size());
     }
 
 }
