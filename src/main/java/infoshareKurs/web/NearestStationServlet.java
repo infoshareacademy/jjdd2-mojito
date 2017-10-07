@@ -24,18 +24,29 @@ public class NearestStationServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        writer.println("<!DOCTYPE html>");
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n");
-        writer.println("<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>");
-        writer.println("</head>");
-        writer.println("<body class=\"bg-dark\">");
-        writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
+        writer.println("<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<link rel=\"stylesheet\" " +
+                "href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\"" +
+                " integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\"" +
+                " crossorigin=\"anonymous\">\n" +
+                "<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" " +
+                "integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\"" +
+                " crossorigin=\"anonymous\"></script>\n" +
+                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\"" +
+                " integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" " +
+                "crossorigin=\"anonymous\"></script>\n" +
+                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\"" +
+                " integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\"" +
+                " crossorigin=\"anonymous\"></script>" +
+                "</head>" +
+                "<body class=\"bg-dark\">" +
+                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
                 "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
-                "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
+                " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\"" +
+                " aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                 "    <span class=\"navbar-toggler-icon\"></span>\n" +
                 "  </button>\n" +
                 "  <div class=\"collapse navbar-collapse\" id=\"navbarText\">\n" +
@@ -60,22 +71,21 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>");
-        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +
+                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
-                "      <div class=\"text-center\">");
-        writer.println("<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>");
-        writer.println("<form action=\"nearestStation\" method=\"post\">");
-        writer.println("<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>");
-        writer.println("<form action=\"nearestStation\" method=\"post\">");
-        writer.println("<input type=\"text\"name=\"latitiudeUser\"/>");
-        writer.println("<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>");
-        writer.println("<input type=\"text\"name=\"longitudeUser\"/>");
-        writer.println("<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>");
-        writer.println("</form>");
-        writer.println("</body>");
-        writer.println("</html>");
-
+                "      <div class=\"text-center\">" +
+                "<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>" +
+                "<form action=\"nearestStation\" method=\"post\">" +
+                "<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>" +
+                "<form action=\"nearestStation\" method=\"post\">" +
+                "<input type=\"text\"name=\"latitiudeUser\"/>" +
+                "<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>" +
+                "<input type=\"text\"name=\"longitudeUser\"/>" +
+                "<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>" +
+                "</form>" +
+                "</body>" +
+                "</html>");
     }
 
     @Override
@@ -105,16 +115,16 @@ public class NearestStationServlet extends HttpServlet {
         NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
 
-        writer.println("<!DOCTYPE html>");
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n");
-        writer.println("<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
+        writer.println("<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n" +
+                "<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
                 "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>");
-        writer.println("</head>");
-        writer.println("<body class=\"bg-dark\">");
-        writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
+                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>" +
+                "</head>" +
+                "<body class=\"bg-dark\">" +
+                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
                 "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                 "    <span class=\"navbar-toggler-icon\"></span>\n" +
@@ -141,11 +151,11 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>");
-        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +
+                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
-                "      <div class=\"text-center\">");
-        writer.println("<span class=\"text-white\">" +"<h1><b>" + nearestPlace.findNearestPlace(geoLocation)
+                "      <div class=\"text-center\">" +
+                "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)
                 + "</b></h1>" + "</span>");
     }
 }

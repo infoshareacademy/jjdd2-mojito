@@ -24,18 +24,29 @@ public class CountryStationsServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        writer.println("<!DOCTYPE html>");
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n");
-        writer.println("<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>");
-        writer.println("</head>");
-        writer.println("<body class=\"bg-dark\">");
-        writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
+        writer.println("<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<link rel=\"stylesheet\" " +
+                "href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\"" +
+                " integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\"" +
+                " crossorigin=\"anonymous\">\n" +
+                "<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\"" +
+                " integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\"" +
+                " crossorigin=\"anonymous\"></script>\n" +
+                "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\"" +
+                " integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" " +
+                "crossorigin=\"anonymous\"></script>\n" +
+                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" " +
+                "integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\"" +
+                " crossorigin=\"anonymous\"></script>" +
+                "</head>" +
+                "<body class=\"bg-dark\">" +
+                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
                 "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
-                "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" " +
+                "data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\"" +
+                " aria-label=\"Toggle navigation\">\n" +
                 "    <span class=\"navbar-toggler-icon\"></span>\n" +
                 "  </button>\n" +
                 "  <div class=\"collapse navbar-collapse\" id=\"navbarText\">\n" +
@@ -60,20 +71,20 @@ public class CountryStationsServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>");
-        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +
+                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
-                "      <div class=\"text-center\">");
-        writer.println("<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>");
-        writer.println("</form>");
-        writer.println("<form action=\"country_stations\" method=\"post\">");
-        writer.println("<input type=\"text\" name=\"userCountry\"/>");
-        writer.println("<button type=\"submit\" />Znajdz</button>");
-        writer.println("</form>");
-        writer.println("</div>");
-        writer.println("</div>");
-        writer.println("</body>");
-        writer.println("</html>");
+                "      <div class=\"text-center\">" +
+                "<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>" +
+                "</form>" +
+                "<form action=\"country_stations\" method=\"post\">" +
+                "<input type=\"text\" name=\"userCountry\"/>" +
+                "<button type=\"submit\" />Znajdz</button>" +
+                "</form>" +
+                "</div>" +
+                "</div>" +
+                "</body>" +
+                "</html>");
     }
 
     @Override
@@ -99,18 +110,29 @@ public class CountryStationsServlet extends HttpServlet {
         while (!done) {
             String inputdata = req.getParameter("userCountry");
             int i = 0;
-            writer.println("<!DOCTYPE html>");
-            writer.println("<html>");
-            writer.println("<head>");
-            writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n");
-            writer.println("<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
-                    "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>\n" +
-                    "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>");
-            writer.println("</head>");
-            writer.println("<body class=\"bg-dark\">");
-            writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
+            writer.println("<!DOCTYPE html>" +
+                    "<html>" +
+                    "<head>" +
+                    "<link rel=\"stylesheet\" " +
+                    "href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" " +
+                    "integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\"" +
+                    " crossorigin=\"anonymous\">\n" +
+                    "<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" " +
+                    "integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\"" +
+                    " crossorigin=\"anonymous\"></script>\n" +
+                    "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" " +
+                    "integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" " +
+                    "crossorigin=\"anonymous\"></script>\n" +
+                    "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" " +
+                    "integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" " +
+                    "crossorigin=\"anonymous\"></script>" +
+                    "</head>" +
+                    "<body class=\"bg-dark\">" +
+                    "<nav class=\"navbar navbar-dark bg-dark\">\n" +
                     "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
-                    "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                    "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"" +
+                    " data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" " +
+                    "aria-label=\"Toggle navigation\">\n" +
                     "    <span class=\"navbar-toggler-icon\"></span>\n" +
                     "  </button>\n" +
                     "  <div class=\"collapse navbar-collapse\" id=\"navbarText\">\n" +
@@ -135,17 +157,18 @@ public class CountryStationsServlet extends HttpServlet {
                     "      </li>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
-                    "</nav>");
-            writer.println("<div style=\"margin-top:15%;\">\n" +
+                    "</nav>" +
+                    "<div style=\"margin-top:15%;\">\n" +
                     "      \n" +
-                    "      <div class=\"text-center\">");
-            writer.println("<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>");
-            writer.println("</form>");
-            writer.println("<form action=\"country_stations\" method=\"post\">");
-            writer.println("<input type=\"text\" name=\"userCountry\"/>");
-            writer.println("<button type=\"submit\" />Znajdz</button>");
-            writer.println("<span class=\"text-white text-center align-middle\"><h1><b> Stacje rowerowe znajdujące sie w  " + inputdata + "</b></h1></span>");
-            writer.println("<table class=\"table table-hover\">\n" +
+                    "      <div class=\"text-center\">" +
+                    "<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>" +
+                    "</form>" +
+                    "<form action=\"country_stations\" method=\"post\">" +
+                    "<input type=\"text\" name=\"userCountry\"/>" +
+                    "<button type=\"submit\" />Znajdz</button>" +
+                    "<span class=\"text-white text-center align-middle\"><h1><b> Stacje rowerowe znajdujące sie w  "
+                    + inputdata + "</b></h1></span>" +
+                    "<table class=\"table table-hover\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
                     "      <th>Stacja</th>\n" +
@@ -157,25 +180,21 @@ public class CountryStationsServlet extends HttpServlet {
                 if (city.getCountryName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        writer.println("<tr>");
-                        writer.println("<td>" + place.getName() + "</td><td>" + city.getName()+ "</td>");
-                        writer.println("</tr>");
+                        writer.println("<tr>" + "<td>" + place.getName() + "</td><td>" + city.getName() +
+                                "</td>" + "</tr>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
                 done = true;
             }
-            writer.println("</tbody>" +
-                    "</table>");
+            writer.println("</tbody>" + "</table>");
 
             if (i == 0) {
                 writer.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
                 logger.info("nie znaleziono kraju w bazie danych ");
                 done = true;
             }
-            writer.println("</body>");
-            writer.print("</html>");
-
+            writer.println("</body>" + "</html>");
         }
     }
 }

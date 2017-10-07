@@ -45,18 +45,29 @@ public class CountryStatServlet extends HttpServlet {
                     countryStats.put(city.getCountryName(), currentPointCount + city.getPlaceList().size());
                 }
             }
-            writer.println("<!DOCTYPE html>");
-            writer.println("<html>");
-            writer.println("<head>");
-            writer.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\" integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\" crossorigin=\"anonymous\">\n");
-            writer.println("<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\" integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" crossorigin=\"anonymous\"></script>\n" +
-                    "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" crossorigin=\"anonymous\"></script>\n" +
-                    "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\" crossorigin=\"anonymous\"></script>");
-            writer.println("</head>");
-            writer.println("<body class=\"bg-dark\">");
-            writer.println("<nav class=\"navbar navbar-dark bg-dark\">\n" +
+            writer.println("<!DOCTYPE html>" +
+                    "<html>" +
+                    "<head>" +
+                    "<link rel=\"stylesheet\" " +
+                    "href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css\"" +
+                    " integrity=\"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M\"" +
+                    " crossorigin=\"anonymous\">\n" +
+                    "<script src=\"https://code.jquery.com/jquery-3.1.1.slim.min.js\"" +
+                    " integrity=\"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n\" " +
+                    "crossorigin=\"anonymous\"></script>\n" +
+                    "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\" " +
+                    "integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" " +
+                    "crossorigin=\"anonymous\"></script>\n" +
+                    "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\"" +
+                    " integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\"" +
+                    " crossorigin=\"anonymous\"></script>" +
+                    "</head>" +
+                    "<body class=\"bg-dark\">" +
+                    "<nav class=\"navbar navbar-dark bg-dark\">\n" +
                     "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
-                    "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
+                    "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
+                    " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" " +
+                    "aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
                     "    <span class=\"navbar-toggler-icon\"></span>\n" +
                     "  </button>\n" +
                     "  <div class=\"collapse navbar-collapse\" id=\"navbarText\">\n" +
@@ -81,14 +92,14 @@ public class CountryStatServlet extends HttpServlet {
                     "      </li>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
-                    "</nav>");
-            writer.println("<div style=\"margin-top:5%;\">\n" +
+                    "</nav>" +
+                    "<div style=\"margin-top:5%;\">\n" +
                     "      \n" +
                     "      <div class=\"text-center\">");
             for (Map.Entry country : countryStats.entrySet()) {
                 writer.println("<span class=\"text-white text-center align-middle\"> Liczba stacji rowerowych w "
-                        + country.getKey() + ": " + country.getValue() + "</span>");
-                writer.println("<br>");
+                        + country.getKey() + ": " + country.getValue() + "</span>" +
+                        "<br>");
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.warn("bład parsowania pliku");
