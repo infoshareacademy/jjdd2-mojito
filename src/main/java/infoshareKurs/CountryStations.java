@@ -6,9 +6,13 @@ import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class CountryStations {
+
     private final Logger logger = LogManager.getLogger(CountryStations.class);
     protected void countryStation() {
-        BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        final BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         try {
             bikeParsing.parseData();
         } catch (ParserConfigurationException | SAXException | IOException e) {

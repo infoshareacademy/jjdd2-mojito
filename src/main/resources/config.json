@@ -1,0 +1,8 @@
+{
+  "bikeDataPath" : "data/nextbike-live.xml",
+  "logPath": "log4j.xml",
+  "placeLatDouble" : 0.0,
+  "placeLngDouble" : 0.0,
+  "cityLatDouble" : 0.0,
+  "cityLngDouble" : 0.0
+}
