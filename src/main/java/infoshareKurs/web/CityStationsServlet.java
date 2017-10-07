@@ -149,7 +149,6 @@ public class CityStationsServlet extends HttpServlet {
             writer.println("<table class=\"table table-hover\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
-                    "      <th>Stacja</th>\n" +
                     "    </tr>\n" +
                     "  </thead>\n" +
                     "  <tbody>");
