@@ -3,6 +3,7 @@ package infoshareKurs.web;
 import infoshareKurs.BikeParsing;
 import infoshareKurs.GeoLocation;
 import infoshareKurs.NearestPlace;
+import infoshareKurs.Place;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet{
@@ -63,24 +65,28 @@ public class FindPlaceServlet extends HttpServlet{
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>");
-        writer.println("<body>");
-        writer.println("<h2>\"Wpisz odległosć wyszukiwania stacji . </h2>");
+        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">");
+        writer.println("<h2 class=\"text-white\">Wpisz odległosć wyszukiwania stacji. </h2>");
         writer.println("</form>");
         writer.println("<form action=\"FindPlaceServlet\" method=\"post\">");
         writer.println("<input type=\"number\" name=\"choosenRadius\"/>");
-        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"</h2>");
         writer.println("<form action=\"nearestStation\" method=\"post\">");
         writer.println("<input type=\"text\"name=\"latitiudeUser\"/>");
-        writer.println("<h2>\"Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
+        writer.println("<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>");
         writer.println("<input type=\"text\"name=\"longitudeUser\"/>");
-        writer.println("<button type=\"submit\" />Znajdz</button>");
+        writer.println("<button class=\"btn btn-secondary btn-lg\" type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
+        writer.println("</div>");
+        writer.println("</div>");
         writer.println("</body>");
         writer.println("</html>");
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
 
         resp.setContentType("text/html;charset=UTF-8");
 
@@ -143,7 +149,25 @@ public class FindPlaceServlet extends HttpServlet{
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>");
-        writer.println("<body>" + nearestPlace.findPlace(geoLocation ,distance) + "</body></html>");
-
+        writer.println("<table class=\"table table-hover\">\n" +
+                "  <thead class=\"thead-inverse\">\n" +
+                "    <tr>\n" +
+                "      <th>Stacja</th>\n" +
+                "    </tr>\n" +
+                "  </thead>\n" +
+                "  <tbody>");
+        List<Place> placelist = nearestPlace.findPlace(geoLocation ,distance);
+        if (placelist.size() == 0) {
+            writer.print("nie znalezionoooo");
+        }
+        for (Place place : placelist) {
+            writer.println("<tr>");
+            writer.println("<td>" + place.getName() + "</td>");
+            writer.println("</tr>");
+        }
+        writer.println("</tbody>" +
+                "</table>");
+        writer.println("</body>");
+        writer.print("</html>");
     }
 }

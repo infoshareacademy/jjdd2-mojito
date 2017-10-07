@@ -64,12 +64,14 @@ public class CityStationsServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>");
-        writer.println("<body>");
-        writer.println("<h1>\"Wpisz nazwę interesującego Cię Miasta. </h1>");
+        writer.println("<div style=\"margin-top:15%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">");
+        writer.println("<h1 class=\"text-white\"> Wpisz nazwę interesującego Cię Miasta. </h1>");
         writer.println("</form>");
         writer.println("<form action=\"city_stations\" method=\"post\">");
         writer.println("<input type=\"text\" name=\"userCity\"/>");
-        writer.println("<button type=\"submit\" />Send</button>");
+        writer.println("<button type=\"submit\" />Znajdz</button>");
         writer.println("</form>");
         writer.println("</body>");
         writer.println("</html>");
@@ -134,14 +136,16 @@ public class CityStationsServlet extends HttpServlet {
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>");
-            writer.println("<body>");
-            writer.println("<h1>\"Wpisz nazwę interesującego Cię Miasta. </h1>");
+            writer.println("<div style=\"margin-top:15%;\">\n" +
+                    "      \n" +
+                    "      <div class=\"text-center\">");
+            writer.println("<h1 class=\"text-white\"> Wpisz nazwę interesującego Cię Miasta. </h1>");
             writer.println("</form>");
             writer.println("<form action=\"city_stations\" method=\"post\">");
             writer.println("<input type=\"text\" name=\"userCity\"/>");
             writer.println("<button type=\"submit\" />Znajdz</button>");
             writer.println("</form>");
-            writer.println("Stacje rowerowe znajdujące sie w  " + inputdata);
+            writer.println("<span class=\"text-white\"> <h4><b> Stacje rowerowe znajdujące sie w " + inputdata + "</h4></b></span>");
             writer.println("<table class=\"table table-hover\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
@@ -165,9 +169,12 @@ public class CityStationsServlet extends HttpServlet {
             writer.println("</tbody>" +
                     "</table>");
             if (i == 0) {
-                writer.println("Nie znaleziono miasta w bazie, wprowadź nazwę miasta ponownie.");
+                writer.println("<span class=\"text-white\"> <h4><b> Nie znaleziono miasta w bazie, wprowadź nazwę " +
+                        "miasta ponownie. </h4></b></span>");
                 done = true;
             }
+            writer.println("</div>");
+            writer.println("</div>");
             writer.println("</body>");
             writer.print("</html>");
         }
