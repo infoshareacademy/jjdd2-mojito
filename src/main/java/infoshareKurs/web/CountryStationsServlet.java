@@ -42,8 +42,12 @@ public class CountryStationsServlet extends HttpServlet {
                 " crossorigin=\"anonymous\"></script>" +
                 "</head>" +
                 "<body class=\"bg-dark\">" +
-                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
-                "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
+                "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                "    top: 0;\n" +
+                "    width: 100%;\n" +
+                "    border-bottom: 1px solid #666;" +
+                "    z-index: 1;>\n" +
+                "<span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" " +
                 "data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\"" +
                 " aria-label=\"Toggle navigation\">\n" +
@@ -128,8 +132,11 @@ public class CountryStationsServlet extends HttpServlet {
                     "crossorigin=\"anonymous\"></script>" +
                     "</head>" +
                     "<body class=\"bg-dark\">" +
-                    "<nav class=\"navbar navbar-dark bg-dark\">\n" +
-                    "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
+                    "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    width: 100%;\n" +
+                    "    border-bottom: 1px solid #666;" +
+                    "    z-index: 1;>\n" +"  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
                     "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"" +
                     " data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" " +
                     "aria-label=\"Toggle navigation\">\n" +
@@ -158,17 +165,19 @@ public class CountryStationsServlet extends HttpServlet {
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +
-                    "<div style=\"margin-top:15%;\">\n" +
+                    "<div style=\"margin-top:5%;\">\n" +
                     "      \n" +
                     "      <div class=\"text-center\">" +
                     "<h1 class=\"text-white text-center align-middle\"> Wpisz nazwę interesującego Cię państwa. </h1>" +
                     "</form>" +
-                    "<form action=\"country_stations\" method=\"post\">" +
+                    "<form action=\"country_stations\" method=\"post class=\"mb-4\">" +
                     "<input type=\"text\" name=\"userCountry\"/>" +
                     "<button type=\"submit\" />Znajdz</button>" +
                     "<span class=\"text-white text-center align-middle\"><h1><b> Stacje rowerowe znajdujące sie w  "
                     + inputdata + "</b></h1></span>" +
-                    "<table class=\"table table-hover\">\n" +
+                    "<div class=\"row justify-content-md-center\">" +
+                    "<div class=\"col-5\">" +
+                    "<table class=\"table table-striped mt-4 table-inverse table-hover\">\n" +
                     "  <thead class=\"thead-inverse\">\n" +
                     "    <tr>\n" +
                     "      <th>Stacja</th>\n" +

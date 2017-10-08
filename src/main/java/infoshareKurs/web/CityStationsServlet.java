@@ -44,8 +44,12 @@ public class CityStationsServlet extends HttpServlet {
                 " crossorigin=\"anonymous\"></script>" +
                 "</head>" +
                 "<body class=\"bg-dark\">" +
-                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
-                "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
+                "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                "    top: 0;\n" +
+                "    width: 100%;\n" +
+                "    border-bottom: 1px solid #666;" +
+                "    z-index: 1;>\n" +
+                "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\"" +
                 " data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\"" +
                 " aria-label=\"Toggle navigation\">\n" +
@@ -132,7 +136,7 @@ public class CityStationsServlet extends HttpServlet {
                     "    width: 100%;\n" +
                     "    border-bottom: 1px solid #666;" +
                     "    z-index: 1;>\n" +
-                    "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
+                    "  <span class=\"text-white class=\"navbar-brand\"> <b>Mohito Bike Project</b> </span>\n" +
                     "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
                     " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\"" +
                     " aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n" +
