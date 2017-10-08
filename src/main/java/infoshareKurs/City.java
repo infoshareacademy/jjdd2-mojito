@@ -13,9 +13,13 @@ public class City {
 
     private String name;
 
+    public void setPlaceList(List<Place> placeList) {
+        this.placeList = placeList;
+    }
+
     private List<Place> placeList;
 
-    protected City(Double latitude, Double longitude, String name, String country) {
+    public City(Double latitude, Double longitude, String name, String country) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;

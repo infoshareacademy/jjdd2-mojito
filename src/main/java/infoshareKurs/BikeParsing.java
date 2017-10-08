@@ -15,6 +15,14 @@ import java.util.List;
 
 public class BikeParsing {
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
     private String fileName;
 
     private List<City> cityList;

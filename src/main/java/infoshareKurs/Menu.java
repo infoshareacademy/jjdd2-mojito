@@ -6,7 +6,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 public class Menu {
     public static void main(String[] args) {
 

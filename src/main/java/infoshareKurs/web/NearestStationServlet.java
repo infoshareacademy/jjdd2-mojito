@@ -67,9 +67,5 @@ public class NearestStationServlet extends HttpServlet {
             logger.error("błąd parsowania pliku xml");
         }
 
-        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
-        nearestPlace.findNearestPlace(geoLocation);
-
-        writer.println(nearestPlace.findNearestPlace(geoLocation));
     }
 }

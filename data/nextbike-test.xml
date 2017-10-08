@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+    <country lat="50.7086" lng="10.6348" zoom="5" name="nextbike Germany" hotline="+493069205046" domain="de"
+             country="DE" country_name="Germany" terms="http://www.nextbike.de/media/AGB_Maerz2017_de-en.pdf" policy=""
+             website="https://www.nextbike.de/" booked_bikes="0" set_point_bikes="2819" available_bikes="1267"
+             capped_available_bikes="1">
+        <city uid="1" lat="51.3415" lng="12.3625" zoom="14" maps_icon="" alias="leipzig" break="0" name="Leipzig"
+              num_places="95" refresh_rate="1146"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:51.3012,&quot;lng&quot;:12.2872},&quot;north_east&quot;:{&quot;lat&quot;:51.4021,&quot;lng&quot;:12.4371}}"
+              booked_bikes="0" set_point_bikes="719" available_bikes="232">
+
+            <place uid="251219" lat="51.339963" lng="12.382677"
+                   name="Hauptsitz LVB / Georgiring (LVB Mobilitätsstation 2) " spot="1" number="4036" bikes="1"
+                   free_racks="0" terminal_type="free" bike_numbers="20439" bike_types="{&quot;15&quot;:1}"
+                   place_type="0">
+                <bike number="20439" bike_type="15" active="1" state="ok" electric_lock="1" boardcomputer="11340"/>
+            </place>
+            <place uid="266933" lat="51.341014524445" lng="12.374382019043"
+                   name="Marktplatz / S-Bahn-Rolltreppe / Hainstr." spot="1" number="4012" bikes="2" free_racks="0"
+                   terminal_type="free" bike_numbers="05531,10475"
+                   bike_types="{&quot;5&quot;:1,&quot;undefined&quot;:1}" place_type="0">
+                <bike number="05531" bike_type="0" active="1" state="ok"/>
+                <bike number="10475" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="377116" lat="51.337227664322" lng="12.378115653992"
+                   name="Schillerstr. / Universitätsstr. / Mensa" spot="1" number="4068" bikes="1" free_racks="0"
+                   terminal_type="free" bike_numbers="05700" bike_types="{&quot;5&quot;:1}" place_type="0">
+                <bike number="05700" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="411699" lat="51.337415" lng="12.333697" name="Lindenauer Markt (LVB Mobilitätsstation 21) "
+                   spot="1" number="4038" bikes="0" free_racks="0" terminal_type="free" place_type="0"/>
+            <place uid="415491" lat="51.337733" lng="12.381646" name="Augustusplatz (LVB Mobilitätsstation 3) " spot="1"
+                   number="4071" bikes="1" free_racks="0" terminal_type="free" bike_numbers="05559"
+                   bike_types="{&quot;5&quot;:1}" place_type="0">
+                <bike number="05559" bike_type="0" active="1" state="ok"/>
+            </place>
+
+        </city>
+        <city uid="8" lat="50.1072" lng="8.66375" zoom="12" maps_icon="" alias="frankfurt" break="0" name="Frankfurt"
+              num_places="39" refresh_rate="1742"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:50.0913,&quot;lng&quot;:8.5534},&quot;north_east&quot;:{&quot;lat&quot;:50.1407,&quot;lng&quot;:8.7096}}"
+              booked_bikes="0" set_point_bikes="229" available_bikes="94">
+            <place uid="46" lat="50.099624222884" lng="8.6850491166115" name="4260 - Südbahnhof / Hedderichstr."
+                   spot="1" number="4260" bikes="4" free_racks="0" terminal_type="free"
+                   bike_numbers="06200,06147,06159,06264"
+                   bike_types="{&quot;5&quot;:2,&quot;4&quot;:1,&quot;undefined&quot;:1}" place_type="0">
+
+            </place>
+            <place uid="896" lat="50.113158466165" lng="8.6787593364716" name="4245 - Hauptwache / Sport Arena" spot="1"
+                   number="4245" bikes="5" free_racks="0" terminal_type="free"
+                   bike_numbers="06079,06184,06142,03039,03146" bike_types="{&quot;5&quot;:4,&quot;4&quot;:1}"
+                   place_type="0">
+            </place>
+
+        </city>
+        <city uid="24" lat="47.6519" lng="9.47837" zoom="12" maps_icon="" alias="" break="0" name="Friedrichshafen"
+              num_places="6" refresh_rate="4202"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:47.6511,&quot;lng&quot;:9.4731},&quot;north_east&quot;:{&quot;lat&quot;:47.6793,&quot;lng&quot;:9.5228}}"
+              booked_bikes="0" set_point_bikes="45" available_bikes="3">
+            <place uid="19486" lat="47.67201265825" lng="9.5227754116058" name="Flughafen/ DB Haltestelle" spot="1"
+                   number="9760" bikes="1" free_racks="0" terminal_type="free" bike_numbers="13115"
+                   bike_types="{&quot;15&quot;:1}" place_type="0">
+                <bike number="13115" bike_type="15" active="1" state="ok" electric_lock="1" boardcomputer="13684"/>
+            </place>
+            <place uid="19488" lat="47.67756801554" lng="9.5063924789429" name="Messeeingang West" spot="1"
+                   number="9761" bikes="1" free_racks="0" terminal_type="free" bike_numbers="14035"
+                   bike_types="{&quot;15&quot;:1}" place_type="0">
+                <bike number="14035" bike_type="15" active="1" state="ok" electric_lock="1" boardcomputer="20970"/>
+            </place>
+            <place uid="402041" lat="47.679258344995" lng="9.5136451721191" name="Messeeingang Ost" number="9762"
+                   bikes="0" free_racks="0" bike_numbers="13419" bike_types="{&quot;15&quot;:1}" place_type="0">
+                <bike number="13419" bike_type="15" active="1" state="ok" electric_lock="1" boardcomputer="12847"/>
+            </place>
+            <place uid="402824" lat="47.652784679433" lng="9.4730687141418" name="Stadtbahnhof" spot="1" number="9764"
+                   bikes="0" free_racks="0" terminal_type="free" place_type="0"/>
+            <place uid="402831" lat="47.651068196515" lng="9.4830143451691" name="Hafenbahnhof/ Zeppelinmuseum" spot="1"
+                   number="9766" bikes="1" free_racks="0" terminal_type="free" bike_numbers="14630"
+                   bike_types="{&quot;15&quot;:1}" place_type="0">
+                <bike number="14630" bike_type="15" active="1" state="ok" electric_lock="1" boardcomputer="20142"/>
+            </place>
+            <place uid="402843" lat="47.670897" lng="9.493965" name="Camping am Messegelände" spot="1" number="9767"
+                   bikes="0" free_racks="0" terminal_type="free" place_type="0"/>
+        </city>
+        <city uid="32" lat="50.1093" lng="8.73825" zoom="12" maps_icon="" alias="" break="1" name="Offenbach am Main"
+              num_places="1" refresh_rate="10120"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:50.107,&quot;lng&quot;:8.7415},&quot;north_east&quot;:{&quot;lat&quot;:50.107,&quot;lng&quot;:8.7415}}"
+              booked_bikes="0" set_point_bikes="3" available_bikes="3">
+            <place uid="44537" lat="50.106979722073" lng="8.7414801120758" name="4287 - Hotel Macrander" spot="1"
+                   number="4287" bikes="3" free_racks="0" terminal_type="free" bike_numbers="06015,06072,06177"
+                   bike_types="{&quot;5&quot;:3}" place_type="7">
+                <bike number="06015" bike_type="0" active="1" state="ok"/>
+                <bike number="06072" bike_type="0" active="1" state="ok"/>
+                <bike number="06177" bike_type="0" active="1" state="ok"/>
+            </place>
+        </city>
+        <city uid="42" lat="52.1268" lng="11.6342" zoom="14" maps_icon="" alias="magdeburg" break="0" name="Magdeburg"
+              num_places="19" refresh_rate="2414"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:52.1071,&quot;lng&quot;:11.5974},&quot;north_east&quot;:{&quot;lat&quot;:52.1436,&quot;lng&quot;:11.6532}}"
+              booked_bikes="0" set_point_bikes="61" available_bikes="51">
+            <place uid="33" lat="52.139915138248" lng="11.640052199364"
+                   name="Campus Tower Universität Magdeburg (Universitätsplatz 1)" spot="1" number="4207" bikes="1"
+                   free_racks="0" bike_numbers="07045" bike_types="{&quot;4&quot;:1}" place_type="0">
+                <bike number="07045" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="271" lat="52.143579354027" lng="11.653237938881" name="sleep &amp; go Hotel Magdeburg" spot="1"
+                   number="4204" bikes="4" free_racks="0" bike_numbers="07069,07001,07000,07092"
+                   bike_types="{&quot;5&quot;:1,&quot;4&quot;:2,&quot;undefined&quot;:1}" place_type="7">
+                <bike number="07069" bike_type="0" active="1" state="ok"/>
+                <bike number="07001" bike_type="0" active="1" state="ok"/>
+                <bike number="07000" bike_type="0" active="1" state="ok"/>
+                <bike number="07092" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="1531" lat="52.128285100395" lng="11.631828546524"
+                   name="Jugendherberge Magdeburg (Leiterstraße 10)" spot="1" number="4202" bikes="0" free_racks="0"
+                   place_type="7"/>
+            <place uid="7531" lat="52.1071114302" lng="11.643780469894" name="Mückenwirt Biergarten (An der Elbe 14)"
+                   spot="1" number="4208" bikes="4" free_racks="0" bike_numbers="07063,07016,07018,07020"
+                   bike_types="{&quot;4&quot;:4}" place_type="0">
+                <bike number="07063" bike_type="0" active="1" state="ok"/>
+                <bike number="07016" bike_type="0" active="1" state="ok"/>
+                <bike number="07018" bike_type="0" active="1" state="ok"/>
+                <bike number="07020" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="7532" lat="52.130372935533" lng="11.628427505493" name="Hauptbahnhof Magdeburg (Vorplatz)"
+                   spot="1" number="4209" bikes="5" free_racks="0" bike_numbers="07026,07024,07046,07062,07097"
+                   bike_types="{&quot;4&quot;:3,&quot;5&quot;:2}" place_type="0">
+                <bike number="07026" bike_type="0" active="1" state="ok"/>
+                <bike number="07024" bike_type="0" active="1" state="ok"/>
+                <bike number="07046" bike_type="0" active="1" state="ok"/>
+                <bike number="07062" bike_type="0" active="1" state="ok"/>
+                <bike number="07097" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="7536" lat="52.131028245317" lng="11.637412905693"
+                   name="Tourist-Information Magdeburg (Ernst-Reuter-Allee 12)" spot="1" number="4211" bikes="5"
+                   free_racks="0" bike_numbers="07077,07011,07005,07031,07054"
+                   bike_types="{&quot;5&quot;:1,&quot;4&quot;:4,&quot;undefined&quot;:1}" place_type="8">
+                <bike number="07077" bike_type="0" active="1" state="ok"/>
+                <bike number="07011" bike_type="0" active="1" state="ok"/>
+                <bike number="07005" bike_type="0" active="1" state="ok"/>
+                <bike number="07031" bike_type="0" active="1" state="ok"/>
+                <bike number="07054" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="7537" lat="52.120430143993" lng="11.628030538559" name="Hasselbachplatz (Liebig-Lounge)"
+                   spot="1" number="4214" bikes="5" free_racks="0" bike_numbers="07095,07029,07039,07010,07055"
+                   bike_types="{&quot;5&quot;:1,&quot;4&quot;:3,&quot;undefined&quot;:1}" place_type="0">
+                <bike number="07095" bike_type="0" active="1" state="ok"/>
+                <bike number="07029" bike_type="0" active="1" state="ok"/>
+                <bike number="07039" bike_type="0" active="1" state="ok"/>
+                <bike number="07010" bike_type="0" active="1" state="ok"/>
+                <bike number="07055" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="9920" lat="52.120973613229" lng="11.638984680176" name="MDR Funkhaus / Stadtpark" spot="1"
+                   number="4217" bikes="3" free_racks="0" bike_numbers="07023,07040,07022"
+                   bike_types="{&quot;4&quot;:3}" place_type="0">
+                <bike number="07023" bike_type="0" active="1" state="ok"/>
+                <bike number="07040" bike_type="0" active="1" state="ok"/>
+                <bike number="07022" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="12097" lat="52.12736958347" lng="11.634060144424" name="Am Hundertwasserhaus" spot="1"
+                   number="4219" bikes="4" free_racks="0" bike_numbers="07061,07068,07003,07047"
+                   bike_types="{&quot;5&quot;:2,&quot;4&quot;:2}" place_type="0">
+                <bike number="07061" bike_type="0" active="1" state="ok"/>
+                <bike number="07068" bike_type="0" active="1" state="ok"/>
+                <bike number="07003" bike_type="0" active="1" state="ok"/>
+                <bike number="07047" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="12205" lat="52.129500271863" lng="11.628009080887" name="Hotel - INTER City (am Hbf)" spot="1"
+                   number="4221" bikes="1" free_racks="0" bike_numbers="07017" bike_types="{&quot;4&quot;:1}"
+                   place_type="7">
+                <bike number="07017" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="12878" lat="52.125367236294" lng="11.631817817688" name="Domplatz (Breiter Weg)" spot="1"
+                   number="4206" bikes="2" free_racks="0" bike_numbers="07050,07007" bike_types="{&quot;4&quot;:2}"
+                   place_type="0">
+                <bike number="07050" bike_type="0" active="1" state="ok"/>
+                <bike number="07007" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="59615" lat="52.12993825237" lng="11.635444164276" name="Allee Center/ Ecke Ulrichhaus" spot="1"
+                   number="4215" bikes="5" free_racks="0" bike_numbers="07025,07028,07032,07021,07014"
+                   bike_types="{&quot;4&quot;:4,&quot;undefined&quot;:1}" place_type="0">
+                <bike number="07025" bike_type="0" active="1" state="ok"/>
+                <bike number="07028" bike_type="0" active="1" state="ok"/>
+                <bike number="07032" bike_type="0" active="1" state="ok"/>
+                <bike number="07021" bike_type="0" active="1" state="ok"/>
+                <bike number="07014" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="94304" lat="52.12659236729" lng="11.612323522568" name="Lessingstraße / Winckelmannstraße"
+                   spot="1" number="4222" bikes="1" free_racks="0" bike_numbers="07083" bike_types="{&quot;5&quot;:1}"
+                   place_type="0">
+                <bike number="07083" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="106832" lat="52.132579216503" lng="11.647245883942"
+                   name="Am Petriförder / Weiße Flotte Magdeburg" spot="1" number="4224" bikes="2" free_racks="0"
+                   bike_numbers="07019,07027" bike_types="{&quot;4&quot;:2}" place_type="0">
+                <bike number="07019" bike_type="0" active="1" state="ok"/>
+                <bike number="07027" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="126422" lat="52.109048705344" lng="11.597421169281" name="Hotel - Plaza / Halberstädter Straße"
+                   spot="1" number="4228" bikes="4" free_racks="0" bike_numbers="07091,07070,07076,07071"
+                   bike_types="{&quot;5&quot;:4}" place_type="7">
+                <bike number="07091" bike_type="0" active="1" state="ok"/>
+                <bike number="07070" bike_type="0" active="1" state="ok"/>
+                <bike number="07076" bike_type="0" active="1" state="ok"/>
+                <bike number="07071" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="126431" lat="52.132954602688" lng="11.610413789749" name="Hotel - Best Western / Goethestraße"
+                   spot="1" number="4226" bikes="0" free_racks="0" place_type="7"/>
+            <place uid="207380" lat="52.131024952327" lng="11.639370918274" name="Rathaus, Alter Markt" spot="1"
+                   number="4223" bikes="0" free_racks="0" place_type="0"/>
+            <place uid="219897" lat="52.11771269841" lng="11.640615463257" name="Stadtpark - Aussichtsturm" spot="1"
+                   number="4225" bikes="2" free_racks="0" bike_numbers="07049,07030" bike_types="{&quot;4&quot;:2}"
+                   place_type="0">
+                <bike number="07049" bike_type="0" active="1" state="ok"/>
+                <bike number="07030" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="236643" lat="52.130366349457" lng="11.638072729111" name="Allee Center /Ernst-Reuter-Allee"
+                   spot="1" number="4227" bikes="2" free_racks="0" bike_numbers="07037,07013"
+                   bike_types="{&quot;4&quot;:2}" place_type="0">
+                <bike number="07037" bike_type="0" active="1" state="ok"/>
+                <bike number="07013" bike_type="0" active="1" state="ok"/>
+            </place>
+        </city>
+    </country>
+    <country lat="-39.0789" lng="175.649" zoom="5" name="nextbike New Zealand" hotline="+6499099090" domain="nz"
+             country="NZ" country_name="New Zealand"
+             terms="http://www.nextbike.co.nz/media/Terms_and_Conditions_nextbike_NZ_09-2015.pdf" policy=""
+             website="http://www.nextbike.co.nz/" booked_bikes="0" set_point_bikes="343" available_bikes="64"
+             capped_available_bikes="1">
+        <city uid="34" lat="-36.8603" lng="174.763" zoom="13" maps_icon="" alias="auckland" break="0" name="Auckland"
+              num_places="3" refresh_rate="5894"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:-36.8603,&quot;lng&quot;:174.6609},&quot;north_east&quot;:{&quot;lat&quot;:-36.7886,&quot;lng&quot;:174.763}}"
+              booked_bikes="0" set_point_bikes="158" available_bikes="9">
+            <place uid="213693" lat="-36.790247175081" lng="174.66085910797" name="1 Hastings cr" spot="1" number="7776"
+                   bikes="4" bike_racks="4" free_racks="0" bike_numbers="64058,64079,64103,64101"
+                   bike_types="{&quot;5&quot;:2,&quot;4&quot;:2}" place_type="0">
+                <bike number="64058" bike_type="0" active="1" state="ok"/>
+                <bike number="64079" bike_type="0" active="1" state="ok"/>
+                <bike number="64103" bike_type="0" active="1" state="ok"/>
+                <bike number="64101" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="288795" lat="-36.788636156372" lng="174.67168450356" name="The landing" spot="1" number="7778"
+                   bikes="4" bike_racks="4" free_racks="0" bike_numbers="64001,64056,64104,64102"
+                   bike_types="{&quot;5&quot;:2,&quot;4&quot;:2}" place_type="0">
+                <bike number="64001" bike_type="0" active="1" state="ok"/>
+                <bike number="64056" bike_type="0" active="1" state="ok"/>
+                <bike number="64104" bike_type="0" active="1" state="ok"/>
+                <bike number="64102" bike_type="0" active="1" state="ok"/>
+            </place>
+        </city>
+        <city uid="193" lat="-43.5341" lng="172.621" zoom="11" maps_icon="" alias="" break="0" name="Christchurch"
+              num_places="9" refresh_rate="3453"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:-43.5384,&quot;lng&quot;:172.6256},&quot;north_east&quot;:{&quot;lat&quot;:-43.5163,&quot;lng&quot;:172.6435}}"
+              booked_bikes="0" set_point_bikes="157" available_bikes="42">
+            <place uid="348126" lat="-43.531212553141" lng="172.63018012047" name="28 Worcester blvd (The Arts Centre)"
+                   spot="1" number="7804" bikes="4" bike_racks="9" free_racks="4" bike_numbers="64337,64332,64316,64308"
+                   bike_types="{&quot;4&quot;:4}" place_type="0">
+                <bike number="64337" bike_type="0" active="1" state="ok"/>
+                <bike number="64332" bike_type="0" active="1" state="ok"/>
+                <bike number="64316" bike_type="0" active="1" state="ok"/>
+                <bike number="64308" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="348127" lat="-43.533196012105" lng="172.63378500938" name="96 Oxford tce (Re:START Mall)"
+                   spot="1" number="7803" bikes="0" bike_racks="9" free_racks="8" place_type="0"/>
+            <place uid="348128" lat="-43.529750196521" lng="172.63747572899" name="125 Gloucester st" spot="1"
+                   number="7802" bikes="5" bike_racks="9" free_racks="4" bike_numbers="64338,64325,64318,64307,64306"
+                   bike_types="{&quot;4&quot;:4,&quot;undefined&quot;:1}" place_type="0">
+                <bike number="64338" bike_type="0" active="1" state="ok"/>
+                <bike number="64325" bike_type="0" active="1" state="ok"/>
+                <bike number="64318" bike_type="0" active="1" state="ok"/>
+                <bike number="64307" bike_type="0" active="1" state="ok"/>
+                <bike number="64306" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="348129" lat="-43.524196029728" lng="172.63023376465" name="99 Victoria st (Food Containers)"
+                   spot="1" number="7801" bikes="5" bike_racks="9" free_racks="1"
+                   bike_numbers="64334,64330,64326,64317,64315" bike_types="{&quot;4&quot;:5,&quot;undefined&quot;:1}"
+                   place_type="0">
+                <bike number="64334" bike_type="0" active="1" state="ok"/>
+                <bike number="64330" bike_type="0" active="1" state="ok"/>
+                <bike number="64326" bike_type="0" active="1" state="ok"/>
+                <bike number="64317" bike_type="0" active="1" state="ok"/>
+                <bike number="64315" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="348130" lat="-43.53628774451" lng="172.63982534409" name="224 Tuam st (EPIC)" spot="1"
+                   number="7800" bikes="5" bike_racks="9" free_racks="2" bike_numbers="64336,64333,64329,64328,64314"
+                   bike_types="{&quot;4&quot;:5,&quot;undefined&quot;:1}" place_type="0">
+                <bike number="64336" bike_type="0" active="1" state="ok"/>
+                <bike number="64333" bike_type="0" active="1" state="ok"/>
+                <bike number="64329" bike_type="0" active="1" state="ok"/>
+                <bike number="64328" bike_type="0" active="1" state="ok"/>
+                <bike number="64314" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="711990" lat="-43.535078293225" lng="172.63686418533" name="630 Colombo St (Bus Interchange)"
+                   spot="1" number="7810" bikes="5" bike_racks="10" free_racks="2"
+                   bike_numbers="64335,64331,64323,64320,64319" bike_types="{&quot;4&quot;:5,&quot;undefined&quot;:2}"
+                   place_type="0">
+                <bike number="64335" bike_type="0" active="1" state="ok"/>
+                <bike number="64331" bike_type="0" active="1" state="ok"/>
+                <bike number="64323" bike_type="0" active="1" state="ok"/>
+                <bike number="64320" bike_type="0" active="1" state="ok"/>
+                <bike number="64319" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="3357512" lat="-43.538407142442" lng="172.64350533485" name="Ara City Campus" spot="1"
+                   number="7880" bikes="5" bike_racks="10" free_racks="0" terminal_type="sign"
+                   bike_numbers="64264,64263,64262,64261,64260" bike_types="{&quot;undefined&quot;:5}" place_type="9">
+                <bike number="64264" bike_type="0" active="1" state="ok"/>
+                <bike number="64263" bike_type="0" active="1" state="ok"/>
+                <bike number="64262" bike_type="0" active="1" state="ok"/>
+                <bike number="64261" bike_type="0" active="1" state="ok"/>
+                <bike number="64260" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="3392192" lat="-43.538407142442" lng="172.64350533485" name="Ara Ōtautahi House" spot="1"
+                   number="7881" bikes="0" bike_racks="4" free_racks="4" terminal_type="sign" place_type="9"/>
+        </city>
+        <city uid="361" lat="-36.841" lng="174.763" zoom="14" maps_icon="" alias="" break="0" name="Auckland Waterfront"
+              num_places="3" refresh_rate="5894"
+              bounds="{&quot;south_west&quot;:{&quot;lat&quot;:-36.8451,&quot;lng&quot;:174.7559},&quot;north_east&quot;:{&quot;lat&quot;:-36.8412,&quot;lng&quot;:174.7677}}"
+              booked_bikes="0" set_point_bikes="17" available_bikes="13">
+            <place uid="213691" lat="-36.843241529599" lng="174.7677397728" name="Queens wharf" spot="1" number="7774"
+                   bikes="5" bike_racks="8" free_racks="0" bike_numbers="64024,64088,64113,64107,64106"
+                   bike_types="{&quot;5&quot;:2,&quot;4&quot;:5}" place_type="0">
+                <bike number="64024" bike_type="0" active="1" state="ok"/>
+                <bike number="64088" bike_type="0" active="1" state="ok"/>
+                <bike number="64113" bike_type="0" active="1" state="ok"/>
+                <bike number="64107" bike_type="0" active="1" state="ok"/>
+                <bike number="64106" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="213692" lat="-36.841155087878" lng="174.75858807564" name="North wharf" spot="1" number="7775"
+                   bikes="4" bike_racks="6" free_racks="2" bike_numbers="64114,64105,64119,64116"
+                   bike_types="{&quot;4&quot;:4}" place_type="0">
+                <bike number="64114" bike_type="0" active="1" state="ok"/>
+                <bike number="64105" bike_type="0" active="1" state="ok"/>
+                <bike number="64119" bike_type="0" active="1" state="ok"/>
+                <bike number="64116" bike_type="0" active="1" state="ok"/>
+            </place>
+            <place uid="2962616" lat="-36.845096096672" lng="174.75586295128" name="VXV plaza" spot="1" number="7779"
+                   bikes="0" bike_racks="8" free_racks="8" place_type="0"/>
+        </city>
+    </country>
+</markers>
+        <!-- 05.09.2017 09:39 -->
