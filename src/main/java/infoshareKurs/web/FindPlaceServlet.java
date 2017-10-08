@@ -145,7 +145,7 @@ public class FindPlaceServlet extends HttpServlet {
                 "    top: 0;\n" +
                 "    width: 100%;\n" +
                 "    border-bottom: 1px solid #666;" +
-                "    z-index: 1;>\n" +
+                "    z-index: 1;\">\n" +
                 "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" " +
                 "data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" " +

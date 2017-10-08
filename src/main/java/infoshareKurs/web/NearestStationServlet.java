@@ -111,9 +111,9 @@ public class NearestStationServlet extends HttpServlet {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.error("błąd parsowania pliku xml");
         }
-
         NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
+        PlaceCordi placeCordi = new PlaceCordi();
 
         writer.println("<!DOCTYPE html>" +
                 "<html>" +
@@ -167,6 +167,8 @@ public class NearestStationServlet extends HttpServlet {
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)
-                + "</b></h1>" + "</span>");
+                + "</b></h1>" + "</span>" +
+                "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
+                "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
     }
 }
