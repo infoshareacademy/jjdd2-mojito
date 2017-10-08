@@ -141,7 +141,11 @@ public class FindPlaceServlet extends HttpServlet {
                 " crossorigin=\"anonymous\"></script>" +
                 "</head>" +
                 "<body class=\"bg-dark\">" +
-                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
+                "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                "    top: 0;\n" +
+                "    width: 100%;\n" +
+                "    border-bottom: 1px solid #666;" +
+                "    z-index: 1;>\n" +
                 "  <span class=\"navbar-brand\">Mohito Bike Project</span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" " +
                 "data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" " +
@@ -171,7 +175,12 @@ public class FindPlaceServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
-                "<table class=\"table table-hover\">\n" +
+                "<div style=\"margin-top:5%;\">\n" +
+                "      \n" +
+                "      <div class=\"text-center\">" +
+                "<div class=\"row justify-content-md-center\">" +
+                "<div class=\"col-5\">" +
+                "<table class=\"table table-striped mt-4 table-inverse table-hover\">\n" +
                 "  <thead class=\"thead-inverse\">\n" +
                 "    <tr>\n" +
                 "      <th>Stacja</th>\n" +
