@@ -78,7 +78,7 @@ public class CityStationsServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
-                "<div style=\"margin-top:15%;\">\n" +
+                "<div style=\"margin-top:10%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white\"> Wpisz nazwę interesującego Cię Miasta. </h1>" +
