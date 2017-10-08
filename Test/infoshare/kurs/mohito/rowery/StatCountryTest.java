@@ -1,14 +1,7 @@
 package infoshare.kurs.mohito.rowery;
 
-import infoshareKurs.BikeParsing;
-import infoshareKurs.City;
-import infoshareKurs.FilePath;
 import infoshareKurs.StatCountry;
 import org.junit.Test;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 

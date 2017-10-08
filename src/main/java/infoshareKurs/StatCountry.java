@@ -3,21 +3,26 @@ package infoshareKurs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.*;
 
 
 public class StatCountry {
-    FilePath filePath = new FilePath();
-
-    BikeParsing bikeParsing = new BikeParsing(filePath.getFilepath());
-//    private TestLogger logger;
-
+    final static Logger logger = LogManager.getLogger();
     public Map<String, Integer> getCityStat() {
 
         Map<String, Integer> cityStats = new TreeMap<>();
+
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        logger.debug("Stworzenie statystyk państwa");
+
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
+        logger.error("blad parsowania pliku xml");
+//    private TestLogger logger;
+
+
         try {
             bikeParsing.parseData();
             Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
@@ -38,18 +43,21 @@ public class StatCountry {
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
-//            logger.warn("bład parsowania pliku");
+            logger.warn("bład parsowania pliku");
         }
         return cityStats;
     }
 
     public Map<String, Integer> getCountryStat() {
 
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
 
         SortedMap<String, Integer> countryStats = new TreeMap<>();
         try {
             bikeParsing.parseData();
-            System.out.println("LICZBA STACJI ROWEROWYCH W DANYM KRAJU.");
+            System.out.println("LICZBA STACJI ROWEROWYCH W DANYM PAŃSTWIE.");
 
             for (City city : bikeParsing.getCityList()) {
                 if (countryStats.get(city.getCountryName()) == null) {

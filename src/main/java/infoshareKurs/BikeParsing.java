@@ -38,6 +38,8 @@ public class BikeParsing {
 
     public void parseData() throws ParserConfigurationException, SAXException, IOException {
 
+        Configuration config = ConfigurationLoader.getConfiguration();
+
         File inputFile = new File(fileName);
         DocumentBuilderFactory dbFaktory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dbBuilder = dbFaktory.newDocumentBuilder();
@@ -59,8 +61,8 @@ public class BikeParsing {
                         String cityLat = cityElement.getAttribute("lat");
                         String cityLong = cityElement.getAttribute("lng");
 
-                        double cityLatDouble = 0.0;
-                        double cityLngDouble = 0.0;
+                        double cityLatDouble = config.getCityLatDouble();
+                        double cityLngDouble = config.getCityLngDouble();
                         if (!cityLat.isEmpty()) {
                             cityLatDouble = Double.parseDouble(cityLat);
                         }
@@ -80,8 +82,8 @@ public class BikeParsing {
                                 String placeLat = placeElement.getAttribute("lat");
                                 String placeLng = placeElement.getAttribute("lng");
 
-                                double placeLatDouble = 0.0;
-                                double placeLngDouble = 0.0;
+                                double placeLatDouble = config.getPlaceLatDouble();
+                                double placeLngDouble = config.getPlaceLngDouble();
                                 if (!placeLat.isEmpty()) {
                                     placeLatDouble = Double.parseDouble(placeLat);
                                 }

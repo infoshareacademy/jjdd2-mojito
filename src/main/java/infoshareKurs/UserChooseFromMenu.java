@@ -35,7 +35,7 @@ public class UserChooseFromMenu {
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
-                    countryStations.countryStation(cityList);
+                    countryStations.countryStation();
                     logger.debug("wypisanie stacji w kraju");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
@@ -43,14 +43,14 @@ public class UserChooseFromMenu {
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
-                    cityStations.cityStation(cityList);
+                    cityStations.cityStation();
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
-                    userChooseRadius.Radius(cityList);
+                    userChooseRadius.Radius();
                     logger.debug("przekierowanie do submenu userchoose radius");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
