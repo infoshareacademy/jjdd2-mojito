@@ -26,7 +26,7 @@ public class UserChooseFromMenu {
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    NearestPlaceFinder nearestPlace = new NearestPlaceFinder(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
                     logger.debug("znalezienie najblizszej stacji od uzytkownika");
                     aftertask.aftertask(cityList);
@@ -35,7 +35,7 @@ public class UserChooseFromMenu {
                     break;
                 case "2":
                     CountryStations countryStations = new CountryStations();
-                    countryStations.countryStation(cityList);
+                    countryStations.countryStation();
                     logger.debug("wypisanie stacji w kraju");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
@@ -43,27 +43,29 @@ public class UserChooseFromMenu {
                     break;
                 case "3":
                     CityStations cityStations = new CityStations();
-                    cityStations.cityStation(cityList);
+                    cityStations.cityStation();
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();
-                    userChooseRadius.Radius(cityList);
+                    userChooseRadius.Radius();
                     logger.debug("przekierowanie do submenu userchoose radius");
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "5":
-                    StatCountry.getCountryStat(cityList);
+                    StatCountry statCountry=new StatCountry();
+                    statCountry.getCountryStat();
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "6":
-                    StatCountry.getCityStat(cityList);
+                    StatCountry statCountry2 =new StatCountry();
+                    statCountry2.getCityStat();
                     aftertask.aftertask(cityList);
                     logger.debug("wyswietlenie statystyk o państiwe");
                     break;

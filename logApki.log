@@ -1,3 +1,4 @@
+
 11:55:52.890 [main] INFO  log4j.xml - This is logger with file appender
 11:55:53.245 [main] INFO  log4j.xml - Parsowanie pliku xml
 11:55:53.248 [main] INFO  infoshareKurs.MenuText - wypisanie tekstu menu
@@ -2863,3 +2864,15 @@
 11:56:10.507 [main] INFO  infoshareKurs.UserChooseFromMenu - wypisanie stacji w kraju
 11:56:10.507 [main] INFO  infoshareKurs.UserInputReader - Zaimpletowanie skanera
 11:56:10.507 [main] INFO  infoshareKurs.UserInputReader - Użytkownik wpisal cos w konsole/strone
+2017-10-03 10:34:20,270 INFO l.xml [main] This is logger with file appender
+2017-10-03 10:34:20,677 INFO l.xml [main] Parsowanie pliku xml
+2017-10-03 10:34:38,662 INFO l.xml [main] This is logger with file appender
+2017-10-03 10:34:39,043 INFO l.xml [main] Parsowanie pliku xml
+2017-10-03 10:34:49,573 INFO l.xml [main] This is logger with file appender
+2017-10-03 10:34:49,868 INFO l.xml [main] Parsowanie pliku xml
+10:37:52.211 [main] INFO  log4j.xml - This is logger with file appender
+10:37:52.537 [main] INFO  log4j.xml - Parsowanie pliku xml
+2017-10-03 10:39:54,964 INFO l.xml [main] This is logger with file appender
+2017-10-03 10:39:55,282 INFO l.xml [main] Parsowanie pliku xml
+2017-10-03 10:39:59,668 INFO l.xml [main] This is logger with file appender
+2017-10-03 10:40:00,083 INFO l.xml [main] Parsowanie pliku xml

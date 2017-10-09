@@ -10,11 +10,21 @@ import java.util.List;
 
 public class UserChooseRadius {
     private final Logger logger = LogManager.getLogger(UserChooseRadius.class);
-    protected void Radius(List<City> cityList) {
+    protected void Radius() {
 
+        Configuration config = ConfigurationLoader.getConfiguration();
+
+        BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
+        logger.debug("Pasrowanie danych z pliku xml");
         AfterTask afterTask = new AfterTask();
         logger.debug("implementacja obiektu klasy afterTask");
 
+
+        try {
+            bikeParsing.parseData();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            logger.error("Blad pasrowania danych z pliku xml");
+        }
         UserInputReader scanner = new UserInputReader();
         logger.debug("Implementacja skanera");
         System.out.println("Prosze wybierz promień poszukiwań w km .");
@@ -41,11 +51,11 @@ public class UserChooseRadius {
                     GeoLocation geoLocation5 = new GeoLocation();
                     geoLocation5.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    PlaceFinder nearestPlace = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
                     nearestPlace.findPlace(geoLocation5, 5.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
-                    afterTask.aftertask(cityList);
+                    afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
@@ -53,11 +63,11 @@ public class UserChooseRadius {
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace10 = new NearestPlace(cityList);
+                    PlaceFinder nearestPlace10 = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
                     nearestPlace10.findPlace(geoLocation10, 10.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
-                    afterTask.aftertask(cityList);
+                    afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
@@ -65,18 +75,18 @@ public class UserChooseRadius {
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace15 = new NearestPlace(cityList);
+                    PlaceFinder nearestPlace15 = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
                     nearestPlace15.findPlace(geoLocation15, 15.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
-                    afterTask.aftertask(cityList);
+                    afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "4":
                     UserChooseFromMenu returnMenu = new UserChooseFromMenu();
                     logger.debug("Implementacja Menu");
-                    returnMenu.userChooseFromMenu(cityList);
+                    returnMenu.userChooseFromMenu(bikeParsing.getCityList());
                     afterTask.chooseAfterTask();
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");

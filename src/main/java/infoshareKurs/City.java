@@ -13,9 +13,13 @@ public class City {
 
     private String name;
 
+    public void setPlaceList(List<Place> placeList) {
+        this.placeList = placeList;
+    }
+
     private List<Place> placeList;
 
-    protected City(Double latitude, Double longitude, String name, String country) {
+    public City(Double latitude, Double longitude, String name, String country) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
@@ -39,15 +43,15 @@ public class City {
         return longitude;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public List<Place> getPlaceList() {
+    protected List<Place> getPlaceList() {
         return placeList;
     }
 
-    public String getCountryName() {
+    protected String getCountryName() {
         return countryName;
     }
 }
