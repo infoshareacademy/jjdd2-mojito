@@ -39,15 +39,15 @@ public class City {
         return longitude;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected List<Place> getPlaceList() {
+    public List<Place> getPlaceList() {
         return placeList;
     }
 
-    protected String getCountryName() {
+    public String getCountryName() {
         return countryName;
     }
 }
