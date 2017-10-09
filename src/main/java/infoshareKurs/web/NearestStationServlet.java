@@ -42,7 +42,11 @@ public class NearestStationServlet extends HttpServlet {
                 " crossorigin=\"anonymous\"></script>" +
                 "</head>" +
                 "<body class=\"bg-dark\">" +
-                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
+                "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                "    top: 0;\n" +
+                "    width: 100%;\n" +
+                "    border-bottom: 1px solid #666;" +
+                "    z-index: 1;\">\n" +
                 "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
                 " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\"" +
@@ -71,8 +75,7 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>" +
-                "<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>" +
@@ -128,12 +131,16 @@ public class NearestStationServlet extends HttpServlet {
                 "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js\"" +
                 " integrity=\"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb\" " +
                 "crossorigin=\"anonymous\"></script>\n" +
-                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\" " +
-                "integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\"" +
+                "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js\"" +
+                " integrity=\"sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn\"" +
                 " crossorigin=\"anonymous\"></script>" +
                 "</head>" +
                 "<body class=\"bg-dark\">" +
-                "<nav class=\"navbar navbar-dark bg-dark\">\n" +
+                "<nav class=\"navbar navbar-dark bg-dark\" style=\" position: fixed;\n" +
+                "    top: 0;\n" +
+                "    width: 100%;\n" +
+                "    border-bottom: 1px solid #666;" +
+                "    z-index: 1;\">\n" +
                 "  <span class=\"navbar-brand\"><b>Mohito Bike Project</b></span>\n" +
                 "  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\"" +
                 " data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\"" +
