@@ -79,9 +79,9 @@ public class NearestStationServlet extends HttpServlet {
                 "<form action=\"nearestStation\" method=\"post\">" +
                 "<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>" +
                 "<form action=\"nearestStation\" method=\"post\">" +
-                "<input type=\"text\"name=\"latitiudeUser\"/>" +
+                "<input type=\"number\"name=\"latitiudeUser\"/>" +
                 "<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>" +
-                "<input type=\"text\"name=\"longitudeUser\"/>" +
+                "<input type=\"number\"name=\"longitudeUser\"/>" +
                 "<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>" +
                 "</form>" +
                 "</body>" +
