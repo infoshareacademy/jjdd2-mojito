@@ -2,7 +2,7 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.GeoLocation;
-import infoshareKurs.NearestPlace;
+import infoshareKurs.NearestPlaceFinder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -70,8 +70,8 @@ public class FindPlaceServlet extends HttpServlet{
 
         }
 
-        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
-        writer.println(nearestPlace.findPlace(geoLocation ,distance));
+        NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
+        writer.println(nearestPlace.findNearestPlace(geoLocation));
 
     }
 }

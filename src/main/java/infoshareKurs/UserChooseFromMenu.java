@@ -26,7 +26,7 @@ public class UserChooseFromMenu {
                     GeoLocation geoLocation = new GeoLocation();
                     geoLocation.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    NearestPlace nearestPlace = new NearestPlace(cityList);
+                    NearestPlaceFinder nearestPlace = new NearestPlaceFinder(cityList);
                     nearestPlace.findNearestPlace(geoLocation);
                     logger.debug("znalezienie najblizszej stacji od uzytkownika");
                     aftertask.aftertask(cityList);
@@ -57,13 +57,15 @@ public class UserChooseFromMenu {
                             "po wykonanej czynnosci");
                     break;
                 case "5":
-                    StatCountry.getCountryStat();
+                    StatCountry statCountry=new StatCountry();
+                    statCountry.getCountryStat();
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
                     break;
                 case "6":
-                    StatCountry.getCityStat();
+                    StatCountry statCountry2 =new StatCountry();
+                    statCountry2.getCityStat();
                     aftertask.aftertask(cityList);
                     logger.debug("wyswietlenie statystyk o państiwe");
                     break;
