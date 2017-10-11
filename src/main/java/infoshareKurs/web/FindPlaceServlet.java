@@ -2,7 +2,8 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.GeoLocation;
-import infoshareKurs.NearestPlace;
+import infoshareKurs.Place;
+import infoshareKurs.PlaceFinder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -192,7 +193,7 @@ public class FindPlaceServlet extends HttpServlet {
                 "  <tbody>");
         List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
         if (placelist.size() == 0) {
-            writer.print("nie znalezionoooo");
+            writer.print("nie znaleziono");
         }
         writer.println("<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
                 "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
