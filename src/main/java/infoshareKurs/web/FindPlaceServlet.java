@@ -1,9 +1,6 @@
 package infoshareKurs.web;
 
-import infoshareKurs.BikeParsing;
-import infoshareKurs.GeoLocation;
-import infoshareKurs.NearestPlace;
-import infoshareKurs.Place;
+import infoshareKurs.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -126,7 +123,7 @@ public class FindPlaceServlet extends HttpServlet {
 
         }
 
-        NearestPlace nearestPlace = new NearestPlace(bikeParsing.getCityList());
+        PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
         writer.println("<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
@@ -191,7 +188,7 @@ public class FindPlaceServlet extends HttpServlet {
                 "    </tr>\n" +
                 "  </thead>\n" +
                 "  <tbody>");
-        List<Place> placelist = nearestPlace.findPlace(geoLocation, distance);
+        List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
         if (placelist.size() == 0) {
             writer.print("nie znalezionoooo");
         }
