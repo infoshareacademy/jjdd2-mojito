@@ -1,6 +1,10 @@
 package infoshareKurs;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class GeoLocation {
+    private final Logger logger = LogManager.getLogger(GeoLocation.class);
 
     protected double latitiudeUser;
 
@@ -10,12 +14,12 @@ public class GeoLocation {
         return latitiudeUser;
     }
 
-    public double getLongitudeUser() {
-        return longitudeUser;
-    }
-
     public void setLatitiudeUser(double latitiudeUser) {
         this.latitiudeUser = latitiudeUser;
+    }
+
+    public double getLongitudeUser() {
+        return longitudeUser;
     }
 
     public void setLongitudeUser(double longitudeUser) {
@@ -59,11 +63,7 @@ public class GeoLocation {
                 System.out.println("Niepoprawny format, podaj długość geograficzną ponownie");
 
             }
-
         }
-
         return wspolrzedne;
-
-
     }
 }

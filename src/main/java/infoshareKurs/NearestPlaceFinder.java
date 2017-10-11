@@ -1,22 +1,23 @@
 package infoshareKurs;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class NearestPlace {
-    private final Logger logger = LogManager.getLogger(NearestPlace.class);
+public class NearestPlaceFinder {
+    private final Logger logger = LogManager.getLogger(NearestPlaceFinder.class);
 
     List<City> cityList;
 
-    public NearestPlace(List<City> city) {
+    public NearestPlaceFinder(List<City> city) {
         this.cityList = city;
     }
 
     private String name;
 
     public String findNearestPlace(GeoLocation geoLocation) {
-        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
+        logger.debug("znalezienie najbliższej stacji od miejsca użytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
 
@@ -28,6 +29,11 @@ public class NearestPlace {
                 }
             }
         }
-        return "Najbliższa stacja rowerowa znajduje się " + lowestDistance + " km od Ciebie. Stacja nazywa się " + this.name;
+        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s. "
+                , lowestDistance, this.name);
+
+        return this.name;
     }
+
+
 }

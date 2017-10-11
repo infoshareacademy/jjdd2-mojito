@@ -1,6 +1,8 @@
 package infoshareKurs.web;
 
-import infoshareKurs.*;
+import infoshareKurs.BikeParsing;
+import infoshareKurs.GeoLocation;
+import infoshareKurs.NearestPlace;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;

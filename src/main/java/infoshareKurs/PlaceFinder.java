@@ -1,9 +1,11 @@
 package infoshareKurs;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PlaceFinder {
@@ -15,23 +17,22 @@ public class PlaceFinder {
     public PlaceFinder(List<City> city) {
         this.cityList = city;
     }
-    public List<Place> findPlace(GeoLocation geoLocation, double distance) {
-        logger.debug("znalezienie stacji w danym promieniu od uzytkownika");
+
+    private String name;
+
+    public String findNearestPlace(GeoLocation geoLocation) {
+        logger.debug("znalezienie najblizszej stacji od miejsca uzytkownika");
+        double lowestDistance = Double.MAX_VALUE;
         DistanceMath distanceMath = new DistanceMath();
-        List<Place> placelist = new ArrayList<>();
+
         for (City city : cityList) {
             for (Place place : city.getPlaceList()) {
-                double placedistance = distanceMath.countDistance(place, geoLocation);
-                if (placedistance <= distance) {
-                    placelist.add(place);
+                if (lowestDistance > distanceMath.countDistance(place, geoLocation)) {
+                    lowestDistance = distanceMath.countDistance(place, geoLocation);
+                    this.name = place.getName();
                 }
             }
         }
-        if (placelist.size() > 0) {
-            String b ="";
-            for (Place place : placelist) {
-                b = b + "\n" + place.getName();
-            }
-        }return placelist;
+        return "Najbliższa stacja rowerowa znajduje się " + lowestDistance + " km od Ciebie. Stacja nazywa się " + this.name;
     }
 }
