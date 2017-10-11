@@ -51,9 +51,9 @@ public class UserChooseRadius {
                     GeoLocation geoLocation5 = new GeoLocation();
                     geoLocation5.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    PlaceFinder nearestPlace = new PlaceFinder(bikeParsing.getCityList());
+                    PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
-                    nearestPlace.findPlace(geoLocation5, 5.0);
+                    placeFinder.findPlace(geoLocation5, 5.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
                     afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
@@ -63,9 +63,9 @@ public class UserChooseRadius {
                     GeoLocation geoLocation10 = new GeoLocation();
                     geoLocation10.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    PlaceFinder nearestPlace10 = new PlaceFinder(bikeParsing.getCityList());
+                    PlaceFinder placeFinder10 = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
-                    nearestPlace10.findPlace(geoLocation10, 10.0);
+                    placeFinder10.findPlace(geoLocation10, 10.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
                     afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
@@ -75,9 +75,9 @@ public class UserChooseRadius {
                     GeoLocation geoLocation15 = new GeoLocation();
                     geoLocation15.geoLocation();
                     logger.debug("Stworzenie geo lokacji uzytkownika");
-                    PlaceFinder nearestPlace15 = new PlaceFinder(bikeParsing.getCityList());
+                    PlaceFinder placeFinder15 = new PlaceFinder(bikeParsing.getCityList());
                     logger.debug("Zaimplementowanie klasy szukajacej stacji");
-                    nearestPlace15.findPlace(geoLocation15, 15.0);
+                    placeFinder15.findPlace(geoLocation15, 15.0);
                     logger.debug("Wiadomosc z danymi o najlizszej stacji badz jej braku");
                     afterTask.aftertask(bikeParsing.getCityList());
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
