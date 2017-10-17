@@ -1,14 +1,17 @@
 version: "3.3"
 services:
   app:
+    container_name: "webapp"
     build: /home/mkoniuszy/IdeaProjects/jjdd2-mojito
 
     ports:
       - 8801:8080
+      - 9900:9990
     depends_on:
       - db
   db:
-    image: mysql:8
+    container_name: "db"
+    image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=Data
@@ -16,3 +19,6 @@ services:
       - MYSQL_PASSWORD=admin
     ports:
       - 3306:3306
+networks:
+  Mohito:
+    driver: bridge
