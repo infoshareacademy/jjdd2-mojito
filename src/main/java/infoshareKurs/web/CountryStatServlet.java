@@ -3,7 +3,7 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
@@ -30,7 +30,7 @@ public class CountryStatServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(CountryStatServlet.class);
+        final org.apache.log4j.Logger logger = LogManager.getLogger(CountryStatServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
         try {

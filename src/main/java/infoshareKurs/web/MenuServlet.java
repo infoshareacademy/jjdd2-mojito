@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/Menu")
+@WebServlet("/portal/Menu")
 public class MenuServlet extends HttpServlet {
 
     @Override

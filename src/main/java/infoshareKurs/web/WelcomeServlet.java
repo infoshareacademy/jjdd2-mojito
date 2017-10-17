@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
 
-@WebServlet("/Welcome")
+@WebServlet("/portal/Welcome")
 @MultipartConfig
 public class WelcomeServlet extends HttpServlet {
 
