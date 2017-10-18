@@ -4,6 +4,7 @@ import infoshareKurs.BikeParsing;
 import infoshareKurs.GeoLocation;
 import infoshareKurs.Place;
 import infoshareKurs.PlaceFinder;
+import infoshareKurs.database.beans.CountriesDAOBeanLocal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
