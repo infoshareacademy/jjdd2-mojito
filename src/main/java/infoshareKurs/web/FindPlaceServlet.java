@@ -1,13 +1,11 @@
 package infoshareKurs.web;
 
-import infoshareKurs.BikeParsing;
-import infoshareKurs.GeoLocation;
-import infoshareKurs.Place;
-import infoshareKurs.PlaceFinder;
+import infoshareKurs.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +18,9 @@ import java.util.List;
 
 @WebServlet("/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet {
+
+    @Inject
+    private Statistics statistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -200,6 +201,9 @@ public class FindPlaceServlet extends HttpServlet {
 
         for (Place place : placelist) {
             writer.println("<tr>" + "<td>" + place.getName() + "</td>" + "</tr>");
+
+            // stat
+            statistics.add(place.getCity());
         }
         writer.println("</tbody>" + "</table>" + "</body>" + "</html>");
     }
