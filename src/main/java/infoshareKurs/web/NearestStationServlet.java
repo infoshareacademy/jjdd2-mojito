@@ -75,7 +75,8 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>" +                "<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +
+                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>" +
@@ -99,10 +100,13 @@ public class NearestStationServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
         GeoLocation geoLocation = new GeoLocation();
+        if(req.getParameter("latitiudeUser") != null || req.getParameter("latitiudeUser") != null){
+            geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
-        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
-
-        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+            geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+        }else{
+            writer.println("podaj właściwe dane");
+        }
 
 
         final Logger logger = LogManager.getLogger(NearestStationServlet.class);
