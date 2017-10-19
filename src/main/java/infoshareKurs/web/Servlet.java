@@ -17,9 +17,12 @@ public class Servlet extends HttpServlet {
     CountriesDAOBeanLocal countriesDAOBeanLocal;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CountriesEntity countriesEntity=new CountriesEntity();
-countriesEntity.setName("DUPA");
-countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
+        CountriesEntity countriesEntity = new CountriesEntity();
+        countriesEntity.setName("DUPfaA");
+        countriesEntity.setNumber(1);
+        countriesEntity.setId(2);
+        countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
