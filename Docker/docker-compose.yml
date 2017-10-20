@@ -2,7 +2,7 @@ version: "3.3"
 services:
   app:
     container_name: "webapp"
-    build: /home/mkoniuszy/IdeaProjects/jjdd2-mojito
+    build: ../
 
     ports:
       - 8801:8080

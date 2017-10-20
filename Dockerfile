@@ -10,3 +10,4 @@ EXPOSE 8801
 EXPOSE 9900
 
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+
