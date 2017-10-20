@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
 
-@WebServlet("/Welcome")
+@WebServlet("/portal/bikeSearch")
 @MultipartConfig
-public class WelcomeServlet extends HttpServlet {
+public class BikeSearchServlet extends HttpServlet {
 
 
     @Override
@@ -39,7 +39,14 @@ public class WelcomeServlet extends HttpServlet {
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white \">Witaj w wyszukiwarce stacji rowerowych. </h1>" +
-                "<a href=\"portal/bikeSearch\"> Zaloguj się proszę</a>"  +
+                "<h2 class=\"text-white \">Wczytaj plik Xml do bazy danych. </h2>" +
+                "<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">" +
+                "<div class=\"row justify-content-md-center\"> " +
+                "<input type=\"file\" class=\"col-3 form-control\" name=\"userFile\" style=\"\n" +
+                "text-align: center !important;\n" +
+                "\"><button class=\"btn btn-secondary btn-lg\" type=\"submit\">Załaduj plik</button></div>" +
+
+                "</form>" +
                 "</div>" +
                 "</div>" +
                 "</body>" +
@@ -49,7 +56,7 @@ public class WelcomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        final Logger logger = LogManager.getLogger(WelcomeServlet.class);
+        final Logger logger = LogManager.getLogger(BikeSearchServlet.class);
 
         resp.setContentType("text/html;charset=UTF-8");
 
