@@ -13,6 +13,7 @@
         <class>infoshareKurs.database.entities.CitiesEntity</class>
         <class>infoshareKurs.database.entities.CountriesEntity</class>
 
+
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.show_sql" value="true"/>
@@ -22,7 +23,9 @@
             <property name="javax.persistence.jdbc.password" value="Infoshare12#$" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jdbc:mysql://localhost:3306/STATISTICS?useSSL=false" />
-            <!--??-->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/STATISTICS"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+
         </properties>
     </persistence-unit>
 </persistence>

@@ -3,6 +3,7 @@ package infoshareKurs.database.beans;
 import infoshareKurs.database.entities.CountriesEntity;
 
 import javax.ejb.Local;
+import java.util.List;
 
 
 @Local
@@ -12,5 +13,6 @@ public interface CountriesDAOBeanLocal {
     void updateCountriesEntity(CountriesEntity countriesEntity);
 
     void deleteCountriesEntity(Integer id);
+
 
 }
