@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/nearestStation")
+@WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
 
@@ -75,7 +75,8 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
-                "</nav>" +                "<div style=\"margin-top:15%;\">\n" +
+                "</nav>" +
+                "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white\"><b>Podaj swoje położenie geograficzne</b> </h1>" +
@@ -99,10 +100,13 @@ public class NearestStationServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
         GeoLocation geoLocation = new GeoLocation();
+        if(req.getParameter("latitiudeUser") != null || req.getParameter("longitudeUser") != null){
+            geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
-        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
-
-        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+            geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+        }else{
+            writer.println("podaj właściwe dane");
+        }
 
 
         final Logger logger = LogManager.getLogger(NearestStationServlet.class);
@@ -117,7 +121,12 @@ public class NearestStationServlet extends HttpServlet {
         NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
         PlaceCordi placeCordi = new PlaceCordi();
-
+        String toPlace = "";
+        for (City city : bikeParsing.getCityList()) {
+            for (Place place : city.getPlaceList()) {
+                toPlace =""+ place.getLatitiudePlace()+","+place.getLatitiudePlace();
+            }
+        }
         writer.println("<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
@@ -176,6 +185,6 @@ public class NearestStationServlet extends HttpServlet {
                 "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)
                 + "</b></h1>" + "</span>" +
                 "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
-                "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
+                "src=\"https://www.google.com/maps/embed/v1/directions?origin="+req.getParameter("latitiudeUser") +","+ req.getParameter("longitudeUser")+"&destination="+toPlace+"&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
     }
 }

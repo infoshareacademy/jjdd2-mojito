@@ -16,7 +16,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/city_stations")
+@WebServlet("/portal/city_stations")
 public class CityStationsServlet extends HttpServlet {
 
     @Override

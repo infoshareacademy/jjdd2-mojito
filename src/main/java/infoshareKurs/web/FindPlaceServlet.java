@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/FindPlaceServlet")
+@WebServlet("/portal/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet {
 
     @Override

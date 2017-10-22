@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-@WebServlet("/countryStat")
+@WebServlet("/portal/countryStat")
 public class CountryStatServlet extends HttpServlet {
 
     @Override

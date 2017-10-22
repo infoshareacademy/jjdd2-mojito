@@ -40,7 +40,7 @@ public class BikeSearchServlet extends HttpServlet {
                 "      <div class=\"text-center\">" +
                 "<h1 class=\"text-white \">Witaj w wyszukiwarce stacji rowerowych. </h1>" +
                 "<h2 class=\"text-white \">Wczytaj plik Xml do bazy danych. </h2>" +
-                "<form action=\"Welcome\" method=\"post\" enctype=\"multipart/form-data\">" +
+                "<form action=\"bikeSearch\" method=\"post\" enctype=\"multipart/form-data\">" +
                 "<div class=\"row justify-content-md-center\"> " +
                 "<input type=\"file\" class=\"col-3 form-control\" name=\"userFile\" style=\"\n" +
                 "text-align: center !important;\n" +
