@@ -93,6 +93,8 @@ public class CityStatServlet extends HttpServlet {
                     "      <li class=\"nav-item\">\n" +
                     "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                     "      </li>\n" +
+                    "       <li class=\"nav-item\">\n" +
+                    "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +

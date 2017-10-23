@@ -74,6 +74,8 @@ public class CityStationsServlet extends HttpServlet {
                 "      </li>\n" +
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
+                "       <li class=\"nav-item\">\n" +
+                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
