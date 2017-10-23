@@ -5,6 +5,8 @@ import infoshareKurs.database.entities.CitiesEntity;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 @Stateless
 public class CitiesDAOBean implements CitiesDAOBeanLocal {
@@ -32,5 +34,9 @@ public class CitiesDAOBean implements CitiesDAOBeanLocal {
         }
     }
 
-
+    @Override
+    public List<CitiesEntity> getAll() {
+        Query query = em.createQuery("SELECT e FROM CitiesEntity e");
+        return query.getResultList();
+    }
 }

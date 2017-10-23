@@ -6,6 +6,7 @@ import infoshareKurs.database.entities.CountriesEntity;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @WebServlet("/baza")
 public class Servlet extends HttpServlet {
+    @PersistenceContext(name = "statistics")
     EntityManager entityManager;
     @Inject
     CountriesDAOBeanLocal countriesDAOBeanLocal;
@@ -34,7 +36,14 @@ public class Servlet extends HttpServlet {
         countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
 
 // lista ze statystykami pobranymi z bazy mysql
-        List<CountriesEntity> countriesEntities =entityManager.createNamedQuery("infoshareKurs.database.entities.CountriesEntity.dsc",CountriesEntity.class).getResultList();
+//        List<CountriesEntity> countriesEntities =entityManager.createNamedQuery("infoshareKurs.database.entities.CountriesEntity.dsc",CountriesEntity.class).getResultList();
+//
+//        for (CountriesEntity c:countriesEntities
+//             ) {writer.println(c.getName());
+//
+//        }
+
+List<CountriesEntity> countriesEntities= countriesDAOBeanLocal.getAll();
 
         for (CountriesEntity c:countriesEntities
              ) {writer.println(c.getName());
