@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/Menu")
+@WebServlet("/portal/Menu")
 public class MenuServlet extends HttpServlet {
 
     @Override
@@ -60,6 +60,8 @@ public class MenuServlet extends HttpServlet {
                 "5.Statystyki ilości stacji rowerowych w danym państwie.</a>\n" +
                 "  <a href=\"cityStat\" class=\"list-group-item list-group-item-action\">" +
                 "6.Statystyki ilości stacji rowerowych w danym mieście</a>\n" +
+                "  <a href=\"Statistics\" class=\"list-group-item list-group-item-action\">" +
+                "7.Najczęściej wyszukiwane miasta.</a>\n" +
                 "</div>" +
                 "</div>" +
                 "</div>" +

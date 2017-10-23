@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/country_stations")
+@WebServlet("/portal/country_stations")
 public class CountryStationsServlet extends HttpServlet {
 
     @Override
@@ -68,11 +68,14 @@ public class CountryStationsServlet extends HttpServlet {
                 "        <a class=\"nav-link\" href=\"FindPlaceServlet\">wyszukanie stacji w promieniu</a>\n" +
                 "      </li>\n" +
                 "      <li class=\"nav-item\">\n" +
-                "        <a class=\"nav-link\" href=\"countryStat\">statystyki panst</a>\n" +
+                "        <a class=\"nav-link\" href=\"countryStat\">statystyki panstw</a>\n" +
                 "      </li>\n" +
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                 "      </li>\n" +
+                "       <li class=\"nav-item\">\n" +
+                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
+                "     </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
@@ -162,7 +165,7 @@ public class CountryStationsServlet extends HttpServlet {
                     "      </li>\n" +
                     "      <li class=\"nav-item\">\n" +
                     "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
-                    "      </li>\n" +
+                    "       </li>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +

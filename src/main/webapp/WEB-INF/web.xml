@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="false">
+
+
+    <context-param>
+        <param-name>com.auth0.domain</param-name>
+        <param-value>tzmitrowicz.auth0.com</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.auth0.clientId</param-name>
+        <param-value>4vlLMOG0T_I-vBpIudZoA2p79m3KaTpo</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.auth0.clientSecret</param-name>
+        <param-value>PVF9deheUE4jfQO-OGG90ryHzDUweeYg_jQUz3xJsdsN869Sc4at2up5LCNKcNhp</param-value>
+    </context-param>
+</web-app>
