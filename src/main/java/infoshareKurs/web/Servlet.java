@@ -43,10 +43,11 @@ public class Servlet extends HttpServlet {
 //
 //        }
 
-List<CountriesEntity> countriesEntities= countriesDAOBeanLocal.getAll();
+List<String> countriesEntities= countriesDAOBeanLocal.getAll();
 
-        for (CountriesEntity c:countriesEntities
-             ) {writer.println(c.getName());
+        for (String c:countriesEntities) {
+            writer.println(c );
+
 
         }
 

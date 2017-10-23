@@ -14,7 +14,7 @@ public interface CountriesDAOBeanLocal {
     void updateCountriesEntity(CountriesEntity countriesEntity);
 
     void deleteCountriesEntity(Integer id);
-    List<CountriesEntity> getAll();
+    List<String> getAll();
 
 
 }

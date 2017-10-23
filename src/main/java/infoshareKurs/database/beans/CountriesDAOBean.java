@@ -9,6 +9,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -39,9 +40,16 @@ public class CountriesDAOBean implements CountriesDAOBeanLocal {
 
 
     @Override
-    public List<CountriesEntity> getAll() {
-        Query query = em.createQuery("SELECT C FROM CountriesEntity c");
-        return query.getResultList();
+    public List<String> getAll() {
+        List<String> result = new ArrayList<>();
+        Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
+        List<Object[]> queryResult = query.getResultList();
+        for (Object[] obj : queryResult) {
+            result.add((String) obj[0]);
+            result.add(String.valueOf(obj[1]));
+
+        }
+        return result;
     }
 
 
