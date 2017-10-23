@@ -5,6 +5,8 @@ public class Place {
 
     private String name;
 
+    private String city;
+
     private GeoLocation geoLocation;
 
     public Place(String name, double latitiudePlace, double longitudePlace) {
@@ -12,6 +14,14 @@ public class Place {
         this.name = name;
         this.latitiudePlace = latitiudePlace;
         this.longitudePlace = longitudePlace;
+    }
+
+    public Place(String name, double latitiudePlace, double longitudePlace, String city) {
+
+        this.name = name;
+        this.latitiudePlace = latitiudePlace;
+        this.longitudePlace = longitudePlace;
+        this.city = city;
     }
 
     public String getName() {
@@ -29,4 +39,9 @@ public class Place {
     private double latitiudePlace;
 
     private double longitudePlace;
+
+    public String getCity() {
+        return city;
+    }
 }
+

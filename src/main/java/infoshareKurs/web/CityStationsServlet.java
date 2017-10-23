@@ -197,7 +197,7 @@ public class CityStationsServlet extends HttpServlet {
                 }
             }
             writer.println("<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
-                    "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
+                    "src=\"https://www.google.com/maps/embed/v1/search?q=47.5951518,-102.3316393&q=12.12,33.3&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
 
             writer.println("</tbody>" +
                     "</table>" +
