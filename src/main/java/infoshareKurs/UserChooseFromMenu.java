@@ -47,6 +47,7 @@ public class UserChooseFromMenu {
                     aftertask.aftertask(cityList);
                     logger.debug("Implementacja klasy aftertask zajmujaca sie obsluga uzytkownika" +
                             "po wykonanej czynnosci");
+
                     break;
                 case "4":
                     UserChooseRadius userChooseRadius = new UserChooseRadius();

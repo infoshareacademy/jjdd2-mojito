@@ -3,7 +3,7 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-@WebServlet("/countryStat")
+@WebServlet("/portal/countryStat")
 public class CountryStatServlet extends HttpServlet {
 
     @Override
@@ -30,7 +30,7 @@ public class CountryStatServlet extends HttpServlet {
 
         PrintWriter writer = resp.getWriter();
 
-        final Logger logger = LogManager.getLogger(CountryStatServlet.class);
+        final org.apache.log4j.Logger logger = LogManager.getLogger(CountryStatServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
         try {
@@ -94,6 +94,8 @@ public class CountryStatServlet extends HttpServlet {
                     "      <li class=\"nav-item\">\n" +
                     "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                     "      </li>\n" +
+                    "       <li class=\"nav-item\">\n" +
+                    "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +
