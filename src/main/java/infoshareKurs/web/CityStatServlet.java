@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.Comparator;
 
-@WebServlet("/cityStat")
+@WebServlet("/portal/cityStat")
 public class CityStatServlet extends HttpServlet {
 
     @Override
@@ -88,11 +88,13 @@ public class CityStatServlet extends HttpServlet {
                     "        <a class=\"nav-link\" href=\"FindPlaceServlet\">wyszukanie stacji w promieniu</a>\n" +
                     "      </li>\n" +
                     "      <li class=\"nav-item\">\n" +
-                    "        <a class=\"nav-link\" href=\"countryStat\">statystyki panst</a>\n" +
+                    "        <a class=\"nav-link\" href=\"countryStat\">statystyki panstw</a>\n" +
                     "      </li>\n" +
                     "      <li class=\"nav-item\">\n" +
                     "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                     "      </li>\n" +
+                    "       <li class=\"nav-item\">\n" +
+                    "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
                     "    </ul>\n" +
                     "  </div>\n" +
                     "</nav>" +
