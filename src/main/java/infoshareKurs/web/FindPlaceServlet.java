@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/FindPlaceServlet")
+@WebServlet("/portal/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet {
 
     @Inject
@@ -79,6 +79,9 @@ public class FindPlaceServlet extends HttpServlet {
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                 "      </li>\n" +
+                "       <li class=\"nav-item\">\n" +
+                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
+                "     </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +

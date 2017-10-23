@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/nearestStation")
+@WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
 
@@ -72,6 +72,9 @@ public class NearestStationServlet extends HttpServlet {
                 "      </li>\n" +
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
+                "      </li>\n" +
+                "       <li class=\"nav-item\">\n" +
+                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
                 "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
