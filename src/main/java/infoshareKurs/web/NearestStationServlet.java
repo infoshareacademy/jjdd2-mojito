@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/nearestStation")
+@WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
 
