@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/portal/nearestStation")
+@WebServlet("/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
 
@@ -73,9 +73,6 @@ public class NearestStationServlet extends HttpServlet {
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                 "      </li>\n" +
-                "       <li class=\"nav-item\">\n" +
-                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
-                "      </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
@@ -86,9 +83,9 @@ public class NearestStationServlet extends HttpServlet {
                 "<form action=\"nearestStation\" method=\"post\">" +
                 "<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>" +
                 "<form action=\"nearestStation\" method=\"post\">" +
-                "<input type=\"number\"name=\"latitiudeUser\"/>" +
+                "<input type=\"text\"name=\"latitiudeUser\"/>" +
                 "<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>" +
-                "<input type=\"number\"name=\"longitudeUser\"/>" +
+                "<input type=\"text\"name=\"longitudeUser\"/>" +
                 "<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>" +
                 "</form>" +
                 "</body>" +
@@ -124,11 +121,13 @@ public class NearestStationServlet extends HttpServlet {
         NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
         String toPlace = "";
-        for (City city : bikeParsing.getCityList()) {
-            for (Place place : city.getPlaceList()) {
-                    toPlace =""+ place.getLatitiudePlace()+","+place.getLatitiudePlace();
-                }
-            }
+        City city = bikeParsing.getCityList().get(0);
+        Place place = city.getPlaceList().get(0);
+        toPlace = new StringBuilder()
+                .append(String.valueOf(place.getLatitiudePlace()))
+                .append(",")
+                .append(String.valueOf(place.getLongitudePlace())).toString();
+
         writer.println("<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
