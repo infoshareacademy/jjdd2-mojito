@@ -38,29 +38,14 @@ public class CountriesDAOBean implements CountriesDAOBeanLocal {
         }
     }
 
-
     @Override
-    public List<String> getAll() {
+    public List<String> countryQueryList() {
         List<String> result = new ArrayList<>();
         Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
         List<Object[]> queryResult = query.getResultList();
         for (Object[] obj : queryResult) {
-            result.add((String) obj[0]);
-            result.add(String.valueOf(obj[1]));
-
+            result.add(((String) obj[0]) + String.valueOf(obj[1]));
         }
         return result;
     }
-
-
-    //"SELECT C FROM CountriesEntity c"//
-//"SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"
-
-
-   // List<CountriesEntity> countriesEntities =entityManager.createNamedQuery("infoshareKurs.database.entities.CountriesEntity.dsc",CountriesEntity.class).getResultList();
-//
-//        for (CountriesEntity c:countriesEntities
-//             ) {writer.println(c.getName());
-//
-//        }
 }

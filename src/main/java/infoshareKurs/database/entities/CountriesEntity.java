@@ -2,12 +2,6 @@ package infoshareKurs.database.entities;
 
 import javax.persistence.*;
 
-//@NamedQuery(query = "SELECT name ,SUM(number) FROM CountriesEntity GROUP BY name ORDER BY (sum(number)) desc ",
-//        name = "infoshareKurs.database.entities.CountriesEntity.dsc")
-@NamedQuery(query = "SELECT name ,SUM(number) FROM CountriesEntity GROUP BY name ORDER BY (sum(number)) desc ",
-        name = "infoshareKurs.database.entities.CountriesEntity.dsc")
-
-
 @Entity
 @Table(name = "panstwa", schema = "STATISTICS", catalog = "")
 public class CountriesEntity {

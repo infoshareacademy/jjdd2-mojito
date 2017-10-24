@@ -13,7 +13,7 @@ public interface CitiesDAOBeanLocal {
 
     void deleteCitiesEntity(Integer id);
 
-    List<CitiesEntity> getAll();
+    List<String> cityQueryList();
 
 
 }

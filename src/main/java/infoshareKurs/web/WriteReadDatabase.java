@@ -18,44 +18,32 @@ import java.util.List;
 
 
 @WebServlet("/baza")
-public class Servlet extends HttpServlet {
+public class WriteReadDatabase extends HttpServlet {
     @PersistenceContext(name = "statistics")
     EntityManager entityManager;
     @Inject
     CountriesDAOBeanLocal countriesDAOBeanLocal;
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer=response.getWriter();
+        PrintWriter writer = response.getWriter();
 
         CountriesEntity countriesEntity = new CountriesEntity();
 
         // wrzucanie statystyk do danej tabeli
-        countriesEntity.setName("Wrzucenie do bazy danych34 ");
+        //Nazwa państwa
+        countriesEntity.setName("Name");
+        //ilość wyszykiwań
         countriesEntity.setNumber(1);
         countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
 
-// lista ze statystykami pobranymi z bazy mysql
-//        List<CountriesEntity> countriesEntities =entityManager.createNamedQuery("infoshareKurs.database.entities.CountriesEntity.dsc",CountriesEntity.class).getResultList();
-//
-//        for (CountriesEntity c:countriesEntities
-//             ) {writer.println(c.getName());
-//
-//        }
 
-List<String> countriesEntities= countriesDAOBeanLocal.getAll();
+        List<String> countriesEntities = countriesDAOBeanLocal.countryQueryList();
 
-        for (String c:countriesEntities) {
-            writer.println(c );
-
-
+        for (String c : countriesEntities) {
+            writer.println(c);
         }
-
-
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
     }
 }
