@@ -35,10 +35,10 @@ public class CountriesDAOBean implements CountriesDAOBeanLocal {
             em.remove(countriesEntity);
         }
     }
-
+//"SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"
     @Override
     public List<CountriesQueryListValues> countryQueryList() {
-        Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
+        Query query = em.createNamedQuery("countriesQueryDsc");
         List<Object[]> rows = query.getResultList();
         List<CountriesQueryListValues> result = new ArrayList<>(rows.size());
         for (Object[] row : rows) {

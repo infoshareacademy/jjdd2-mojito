@@ -37,7 +37,7 @@ public class CitiesDAOBean implements CitiesDAOBeanLocal {
 
     @Override
     public List<CitiesQueryListValues> cityQueryList() {
-        Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CitiesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
+        Query query = em.createNamedQuery("citiesQueryDsc");
         List<Object[]> rows = query.getResultList();
         List<CitiesQueryListValues> result = new ArrayList<>(rows.size());
         for (Object[] row : rows) {
