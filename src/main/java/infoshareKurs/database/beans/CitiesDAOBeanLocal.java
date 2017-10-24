@@ -1,5 +1,6 @@
 package infoshareKurs.database.beans;
 
+import infoshareKurs.database.CitiesQueryListValues;
 import infoshareKurs.database.entities.CitiesEntity;
 
 import javax.ejb.Local;
@@ -13,5 +14,5 @@ public interface CitiesDAOBeanLocal {
 
     void deleteCitiesEntity(Integer id);
 
-    List<String> cityQueryList();
+    List<CitiesQueryListValues> cityQueryList();
 }

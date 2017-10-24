@@ -1,5 +1,6 @@
 package infoshareKurs.web;
 
+import infoshareKurs.database.CountriesQueryListValues;
 import infoshareKurs.database.beans.CountriesDAOBeanLocal;
 import infoshareKurs.database.entities.CountriesEntity;
 
@@ -40,10 +41,10 @@ public class WriteReadDatabase extends HttpServlet {
         countriesEntity.setNumber(1);
         countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
 
-        List<String> countriesEntities = countriesDAOBeanLocal.countryQueryList();
+        List<CountriesQueryListValues> countriesEntities = countriesDAOBeanLocal.countryQueryList();
 
-        for (String c : countriesEntities) {
-            writer.println(c);
+        for (CountriesQueryListValues c : countriesEntities) {
+            writer.println(c.getName() + c.getNumber());
         }
     }
 

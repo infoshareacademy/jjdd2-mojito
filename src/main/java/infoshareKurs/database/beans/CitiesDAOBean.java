@@ -1,5 +1,5 @@
 package infoshareKurs.database.beans;
-
+import infoshareKurs.database.CitiesQueryListValues;
 import infoshareKurs.database.entities.CitiesEntity;
 
 import javax.ejb.Stateless;
@@ -36,12 +36,15 @@ public class CitiesDAOBean implements CitiesDAOBeanLocal {
     }
 
     @Override
-    public List<String> cityQueryList() {
-        List<String> result = new ArrayList<>();
+    public List<CitiesQueryListValues> cityQueryList() {
         Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CitiesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
-        List<Object[]> queryResult = query.getResultList();
-        for (Object[] obj : queryResult) {
-            result.add((obj[0]) + String.valueOf(obj[1]));
+        List<Object[]> rows = query.getResultList();
+        List<CitiesQueryListValues> result = new ArrayList<>(rows.size());
+        for (Object[] row : rows) {
+            CitiesQueryListValues citiesQueryListValues =new CitiesQueryListValues();
+            citiesQueryListValues.setName((row[0].toString()));
+            citiesQueryListValues.setNumber(row[1].toString());
+            result.add(citiesQueryListValues);
         }
         return result;
     }

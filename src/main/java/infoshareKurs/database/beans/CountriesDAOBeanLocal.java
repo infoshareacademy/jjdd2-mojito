@@ -1,5 +1,6 @@
 package infoshareKurs.database.beans;
 
+import infoshareKurs.database.CountriesQueryListValues;
 import infoshareKurs.database.entities.CountriesEntity;
 
 import javax.ejb.Local;
@@ -13,5 +14,5 @@ public interface CountriesDAOBeanLocal {
 
     void deleteCountriesEntity(Integer id);
 
-    List<String> countryQueryList();
+    List<CountriesQueryListValues> countryQueryList();
 }

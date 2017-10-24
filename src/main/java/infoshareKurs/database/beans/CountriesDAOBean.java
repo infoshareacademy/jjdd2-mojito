@@ -1,5 +1,6 @@
 package infoshareKurs.database.beans;
 
+import infoshareKurs.database.CountriesQueryListValues;
 import infoshareKurs.database.entities.CountriesEntity;
 
 import javax.ejb.Stateless;
@@ -36,12 +37,15 @@ public class CountriesDAOBean implements CountriesDAOBeanLocal {
     }
 
     @Override
-    public List<String> countryQueryList() {
-        List<String> result = new ArrayList<>();
+    public List<CountriesQueryListValues> countryQueryList() {
         Query query = em.createQuery("SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc");
-        List<Object[]> queryResult = query.getResultList();
-        for (Object[] obj : queryResult) {
-            result.add(((String) obj[0]) + String.valueOf(obj[1]));
+        List<Object[]> rows = query.getResultList();
+        List<CountriesQueryListValues> result = new ArrayList<>(rows.size());
+        for (Object[] row : rows) {
+            CountriesQueryListValues countriesQueryListValues =new CountriesQueryListValues();
+            countriesQueryListValues.setName((row[0].toString()));
+            countriesQueryListValues.setNumber(row[1].toString());
+            result.add(countriesQueryListValues);
         }
         return result;
     }
