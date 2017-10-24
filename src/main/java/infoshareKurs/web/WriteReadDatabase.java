@@ -30,12 +30,15 @@ public class WriteReadDatabase extends HttpServlet {
         CountriesEntity countriesEntity = new CountriesEntity();
 
         // wrzucanie statystyk do danej tabeli
+
         //Nazwa państwa
+
         countriesEntity.setName("Name");
+
         //ilość wyszykiwań
+
         countriesEntity.setNumber(1);
         countriesDAOBeanLocal.addCountriesEntity(countriesEntity);
-
 
         List<String> countriesEntities = countriesDAOBeanLocal.countryQueryList();
 

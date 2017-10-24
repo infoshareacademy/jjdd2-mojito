@@ -14,6 +14,4 @@ public interface CitiesDAOBeanLocal {
     void deleteCitiesEntity(Integer id);
 
     List<String> cityQueryList();
-
-
 }
