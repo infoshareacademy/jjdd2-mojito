@@ -90,9 +90,9 @@ public class BikeParsing {
                                 if (!placeLng.isEmpty()) {
                                     placeLngDouble = Double.parseDouble(placeLng);
                                 }
-                                Place place = new Place(placeName, placeLatDouble, placeLngDouble);
-                                city.getPlaceList().add(place);
+                                Place place = new Place(placeName, placeLatDouble, placeLngDouble, cityName);
 
+                                city.getPlaceList().add(place);
                             }
                         }
                     }

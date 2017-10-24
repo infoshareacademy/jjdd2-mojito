@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/nearestStation")
+@WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
 
@@ -83,9 +83,9 @@ public class NearestStationServlet extends HttpServlet {
                 "<form action=\"nearestStation\" method=\"post\">" +
                 "<h3 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX</h2>" +
                 "<form action=\"nearestStation\" method=\"post\">" +
-                "<input type=\"number\"name=\"latitiudeUser\"/>" +
+                "<input type=\"text\"name=\"latitiudeUser\"/>" +
                 "<h3 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX</h2>" +
-                "<input type=\"number\"name=\"longitudeUser\"/>" +
+                "<input type=\"text\"name=\"longitudeUser\"/>" +
                 "<button class=\"btn btn-secondary btn-lg type=\"submit\" />Znajdz</button>" +
                 "</form>" +
                 "</body>" +
@@ -100,7 +100,7 @@ public class NearestStationServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
         GeoLocation geoLocation = new GeoLocation();
-        if(req.getParameter("latitiudeUser") != null || req.getParameter("latitiudeUser") != null){
+        if(req.getParameter("latitiudeUser") != null || req.getParameter("longitudeUser") != null){
             geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
             geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
@@ -120,7 +120,13 @@ public class NearestStationServlet extends HttpServlet {
         }
         NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
         nearestPlace.findNearestPlace(geoLocation);
-        PlaceCordi placeCordi = new PlaceCordi();
+        String toPlace = "";
+        City city = bikeParsing.getCityList().get(0);
+        Place place = city.getPlaceList().get(0);
+        toPlace = new StringBuilder()
+                .append(String.valueOf(place.getLatitiudePlace()))
+                .append(",")
+                .append(String.valueOf(place.getLongitudePlace())).toString();
 
         writer.println("<!DOCTYPE html>" +
                 "<html>" +
@@ -177,9 +183,9 @@ public class NearestStationServlet extends HttpServlet {
                 "<div style=\"margin-top:15%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
-                "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)
-                + "</b></h1>" + "</span>" +
+                "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)+
+                "</b></h1>" + "</span>" +
                 "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
-                "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
+                "src=\"https://www.google.com/maps/embed/v1/directions?origin="+req.getParameter("latitiudeUser") +","+ req.getParameter("longitudeUser")+"&destination="+toPlace+"&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
     }
 }

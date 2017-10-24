@@ -1,14 +1,11 @@
 package infoshareKurs.web;
 
-import infoshareKurs.BikeParsing;
-import infoshareKurs.GeoLocation;
-import infoshareKurs.Place;
-import infoshareKurs.PlaceFinder;
-import infoshareKurs.database.beans.CountriesDAOBeanLocal;
+import infoshareKurs.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,10 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/FindPlaceServlet")
+@WebServlet("/portal/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet {
+
+    @Inject
+    private Statistics statistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -78,6 +79,9 @@ public class FindPlaceServlet extends HttpServlet {
                 "      <li class=\"nav-item\">\n" +
                 "        <a class=\"nav-link\" href=\"cityStat\">statystyki miast</a>\n" +
                 "      </li>\n" +
+                "       <li class=\"nav-item\">\n" +
+                "        <a class=\"nav-link\" href=\"logout\">wylogowanie</a>\n" +
+                "     </li>\n" +
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
@@ -91,7 +95,7 @@ public class FindPlaceServlet extends HttpServlet {
                 "<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"</h2>" +
                 "<form action=\"nearestStation\" method=\"post\">" +
                 "<input type=\"text\"name=\"latitiudeUser\"/>" +
-                "<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>" +
+                "<h2 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX\"  </h2>" +
                 "<input type=\"text\"name=\"longitudeUser\"/>" +
                 "<button class=\"btn btn-secondary btn-lg\" type=\"submit\" />Znajdz</button>" +
                 "</form>" +
@@ -199,9 +203,19 @@ public class FindPlaceServlet extends HttpServlet {
         writer.println("<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
                 "src=\"https://www.google.com/maps/embed/v1/directions?origin=47.5951518,-122.3316393&destination=47.5951518,-102.3316393&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
 
+        List<String> distinctCityNames = new ArrayList<>();
         for (Place place : placelist) {
+            String cityName = place.getCity();
             writer.println("<tr>" + "<td>" + place.getName() + "</td>" + "</tr>");
+
+            if(distinctCityNames.contains(cityName)){
+                continue;
+            }
+
+            distinctCityNames.add(cityName);
+            statistics.add(cityName);
         }
+
         writer.println("</tbody>" + "</table>" + "</body>" + "</html>");
     }
 }
