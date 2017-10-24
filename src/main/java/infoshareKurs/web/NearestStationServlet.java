@@ -185,7 +185,7 @@ public class NearestStationServlet extends HttpServlet {
                 "      <div class=\"text-center\">" +
                 "<span class=\"text-white\">" + "<h1>" +"Stacja : "+"<b>"+ nearestPlace.findNearestPlace(geoLocation)+
                 "</b></h1>" + "</span>" +
-                "<iframe width=\"1870\" height=\"820\" frameborder=\"0\" style=\"border:0\"\n" +
+                "<iframe width=\"100%\" height=\"820\" frameborder=\"0\" style=\"border:0\"\n" +
                 "src=\"https://www.google.com/maps/embed/v1/directions?origin="+req.getParameter("latitiudeUser") +","+ req.getParameter("longitudeUser")+"&destination="+toPlace+"&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
     }
 }
