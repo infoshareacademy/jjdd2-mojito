@@ -180,12 +180,12 @@ public class NearestStationServlet extends HttpServlet {
                 "    </ul>\n" +
                 "  </div>\n" +
                 "</nav>" +
-                "<div style=\"margin-top:15%;\">\n" +
+                "<div style=\"margin-top:5%;\">\n" +
                 "      \n" +
                 "      <div class=\"text-center\">" +
-                "<span class=\"text-white\">" + "<h1><b>" + nearestPlace.findNearestPlace(geoLocation)+
+                "<span class=\"text-white\">" + "<h1>" +"Stacja : "+"<b>"+ nearestPlace.findNearestPlace(geoLocation)+
                 "</b></h1>" + "</span>" +
-                "<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
+                "<iframe width=\"100%\" height=\"820\" frameborder=\"0\" style=\"border:0\"\n" +
                 "src=\"https://www.google.com/maps/embed/v1/directions?origin="+req.getParameter("latitiudeUser") +","+ req.getParameter("longitudeUser")+"&destination="+toPlace+"&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
     }
 }
