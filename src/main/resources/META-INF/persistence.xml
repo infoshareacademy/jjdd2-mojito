@@ -9,6 +9,7 @@
         <jta-data-source>java:/statystyki</jta-data-source>
         <class>infoshareKurs.database.entities.CityEntity</class>
         <class>infoshareKurs.database.entities.CountryEntity</class>
+        <class>infoshareKurs.database.entities.StationEntity</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.show_sql" value="true"/>

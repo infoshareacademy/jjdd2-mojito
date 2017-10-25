@@ -1,6 +1,6 @@
 package infoshareKurs.database;
 
-public class CityStatistics {
+public class StationStatistics {
     private String name;
     private Integer number;
 
