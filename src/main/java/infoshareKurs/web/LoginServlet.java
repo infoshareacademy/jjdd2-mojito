@@ -37,7 +37,6 @@ public class LoginServlet extends HttpServlet {
             redirectUri = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + req.getContextPath() + "/callback";
         }
 
-
         String authorizeUrl = authenticationController.buildAuthorizeUrl(req, redirectUri)
                 .withAudience(String.format("https://%s/userinfo", domain))
                 .build();
