@@ -95,7 +95,7 @@ public class FindPlaceServlet extends HttpServlet {
                 "<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"</h2>" +
                 "<form action=\"nearestStation\" method=\"post\">" +
                 "<input type=\"text\"name=\"latitiudeUser\"/>" +
-                "<h2 class=\"text-white\">Podaj szerokość geograficzną \n wzór XXXX.XXXX\"  </h2>" +
+                "<h2 class=\"text-white\">Podaj długość geograficzną \n wzór XXXX.XXXX\"  </h2>" +
                 "<input type=\"text\"name=\"longitudeUser\"/>" +
                 "<button class=\"btn btn-secondary btn-lg\" type=\"submit\" />Znajdz</button>" +
                 "</form>" +

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/Statistics")
+@WebServlet("/portal/Statistics")
 public class StatisticsServlet extends HttpServlet{
 
     @Inject
