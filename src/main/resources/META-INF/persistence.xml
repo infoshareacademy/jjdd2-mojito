@@ -5,13 +5,10 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 
     <persistence-unit name="statistics" transaction-type="JTA">
-        <description>
-            This is persistence unit for statistics.
-        </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/statystyki</jta-data-source>
-        <class>infoshareKurs.database.entities.CitiesEntity</class>
-        <class>infoshareKurs.database.entities.CountriesEntity</class>
+        <class>infoshareKurs.database.entities.CityEntity</class>
+        <class>infoshareKurs.database.entities.CountryEntity</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.show_sql" value="true"/>

@@ -1,14 +1,13 @@
 package infoshareKurs.database.entities;
 
 import javax.persistence.*;
-
 @NamedQueries({
-        @NamedQuery(name = "countriesQueryDsc",
-                query = "SELECT c.name ,SUM(c.number) FROM CountriesEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"),
+        @NamedQuery(name = "citiesQueryDsc",
+                query = "SELECT c.name ,SUM(c.number) FROM CityEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"),
 })
 @Entity
-@Table(name = "panstwa", schema = "STATISTICS", catalog = "")
-public class CountriesEntity {
+@Table(name = "city", schema = "STATISTICS", catalog = "")
+public class CityEntity {
     private int id;
     private String name;
     private Integer number;
@@ -48,7 +47,7 @@ public class CountriesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CountriesEntity that = (CountriesEntity) o;
+        CityEntity that = (CityEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

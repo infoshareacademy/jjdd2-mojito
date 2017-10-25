@@ -1,8 +1,8 @@
 package infoshareKurs.database;
 
-public class CitiesQueryListValues {
+public class CountryStatistics {
     private String name;
-    private String number;
+    private Integer number;
 
     public String getName() {
         return name;
@@ -12,11 +12,11 @@ public class CitiesQueryListValues {
         this.name = name;
     }
 
-    public String getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 }
