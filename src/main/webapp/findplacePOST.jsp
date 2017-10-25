@@ -5,8 +5,8 @@
 <head>
     <jsp:include page="shared/head.jsp"/>
 </head>
-<jsp:include page="shared/BurgerMenu.jsp"/>
 <body class="bg-dark">
+<jsp:include page="shared/burgermenu.jsp"/>
 <div style="margin-top:5%;">
     <div class="text-center">
         <div class="row justify-content-md-center">
@@ -17,13 +17,13 @@
                         <th>Stacja</th>
                     </tr>
                     </thead>
-                    <table>
+                    <table class="table table-striped mt-4 table-inverse table-hover">
                         <c:forEach items="${places}" var="p">
                             <tr>
                                 <td>${p.name}</td>
                             </tr>
                         </c:forEach>
-                    </tbody>
+                        </tbody>
                     </table>
                 </table>
             </div>
