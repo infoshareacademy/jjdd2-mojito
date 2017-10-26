@@ -14,11 +14,11 @@ services:
     image: mysql:wlatest
     environment:
       - MYSQL_ROOT_PASSWORD=admin
-      - MYSQL_DATABASE=Data
-      - MYSQL_USER=mokoniuszy
-      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=STATISTICS
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=Infoshare
     ports:
-      - 3306:3306
+      - 4032:3306
 networks:
   Mohito:
     driver: bridge
