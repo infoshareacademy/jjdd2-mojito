@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/portal/city_stations")
 public class CityStationsServlet extends HttpServlet {
@@ -120,16 +122,25 @@ public class CityStationsServlet extends HttpServlet {
                     "    </tr>\n" +
                     "  </thead>\n" +
                     "  <tbody>");
+
+            List<Place> allPlaces = new ArrayList<>();
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CityStationsPOST.jsp");
+            requestDispatcher.forward(req, resp);
+
             for (City city : bikeParsing.getCityList()) {
                 if (city.getName().equals(inputdata)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
-                        writer.println("<tr>" + "<td>" + place.getName() + "</td>" + "</tr>");
+                        allPlaces.add(place);
+                        //writer.println("<tr>" + "<td>" + place.getName() + "</td>" + "</tr>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                     done = true;
                 }
             }
+            req.setAttribute("places", allPlaces);
+
+
             writer.println("<iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\n" +
                     "src=\"https://www.google.com/maps/embed/v1/search?q=47.5951518,-102.3316393&q=12.12,33.3&key=AIzaSyBhfSZFVEUausxMjtYoA-DeCfjM7wRgy0I\" allowfullscreen></iframe>");
 

@@ -18,9 +18,9 @@
                     </tr>
                     </thead>
                     <table class="table table-striped mt-4 table-inverse table-hover">
-                        <c:forEach items="${places}" var="p">
+                        <c:forEach items="${places}" var="place">
                             <tr>
-                                <td>${p.name}</td>
+                                <td>${place.name}</td>
                             </tr>
                         </c:forEach>
                         </tbody>

@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 @WebServlet("/portal/cityStat")
 public class CityStatServlet extends HttpServlet {
@@ -111,8 +113,14 @@ public class CityStatServlet extends HttpServlet {
                             "    </tr>\n" +
                             "  </thead>\n" +
                             "  <tbody>");
+
+
+
+            List<CityPlace> places = new ArrayList<>();
+
             for (City city : bikeParsing.getCityList()) {
-                writer.println("<tr>" + "<td>" + city.getName() + "</td><td>" + city.getPlaceList().size() + "</td>" + "</tr>");
+                places.add(new CityPlace(city.getName(), city.getPlaceList().size()));
+                //writer.println("<tr>" + "<td>" + city.getName() + "</td><td>" + city.getPlaceList().size() + "</td>" + "</tr>");
             }
             writer.println("</tbody>" + "</table>");
             writer.println("</body>" + "</html>");
