@@ -120,7 +120,7 @@ public class CityStatServlet extends HttpServlet {
 
             for (City city : bikeParsing.getCityList()) {
                 places.add(new CityPlace(city.getName(), city.getPlaceList().size()));
-                //writer.println("<tr>" + "<td>" + city.getName() + "</td><td>" + city.getPlaceList().size() + "</td>" + "</tr>");
+                writer.println("<tr>" + "<td>" + city.getName() + "</td><td>" + city.getPlaceList().size() + "</td>" + "</tr>");
             }
             writer.println("</tbody>" + "</table>");
             writer.println("</body>" + "</html>");

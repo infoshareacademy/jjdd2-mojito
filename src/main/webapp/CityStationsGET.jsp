@@ -8,9 +8,9 @@
 <div style="margin-top:15%;">
     <div class="text-center">
         <div class="text-center">
-            <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię państwa. </h1>
-            <form action="country_stations" method="post">
-                <input type="text" name="userCountry">
+            <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię Miasta. </h1>
+            <form action="city_stations" method="post">
+                <input type="text" name="userCity">
                 <button type="submit">Znajdz</button>
             </form>
         </div>

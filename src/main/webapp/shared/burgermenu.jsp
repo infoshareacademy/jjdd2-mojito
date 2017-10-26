@@ -10,25 +10,25 @@
     <div class="collapse navbar-collapse" id="navbarText" aria-expanded="true" style="">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="nearestStation">Najblizsza stacja</a>
+                <a class="nav-link" href="nearestStation">Wyszukanie najbliższej stacji rowerowej.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="country_stations">stacje w kraju</a>
+                <a class="nav-link" href="country_stations">Wyszukanie stacji w danym kraju.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="city_stations">stacje w miescie</a>
+                <a class="nav-link" href="city_stations">Wyszukanie stacji w danym mieście.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="FindPlaceServlet">wyszukanie stacji w promieniu</a>
+                <a class="nav-link" href="FindPlaceServlet">Wyszukanie stacji rowerowej w konkretnej odległości.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="countryStat">statystyki panst</a>
+                <a class="nav-link" href="countryStat">Ilości stacji rowerowych w Państwach.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cityStat">statystyki miast</a>
+                <a class="nav-link" href="cityStat">Ilości stacji rowerowych w Miastach</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout">wylogowanie</a>
+                <a class="nav-link" href="logout">Wylogowanie</a>
             </li>
         </ul>
     </div>

@@ -10,11 +10,11 @@
         <h2 class="text-white">Wpisz odległosć wyszukiwania stacji. </h2>
         <form action="FindPlaceServlet" method="post">
             <input type="number" name="choosenRadius">
-            <h2 class="text-white">Podaj szerokość geograficzną wzór XXXX.XXXX"</h2>
+            <h2 class="text-white">Podaj szerokość geograficzną wzór (w formacie ułamka dziesiętnego)"</h2>
             <input type="text" name="latitiudeUser">
-            <h2 class="text-white">Podaj długość geograficzną wzór XXXX.XXXX" </h2>
+            <h2 class="text-white">Podaj długość geograficzną wzór (w formacie ułamka dziesiętnego)" </h2>
             <input type="text" name="longitudeUser">
-            <button class="btn btn-secondary btn-lg" type="submit">Znajdz</button>
+            <button class="btn btn-secondary btn-lg" type="submit">Znajdźc</button>
         </form>
     </div>
 </div>
