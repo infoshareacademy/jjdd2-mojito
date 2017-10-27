@@ -1,8 +1,11 @@
 package infoshareKurs.web;
 
-class CityPlace {
-    String name;
-    Integer numOfPlaces;
+public class CityPlace {
+    private String name;
+    private Integer numOfPlaces;
+
+    public CityPlace() {
+    }
 
     public CityPlace(String name, Integer numOfPlaces) {
         this.name = name;
