@@ -26,12 +26,10 @@ public class CityStationsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CityStationsGET.jsp");
         requestDispatcher.forward(req, resp);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
         final Logger logger = LogManager.getLogger(CityStationsServlet.class);
 
@@ -50,8 +48,6 @@ public class CityStationsServlet extends HttpServlet {
 
             List<Place> allPlaces = new ArrayList<>();
 
-
-
             for (City city : bikeParsing.getCityList()) {
                 if (city.getName().equals(req.getParameter("userCity" ))) {
                     i++;
@@ -64,15 +60,10 @@ public class CityStationsServlet extends HttpServlet {
             }
             req.setAttribute("places", allPlaces);
 
-
-
             if (i == 0) {
-//                writer.println("<span class=\"text-white\"> <h4><b> Nie znaleziono miasta w bazie, wprowadź nazwę " +
-//                        "miasta ponownie. </h4></b></span>");
                 done = true;
             }
             requestDispatcher.forward(req, resp);
-//
         }
     }
 }

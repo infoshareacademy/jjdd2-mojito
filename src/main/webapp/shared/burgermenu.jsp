@@ -22,10 +22,10 @@
                 <a class="nav-link" href="FindPlaceServlet">Wyszukanie stacji rowerowej w konkretnej odległości.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="countryStat">Ilości stacji rowerowych w Państwach.</a>
+                <a class="nav-link" href="countryStat">Ilości stacji rowerowych w państwach.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cityStat">Ilości stacji rowerowych w Miastach</a>
+                <a class="nav-link" href="cityStat">Ilości stacji rowerowych w miastach</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout">Wylogowanie</a>
