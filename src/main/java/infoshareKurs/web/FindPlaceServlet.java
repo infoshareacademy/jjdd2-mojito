@@ -35,8 +35,6 @@ public class FindPlaceServlet extends HttpServlet {
 
         resp.setContentType("text/html;charset=UTF-8");
 
-        PrintWriter writer = resp.getWriter();
-
         final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
@@ -62,7 +60,7 @@ public class FindPlaceServlet extends HttpServlet {
 
         List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
         if (placelist.size() == 0) {
-            writer.print("nie znaleziono");
+            //nie znaleziono
         }
 
         req.setAttribute("places", placelist);
@@ -80,7 +78,5 @@ public class FindPlaceServlet extends HttpServlet {
             distinctCityNames.add(cityName);
             statistics.add(cityName);
         }
-
-
     }
 }
