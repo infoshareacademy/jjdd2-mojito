@@ -9,9 +9,9 @@
 <jsp:include page="shared/burgermenu.jsp"/>
 <div style="margin-top:5%;">
     <div class="text-center">
-        <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię Miasta. </h1>
+        <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię kraju. </h1>
         <form action="country_stations" method="post" class=" mb-4">
-            <input type="text" name="userCity">
+            <input type="text" name="userCountry">
             <button type="submit">Znajdz</button>
             <span class="text-white text-center align-middle">
             <h1><b> Stacje rowerowe znajdujące sie w ${userCountry}</b></h1>
