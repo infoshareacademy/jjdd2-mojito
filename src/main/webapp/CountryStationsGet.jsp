@@ -9,7 +9,7 @@
     <div class="text-center">
         <div class="text-center">
             <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię Kraju. </h1>
-            <form action="city_stations" method="post">
+            <form action="country_stations" method="post">
                 <input type="text" name="userCountry">
                 <button type="submit">Znajdz</button>
             </form>

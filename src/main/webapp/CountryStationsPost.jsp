@@ -10,7 +10,7 @@
 <div style="margin-top:5%;">
     <div class="text-center">
         <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię Miasta. </h1>
-        <form action="city_stations" method="post" class=" mb-4">
+        <form action="country_stations" method="post" class=" mb-4">
             <input type="text" name="userCity">
             <button type="submit">Znajdz</button>
             <span class="text-white text-center align-middle">
@@ -26,10 +26,9 @@
                         </thead>
                         <table class="table table-striped mt-4 table-inverse table-hover">
                             <c:forEach items="${places}" var="place">
-                                <c:forEach items="${places}" var="country">
                                 <tr>
                                     <td>${place.name}</td>
-                                    <td>${country.name}</td>
+                                    <td>${place.city}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
