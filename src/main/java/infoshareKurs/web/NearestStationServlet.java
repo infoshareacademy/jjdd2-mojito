@@ -61,6 +61,7 @@ public class NearestStationServlet extends HttpServlet {
         req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
         req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
         req.setAttribute("destination", toPlace);
+        req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
 
         requestDispatcher.forward(req, resp);
     }
