@@ -11,7 +11,7 @@ services:
       - db
   db:
     container_name: "db"
-    image: mysql:latest
+    image: mysql:wlatest
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=STATISTICS
