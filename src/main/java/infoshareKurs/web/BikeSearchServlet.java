@@ -46,7 +46,7 @@ public class BikeSearchServlet extends HttpServlet {
             }
 
         } catch (IOException | ServletException e) {
-            logger.error("bład wczytania pliku",e);
+            logger.error("błąd wczytania pliku",e);
         }
         requestDispatcher.forward(req, resp);
     }

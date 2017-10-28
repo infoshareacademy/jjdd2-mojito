@@ -42,20 +42,19 @@ public class CityStationsServlet extends HttpServlet {
         }
 
         boolean done = false;
-        req.setAttribute("userCity",req.getParameter("userCity" ));
+        req.setAttribute("userCity",req.getParameter("userCity"));
         while (!done) {
             int i = 0;
 
             List<Place> allPlaces = new ArrayList<>();
 
             for (City city : bikeParsing.getCityList()) {
-                if (city.getName().equals(req.getParameter("userCity" ))) {
+                if (city.getName().equals(req.getParameter("userCity"))) {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         allPlaces.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
-                    done = true;
                 }
             }
             req.setAttribute("places", allPlaces);

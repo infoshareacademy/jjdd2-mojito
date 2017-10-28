@@ -29,8 +29,6 @@ public class CountryStationsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-
         final Logger logger = LogManager.getLogger(CountryStationsServlet.class);
 
         final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
@@ -48,7 +46,7 @@ public class CountryStationsServlet extends HttpServlet {
 
         while (!done) {
             int i = 0;
-            req.setAttribute("userCountry",req.getParameter("userCountry"));
+            req.setAttribute("userCountry", req.getParameter("userCountry"));
             List<Place> places = new ArrayList<>();
 
             for (City city : bikeParsing.getCityList()) {
@@ -67,7 +65,6 @@ public class CountryStationsServlet extends HttpServlet {
                 done = true;
             }
             requestDispatcher.forward(req, resp);
-
         }
     }
 }

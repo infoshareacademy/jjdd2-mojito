@@ -18,7 +18,7 @@
     <a href="city_stations" class="list-group-item list-group-item-action">
         3.Wyszukanie stacji w danym mieście.</a>
     <a href="FindPlaceServlet" class="list-group-item list-group-item-action">
-        4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>
+        4.Wyszukanie stacji rowerowej w danymo obszarze.</a>
     <a href="countryStat" class="list-group-item list-group-item-action">
         5.Wyświetl stacje rowerowe w państwach.</a>
     <a href="cityStat" class="list-group-item list-group-item-action">

@@ -29,20 +29,18 @@ public class NearestStationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlacePOST.jsp");
 
         GeoLocation geoLocation = new GeoLocation();
         try {
             req.getSession().setAttribute("formatEx",false);
-            if (req.getParameter("latitiudeUser") != null || req.getParameter("longitudeUser") != null) {
+            if (req.getParameter("latitiudeUser") != null && req.getParameter("longitudeUser") != null) {
                 geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
                 geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
-            } else {
-
             }
-
-            final Logger logger = LogManager.getLogger(NearestStationServlet.class);
 
             final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
 
@@ -68,7 +66,7 @@ public class NearestStationServlet extends HttpServlet {
 
             requestDispatcher.forward(req, resp);
         }catch (Exception e) {
-
+            logger.warn("format exeption", e);
             req.getSession().setAttribute("formatEx",true);
             req.getRequestDispatcher("/nearestPlaceGET.jsp").forward(req, resp);
         }
