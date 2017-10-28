@@ -15,7 +15,7 @@
                     <thead class="thead-inverse">
                     <tr>
                         <th>Miasto</th>
-                        <th>Ilość wyszukiwań</th>
+                        <th><span class="float-right">Liczba wyświetleń</th>
                     </tr>
                     </thead>
                     <table class="table table-striped mt-4 table-inverse table-hover">
