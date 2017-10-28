@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import = "java.util.Map" %>
 <html>
 <head>
     <jsp:include page="shared/head.jsp"/>
@@ -7,6 +9,9 @@
 <jsp:include page="shared/burgermenu.jsp"/>
 <div style="margin-top:15%;">
     <div class="text-center">
+        <c:if test="${sessionScope.formatEx == true}">
+            <span><h1><b>wpisales złe dane</b></h1></span>
+        </c:if>
         <h2 class="text-white">Podaj swoje położenie geograficzne</h2>
         <form action="nearestStation" method="post">
             <h2 class="text-white">Podaj szerokość geograficzną (w formacie ułamka dziesiętnego)"</h2>

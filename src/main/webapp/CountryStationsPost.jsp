@@ -14,7 +14,7 @@
             <input type="text" name="userCountry">
             <button type="submit">Znajdz</button>
             <span class="text-white text-center align-middle">
-            <h1><b> Stacje rowerowe znajdujące sie w ${userCountry}</b></h1>
+            <h1><b> Stacje rowerowe znajdujące się w ${userCountry}</b></h1>
         </span>
             <div class="row justify-content-md-center">
                 <div class="col-5">

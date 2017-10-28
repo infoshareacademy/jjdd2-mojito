@@ -1,5 +1,6 @@
 package infoshareKurs.web;
 
+
 import infoshareKurs.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,38 +32,45 @@ public class NearestStationServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlacePOST.jsp");
 
         GeoLocation geoLocation = new GeoLocation();
-        if(req.getParameter("latitiudeUser") != null || req.getParameter("longitudeUser") != null){
-            geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
-
-            geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
-        }else{
-
-        }
-
-        final Logger logger = LogManager.getLogger(NearestStationServlet.class);
-
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
-
         try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("błąd parsowania pliku xml");
+            req.getSession().setAttribute("formatEx",false);
+            if (req.getParameter("latitiudeUser") != null || req.getParameter("longitudeUser") != null) {
+                geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+
+                geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+            } else {
+
+            }
+
+            final Logger logger = LogManager.getLogger(NearestStationServlet.class);
+
+            final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+
+            try {
+                bikeParsing.parseData();
+            } catch (ParserConfigurationException | SAXException | IOException e) {
+                logger.error("błąd parsowania pliku xml");
+            }
+            NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
+            nearestPlace.findNearestPlace(geoLocation);
+            String toPlace = "";
+            City city = bikeParsing.getCityList().get(0);
+            Place place = city.getPlaceList().get(0);
+            toPlace = new StringBuilder()
+                    .append(String.valueOf(place.getLatitiudePlace()))
+                    .append(",")
+                    .append(String.valueOf(place.getLongitudePlace())).toString();
+
+            req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
+            req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
+            req.setAttribute("destination", toPlace);
+            req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
+
+            requestDispatcher.forward(req, resp);
+        }catch (Exception e) {
+
+            req.getSession().setAttribute("formatEx",true);
+            req.getRequestDispatcher("/nearestPlaceGET.jsp").forward(req, resp);
         }
-        NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
-        nearestPlace.findNearestPlace(geoLocation);
-        String toPlace = "";
-        City city = bikeParsing.getCityList().get(0);
-        Place place = city.getPlaceList().get(0);
-        toPlace = new StringBuilder()
-                .append(String.valueOf(place.getLatitiudePlace()))
-                .append(",")
-                .append(String.valueOf(place.getLongitudePlace())).toString();
-
-        req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
-        req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
-        req.setAttribute("destination", toPlace);
-        req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
-
-        requestDispatcher.forward(req, resp);
     }
 }

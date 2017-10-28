@@ -54,7 +54,7 @@ public class CityStatServlet extends HttpServlet {
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
-            logger.warn("blad parsowania pliku");
+            logger.error("blad parsowania pliku");
         }
 
         requestDispatcher.forward(req, resp);

@@ -20,9 +20,9 @@
     <a href="FindPlaceServlet" class="list-group-item list-group-item-action">
         4.Wyszukanie stacji rowerowej w konkretnej odległości.</a>
     <a href="countryStat" class="list-group-item list-group-item-action">
-        5.Ilości stacji rowerowych w państwach.</a>
+        5.Wyświetl stacje rowerowe w państwach.</a>
     <a href="cityStat" class="list-group-item list-group-item-action">
-        6.Ilości stacji rowerowych w miastach</a>
+        6.Wyświetl stacje rowerowe w miastach</a>
     <a href="Statistics" class="list-group-item list-group-item-action">
         7.Najczęściej wyszukiwane miasta.</a>
 </div>

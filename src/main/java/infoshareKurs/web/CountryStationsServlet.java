@@ -48,32 +48,26 @@ public class CountryStationsServlet extends HttpServlet {
 
         while (!done) {
             int i = 0;
-            req.setAttribute("userCountry",req.getParameter("userCountry" ));
+            req.setAttribute("userCountry",req.getParameter("userCountry"));
             List<Place> places = new ArrayList<>();
 
             for (City city : bikeParsing.getCityList()) {
-                if (city.getCountryName().equals(req.getParameter("userCountry" ))) {
+                if (city.getCountryName().equals(req.getParameter("userCountry"))) {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         places.add(place);
-//                        writer.println("<tr>" + "<td>" + place.getName() + "</td><td>" + city.getName() +
-//                                "</td>" + "</tr>");
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
                 done = true;
             }
             req.setAttribute("places", places);
-//            writer.println("</tbody>" + "</table>");
-
             if (i == 0) {
-//                writer.println("Nie znaleziono państwa w bazie, wprowadź nazwę ponownie.");
                 logger.info("nie znaleziono kraju w bazie danych ");
                 done = true;
             }
             requestDispatcher.forward(req, resp);
-//      writer.println("</body>" + "</html>");
-        }
 
+        }
     }
 }

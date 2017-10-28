@@ -60,7 +60,7 @@ public class FindPlaceServlet extends HttpServlet {
 
         List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
         if (placelist.size() == 0) {
-            //nie znaleziono
+            requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
         }
 
         req.setAttribute("places", placelist);

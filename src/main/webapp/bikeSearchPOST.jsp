@@ -9,7 +9,7 @@
         <div class="text-center">
             <h1 class="text-white">Twoj plik zostal wczytany </h1>
             <form action="Menu" method="get">
-                <button class="btn btn-secondary btn-lg" type="submit">Przejdz do menu</button>
+                <button class="btn btn-secondary btn-lg" type="submit">Przejdź do menu</button>
             </form>
         </div>
     </div>

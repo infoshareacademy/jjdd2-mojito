@@ -8,10 +8,10 @@
 <div style="margin-top:15%;">
     <div class="text-center">
         <div class="text-center">
-            <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię Kraju. </h1>
+            <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię kraju. </h1>
             <form action="country_stations" method="post">
                 <input type="text" name="userCountry">
-                <button type="submit">Znajdz</button>
+                <button type="submit">Znajdź</button>
             </form>
         </div>
     </div>
