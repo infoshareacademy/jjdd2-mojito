@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
+    @Inject
+    Statistics statistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,6 +71,10 @@ public class NearestStationServlet extends HttpServlet {
             req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
 
             requestDispatcher.forward(req, resp);
+
+            String cityName = place.getCity();
+            statistics.add(cityName);
+
         }catch (Exception e) {
             logger.warn("format exeption", e);
             req.getSession().setAttribute("formatEx",true);
