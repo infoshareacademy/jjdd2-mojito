@@ -14,25 +14,29 @@ public class NearestPlaceFinder {
         this.cityList = city;
     }
 
-    private String name;
-
-    public String findNearestPlace(GeoLocation geoLocation) {
+    public Place findNearestPlace(GeoLocation geoLocation) {
         logger.debug("znalezienie najbliższej stacji od miejsca użytkownika");
         double lowestDistance = 9999999999999999.9;
         DistanceMath distanceMath = new DistanceMath();
+
+        Place nearestPlace = null;
 
         for (City city : cityList) {
             for (Place place : city.getPlaceList()) {
                 if (lowestDistance > distanceMath.countDistance(place, geoLocation)) {
                     lowestDistance = distanceMath.countDistance(place, geoLocation);
-                    this.name = place.getName();
+                    nearestPlace = place;
                 }
             }
         }
-        System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s. "
-                , lowestDistance, this.name);
 
-        return this.name;
+        if (nearestPlace != null) {
+            System.out.format("Najbliższa stacja rowerowa znajduje się %.2f km od Ciebie. Stacja nazywa się %s. "
+                    , lowestDistance, nearestPlace.getName());
+        }
+
+        return nearestPlace;
+//        return this.name;
     }
 
 

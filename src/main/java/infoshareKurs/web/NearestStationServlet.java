@@ -15,10 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
@@ -56,23 +54,23 @@ public class NearestStationServlet extends HttpServlet {
                 logger.error("błąd parsowania pliku xml");
             }
             NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
-            nearestPlace.findNearestPlace(geoLocation);
+            Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
             String toPlace = "";
-            City city = bikeParsing.getCityList().get(0);
-            Place place = city.getPlaceList().get(0);
+//            City city = bikeParsing.getCityList().get(0);
+//            Place place = city.getPlaceList().get(0);
             toPlace = new StringBuilder()
-                    .append(String.valueOf(place.getLatitiudePlace()))
+                    .append(String.valueOf(foundedPlace.getLatitiudePlace()))
                     .append(",")
-                    .append(String.valueOf(place.getLongitudePlace())).toString();
+                    .append(String.valueOf(foundedPlace.getLongitudePlace())).toString();
 
             req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
             req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
             req.setAttribute("destination", toPlace);
-            req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
+            req.setAttribute("destinationStationName", foundedPlace.getName());
 
             requestDispatcher.forward(req, resp);
 
-            String cityName = place.getCity();
+            String cityName = foundedPlace.getCity();
             statistics.add(cityName);
 
         }catch (Exception e) {
