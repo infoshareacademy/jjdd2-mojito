@@ -1,28 +1,3 @@
-#version: "3.3"
-#services:
-#  app:
-#    container_name: "JJD2-MojitoWebapp"
-#    build: .
-#
-#    ports:
-#      - 4030:8080
-#      - 4031:9990
-#    depends_on:
-#      - db
-#    links:
-#      - db
-#  db:
-#    container_name: "JJD2-MojitoDB"
-#    image: mysql:latest
-#    environment:
-#      - MYSQL_ROOT_PASSWORD=Infoshare
-#      - MYSQL_DATABASE=statistics
-#      - MYSQL_USER=root
-#      - MYSQL_PASSWORD=Infoshare
-#    ports:
-#      - 4032:3306
-
-
 version: '3.3'
 services:
   jjd2-mojitodb:
