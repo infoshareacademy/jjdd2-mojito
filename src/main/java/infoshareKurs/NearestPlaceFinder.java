@@ -16,7 +16,7 @@ public class NearestPlaceFinder {
 
     public Place findNearestPlace(GeoLocation geoLocation) {
         logger.debug("znalezienie najbliższej stacji od miejsca użytkownika");
-        double lowestDistance = 9999999999999999.9;
+        double lowestDistance = Double.MAX_VALUE;
         DistanceMath distanceMath = new DistanceMath();
 
         Place nearestPlace = null;
@@ -36,7 +36,6 @@ public class NearestPlaceFinder {
         }
 
         return nearestPlace;
-//        return this.name;
     }
 
 
