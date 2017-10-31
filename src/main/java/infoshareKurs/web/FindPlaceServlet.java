@@ -22,7 +22,7 @@ import java.util.List;
 public class FindPlaceServlet extends HttpServlet {
 
     @Inject
-    private Statistics statistics;
+    Statistics statistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
