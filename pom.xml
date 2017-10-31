@@ -28,7 +28,6 @@
     <name>MohitoBikeProject</name>
     <packaging>war</packaging>
 
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -87,6 +86,23 @@
             <version>2.9.1</version>
         </dependency>
         <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.11.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>mvc-auth-commons</artifactId>
             <version>1.0.0</version>
@@ -97,5 +113,4 @@
             <version>3.1.0</version>
         </dependency>
     </dependencies>
-
 </project>
