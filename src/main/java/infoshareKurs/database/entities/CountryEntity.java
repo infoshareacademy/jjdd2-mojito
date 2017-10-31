@@ -7,13 +7,14 @@ import javax.persistence.*;
                 query = "SELECT c.name ,SUM(c.number) FROM CountryEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"),
 })
 @Entity
-@Table(name = "country", schema = "STATISTICS", catalog = "")
+@Table(name = "country")
 public class CountryEntity {
     private int id;
     private String name;
     private Integer number;
 
     @Id
+    @GeneratedValue
     @Column(name = "id")
     public int getId() {
         return id;
