@@ -1,18 +1,20 @@
 package infoshareKurs.database.entities;
 
 import javax.persistence.*;
+
 @NamedQueries({
         @NamedQuery(name = "citiesQueryDsc",
                 query = "SELECT c.name ,SUM(c.number) FROM CityEntity c GROUP BY c.name ORDER BY (sum(c.number)) desc"),
 })
 @Entity
-@Table(name = "city", schema = "STATISTICS", catalog = "")
+@Table(name = "city")
 public class CityEntity {
     private int id;
     private String name;
     private Integer number;
 
     @Id
+    @GeneratedValue
     @Column(name = "id")
     public int getId() {
         return id;
