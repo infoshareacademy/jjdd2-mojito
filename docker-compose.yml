@@ -1,23 +1,28 @@
-version: "3.3"
+version: '3.3'
 services:
-  app:
+  jjd2-mojitodb:
+    container_name: "JJD2-MojitoDB"
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=statistics
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=Infoshare
+      - MYSQL_ROOT_PASSWORD=Infoshare
+    ports:
+      - 4032:3306
+  jjd2-mojitowebapp:
     container_name: "JJD2-MojitoWebapp"
     build: .
-
+    environment:
+      - MYSQL_URI=JJD2-MojitoDB:3306
+      - MYSQL_DATABASE=statistics
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=Infoshare
+      - DATASOURCE_NAME=java:jboss/datasources/statistics
     ports:
       - 4030:8080
       - 4031:9990
     depends_on:
-      - db
+      - jjd2-mojitodb
     links:
-      - db
-  db:
-    container_name: "JJD2-MojitoDB"
-    image: mysql:latest
-    environment:
-      - MYSQL_ROOT_PASSWORD=Infoshare
-      - MYSQL_DATABASE=statistics
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=Infoshare
-    ports:
-      - 4032:3306
+      - jjd2-mojitodb
