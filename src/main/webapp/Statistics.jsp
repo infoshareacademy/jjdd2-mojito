@@ -15,7 +15,7 @@
                     <thead class="thead-inverse">
                     <tr>
                         <th>Miasto</th>
-                        <th>Ilość wyszukiwań</th>
+                        <th><span class="float-right">Liczba wyświetleń</th>
                     </tr>
                     </thead>
                     <table class="table table-striped mt-4 table-inverse table-hover">
@@ -32,5 +32,7 @@
         </div>
     </div>
 </div>
+<%--<input class="btn btn-primary" type="submit" value="Wyślij statystyki odwiedzin na adres Email">--%>
+<h2><a class="text-warning" href="Email">link do wysyłki raportu</a></h2>
 </body>
 </html>
