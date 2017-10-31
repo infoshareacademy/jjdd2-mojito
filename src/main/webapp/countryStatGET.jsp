@@ -43,7 +43,7 @@
 
                 function drawRegionsMap() {
                     var data = google.visualization.arrayToDataTable([
-                        ['Country', 'Popularity'],
+                        ['Country', 'Stacje'],
                         <c:forEach items="${places}" var="place">
                         ["${place.name}", ${place.numOfPlaces}],
                         </c:forEach>
