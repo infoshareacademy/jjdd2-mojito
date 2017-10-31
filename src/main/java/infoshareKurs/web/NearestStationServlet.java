@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
@@ -55,7 +54,7 @@ public class NearestStationServlet extends HttpServlet {
             City city = bikeParsing.getCityList().get(0);
             Place place = city.getPlaceList().get(0);
             toPlace = new StringBuilder()
-                    .append(String.valueOf(place.getLatitiudePlace()))
+                    .append(String.valueOf(place.getLatitudePlace()))
                     .append(",")
                     .append(String.valueOf(place.getLongitudePlace())).toString();
 

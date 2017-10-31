@@ -6,9 +6,9 @@
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
-<jsp:include page="shared/burgermenu.jsp"/>
-<div style="margin-top:15%;">
-    <div class="text-center">
+<jsp:include page="shared/body.jsp"/>
+<div>
+    <div style="margin-top:15%;" class="text-center">
         <c:if test="${sessionScope.formatEx == true}">
             <span><h1><b>wpisales złe dane</b></h1></span>
         </c:if>

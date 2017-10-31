@@ -43,6 +43,9 @@ public class CityStationsServlet extends HttpServlet {
 
         boolean done = false;
         req.setAttribute("userCity",req.getParameter("userCity"));
+
+        Integer markerId = 0;
+        req.setAttribute("markerId",String.valueOf(markerId));
         while (!done) {
             int i = 0;
 
@@ -53,6 +56,9 @@ public class CityStationsServlet extends HttpServlet {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         allPlaces.add(place);
+//                        if(i++>3){
+//                            break;
+//                        }
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                 }
