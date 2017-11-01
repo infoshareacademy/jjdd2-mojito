@@ -32,5 +32,10 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+<%--<input class="btn btn-primary" type="submit" value="Wyślij statystyki odwiedzin na adres Email">--%>
+<h2><a class="text-warning" href="Email">link do wysyłki raportu</a></h2>
+=======
+>>>>>>> 964cba57f05a904fef4c0dd2ac89c7a6a032ca02
 </body>
 </html>
