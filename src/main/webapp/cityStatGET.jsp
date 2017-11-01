@@ -55,7 +55,10 @@
                     }
                 },
                 bar: { groupWidth: "90%" },
-                explorer: { maxZoomIn: .5 }
+                explorer : {
+                actions: ['dragToZoom', 'rightClickToReset']
+                /* you can add more options */
+            }
             };
 
             var chart = new google.charts.Bar(document.getElementById('top_x_div'));
