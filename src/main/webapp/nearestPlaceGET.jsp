@@ -30,6 +30,10 @@
             padding-left: 10px;
         }
     </style>
+    <script>
+        pos={};
+
+    </script>
 </head>
 <body class="bg-dark">
 <jsp:include page="shared/body.jsp"/>
@@ -57,26 +61,42 @@
             </div>
             <div id="map"></div>
             <script>
-                function initMap() {
-                    var directionsDisplay = new google.maps.DirectionsRenderer;
-                    var directionsService = new google.maps.DirectionsService;
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 14,
-                        center: {lat: 37.77, lng: -122.447}
-                    });
-                    directionsDisplay.setMap(map);
 
-                    calculateAndDisplayRoute(directionsService, directionsDisplay);
-                    document.getElementById('mode').addEventListener('change', function() {
-                        calculateAndDisplayRoute(directionsService, directionsDisplay);
-                    });
+
+                function initMap() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                           pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
+                            var directionsDisplay = new google.maps.DirectionsRenderer;
+                            var directionsService = new google.maps.DirectionsService;
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 14,
+                                center: {lat: 37.77, lng: -122.447}
+                            });
+                            directionsDisplay.setMap(map);
+
+                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                            document.getElementById('mode').addEventListener('change', function() {
+                                calculateAndDisplayRoute(directionsService, directionsDisplay);
+                            });
+
+
+                        }, function() {
+
+                        });
+                    }
+
                 }
 
                 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
                     var selectedMode = document.getElementById('mode').value;
                     directionsService.route({
-                        origin: {lat: 37.77, lng: -122.447},  // Haight.
-                        destination: {lat: 37.768, lng: -122.511},  // Ocean Beach.
+                        origin: {lat: pos.lat+10, lng: pos.lng+60},  // Haight.
+                        destination: {lat: 53.768, lng: 12.511},  // Ocean Beach.
                         // Note that Javascript allows us to access the constant
                         // using square brackets and a string value as its
                         // "property."
