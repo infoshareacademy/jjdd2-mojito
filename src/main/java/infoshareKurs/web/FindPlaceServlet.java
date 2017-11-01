@@ -33,50 +33,55 @@ public class FindPlaceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.setContentType("text/html;charset=UTF-8");
-
         final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
+        try{
+            req.getSession().setAttribute("formatEx",false);
 
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+            final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
 
-        GeoLocation geoLocation = new GeoLocation();
+            GeoLocation geoLocation = new GeoLocation();
 
-        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+            geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
-        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+            geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
 
-        double distance = Double.parseDouble(req.getParameter("choosenRadius"));
+            double distance = Double.parseDouble(req.getParameter("choosenRadius"));
 
-        try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("błąd parsowania pliku xml");
 
-        }
+            try {
+                bikeParsing.parseData();
+            } catch (ParserConfigurationException | SAXException | IOException e) {
+                logger.error("błąd parsowania pliku xml");
 
-        PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
-
-        List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
-        if (placelist.size() == 0) {
-            requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
-        }
-
-        req.setAttribute("places", placelist);
-
-        requestDispatcher.forward(req, resp);
-
-        List<String> distinctCityNames = new ArrayList<>();
-        for (Place place : placelist) {
-            String cityName = place.getCity();
-
-            if(distinctCityNames.contains(cityName)){
-                continue;
             }
+                PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
 
-            distinctCityNames.add(cityName);
-            statistics.add(cityName);
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
+
+                List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
+                if (placelist.size() == 0) {
+                    requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
+                }
+
+                req.setAttribute("places", placelist);
+
+                requestDispatcher.forward(req, resp);
+
+                List<String> distinctCityNames = new ArrayList<>();
+                for (Place place : placelist) {
+                    String cityName = place.getCity();
+
+                    if (distinctCityNames.contains(cityName)) {
+                        continue;
+                    }
+
+                    distinctCityNames.add(cityName);
+                    statistics.add(cityName);
+                }
+        } catch (Exception e) {
+            logger.warn("format exeption", e);
+            req.getSession().setAttribute("formatEx", true);
+            req.getRequestDispatcher("/nearestPlaceGET.jsp").forward(req, resp);
         }
     }
 }

@@ -7,10 +7,9 @@
 </head>
 <body class="bg-dark">
 <jsp:include page="shared/body.jsp"/>
-<div>
-    <div style="margin-top:15%;" class="text-center;">
-        <div class="row justify-content-md-center">
-            <div class="col-5">
+<div class="col-3">
+    <div class="tab-content" id="v-pills-tabContent">
+        <div class="text-center">
                 <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>
@@ -18,7 +17,6 @@
                         <th>Ilość stacji</th>
                     </tr>
                     </thead>
-                    <table class="table table-striped mt-4 table-inverse table-hover">
                         <c:forEach items="${places}" var="place">
                             <tr>
                                 <td>${place.name}</td>
@@ -30,10 +28,9 @@
                 </table>
             </div>
         </div>
-    </div>
 </div>
 <div class="col-7">
-    <div id="top_x_div" style="width: 900px; height: 800px;"></div>
+    <div id="top_x_div" style="width: 1200px; height: 900px;"></div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {'packages':['bar']});
@@ -49,14 +46,16 @@
 
             var options = {
                 title: 'Chess opening moves',
-                width: 900,
-                bars: 'horizontal', // Required for Material Bar Charts.
+                height: 950,
+                width: 1050,
+                bars: 'horizontal',
                 axes: {
                     x: {
-                        0: { side: 'top', label: 'Stacje'} // Top x-axis.
+                        0: { side: 'top', label: 'Stacje'}
                     }
                 },
-                bar: { groupWidth: "90%" }
+                bar: { groupWidth: "90%" },
+                explorer: { maxZoomIn: .5 }
             };
 
             var chart = new google.charts.Bar(document.getElementById('top_x_div'));

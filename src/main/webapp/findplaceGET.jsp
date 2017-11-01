@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,6 +8,9 @@
 <jsp:include page="shared/body.jsp"/>
 <div>
     <div style="margin-top:15%;" class="text-center">
+        <c:if test="${sessionScope.formatEx == true}">
+            <span><h1><b>wpisales złe dane</b></h1></span>
+        </c:if>
         <h2 class="text-white">Zdefiniuj obszar wyszukiwania w km. </h2>
         <form action="FindPlaceServlet" method="post">
             <input type="number" name="choosenRadius">
