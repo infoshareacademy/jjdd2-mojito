@@ -14,9 +14,9 @@
         <h2 class="text-white">Zdefiniuj obszar wyszukiwania w km. </h2>
         <form action="FindPlaceServlet" method="post">
             <input type="number" name="choosenRadius">
-            <h2 class="text-white">Podaj szerokość geograficzną (w formacie ułamka dziesiętnego)"</h2>
+            <h2 class="text-white">Podaj szerokość geograficzną (w formacie ułamka dziesiętnego)</h2>
             <input type="text" name="latitiudeUser">
-            <h2 class="text-white">Podaj długość geograficzną (w formacie ułamka dziesiętnego)" </h2>
+            <h2 class="text-white">Podaj długość geograficzną (w formacie ułamka dziesiętnego)</h2>
             <input type="text" name="longitudeUser">
             <button class="btn btn-secondary btn-lg" type="submit">Znajdź</button>
         </form>
