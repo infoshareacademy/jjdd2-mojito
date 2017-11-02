@@ -14,7 +14,7 @@ public class DistanceMath {
         Double x = geoLocation.latitiudeUser;
         Double y = geoLocation.longitudeUser;
 
-        double k = place.getLatitiudePlace();
+        double k = place.getLatitudePlace();
         double j = place.getLongitudePlace();
 
         distance = Math.sqrt(Math.pow((x - k), 2.0)

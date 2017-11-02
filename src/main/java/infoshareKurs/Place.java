@@ -28,7 +28,7 @@ public class Place {
         return name;
     }
 
-    public double getLatitiudePlace() {
+    public double getLatitudePlace() {
         return latitiudePlace;
     }
 
