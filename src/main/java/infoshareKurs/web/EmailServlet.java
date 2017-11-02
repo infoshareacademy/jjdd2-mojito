@@ -27,14 +27,18 @@ public class EmailServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        EmailService email = new EmailService("mojitobikeproject@gmail.com", "bikeproject1", "smtp.gmail.com", 465);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        EmailService email = new EmailService("mojitobikeproject@gmail.com",
+                "bikeproject1", "smtp.gmail.com", 465);
         logger.info("Utworzono obiekt klasy EmailService.");
         try {
             RequestDispatcher dispatcher = getServletContext()
                     .getRequestDispatcher("/EmailDoPost.jsp");
             email.setContent();
-            email.send("mojitobikeproject@gmail.com", "Statystyki wyswietleń miast z " + Instant.now(), "Object");
+            email.send("mojitobikeproject@gmail.com",
+                    "Statystyki wyswietleń miast z " + Instant.now(),
+                    "Object");
             dispatcher.forward(req, resp);
         } catch (MessagingException e) {
             //e.printStackTrace();

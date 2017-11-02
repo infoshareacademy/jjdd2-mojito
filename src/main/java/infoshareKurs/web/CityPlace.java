@@ -28,7 +28,3 @@ public class CityPlace {
         this.numOfPlaces = numOfPlaces;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 964cba57f05a904fef4c0dd2ac89c7a6a032ca02

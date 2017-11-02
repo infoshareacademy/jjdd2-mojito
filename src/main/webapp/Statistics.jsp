@@ -15,10 +15,10 @@
                     <thead class="thead-inverse">
                     <tr>
                         <th>Miasto</th>
-                        <th><span class="float-right">Liczba wyświetleń</th>
+                        <th><span class="float-right"</span>Liczba wyświetleń</th>
                     </tr>
                     </thead>
-                    <table class="table table-striped mt-4 table-inverse table-hover">
+                    <table>class="table table-striped mt-4 table-inverse table-hover">
                         <c:forEach items="${places}" var="place">
                             <tr>
                                 <td>${place.name}</td>
@@ -32,10 +32,8 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
+
 <%--<input class="btn btn-primary" type="submit" value="Wyślij statystyki odwiedzin na adres Email">--%>
 <h2><a class="text-warning" href="Email">link do wysyłki raportu</a></h2>
-=======
->>>>>>> 964cba57f05a904fef4c0dd2ac89c7a6a032ca02
 </body>
 </html>

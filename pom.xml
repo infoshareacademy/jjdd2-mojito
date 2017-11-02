@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>infoshareKurs</groupId>
     <artifactId>MohitoBikeProject</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -27,15 +26,9 @@
     </build>
     <name>MohitoBikeProject</name>
     <packaging>war</packaging>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 964cba57f05a904fef4c0dd2ac89c7a6a032ca02
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>javax</groupId>

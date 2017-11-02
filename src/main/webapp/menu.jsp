@@ -26,6 +26,8 @@
         6.Wyświetl stacje rowerowe w miastach</a>
     <a href="Statistics" class="list-group-item list-group-item-action">
         7.Najczęściej wyszukiwane miasta.</a>
+    <a href="logout" class="list-group-item list-group-item-action">
+        8.Wylogowanie.</a>
 </div>
 </div>
 </div>

@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,16 +18,10 @@
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
 </head>
-
-<body>
-
+    <body>
 Wysylanie Email statystyki wyszukiwania
-
-
-<form action="/MohitoBikeProject/portal/Email" method="post"  enctype="multipart/form-data">
+    <form action="/MohitoBikeProject/portal/Email" method="post"  enctype="multipart/form-data">
     <button type="submit">WYŚLIJ</button>
-</form>
-
-
+    </form>
 </body>
 </html>

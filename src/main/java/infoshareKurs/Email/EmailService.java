@@ -1,12 +1,11 @@
 package infoshareKurs.Email;
 
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import infoshareKurs.Statistics;
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
 public class EmailService {
@@ -16,18 +15,6 @@ public class EmailService {
     private String smtpAdress;
     private Integer port;
     private Session session;
-    private Object content;
-
-    public Object getContent() {
-        return content;
-    }
-
-    public void setContent(Object content) {
-        this.content = "wstaw stringa do maila";
-
-    }
-
-
 
     public EmailService(String eMailAdress, String pass, String smtpAdress, Integer port) {
         this.eMailAdress = eMailAdress;
@@ -57,11 +44,17 @@ public class EmailService {
                 InternetAddress.parse(recipient));
         message.setSubject(subject);
         message.setText(content);
-//        message.setContent(Object);
+//        Multipart mp = new MimeMultipart();
+//        MimeBodyPart htmlPart = new MimeBodyPart();
+//        htmlPart.setContent(message, "text/html");
+//        mp.addBodyPart(htmlPart);
+//        message.setContent(mp);
         Transport.send(message);
     }
 
     public void setContent() {
-        setContent("Obiekt do wysłania1");
+
     }
 }
+
+
