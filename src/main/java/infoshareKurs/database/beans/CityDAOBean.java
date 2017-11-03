@@ -1,4 +1,5 @@
 package infoshareKurs.database.beans;
+
 import infoshareKurs.database.CityStatistics;
 import infoshareKurs.database.entities.CityEntity;
 
@@ -16,7 +17,6 @@ public class CityDAOBean implements CityDAOBeanLocal {
     EntityManager em;
 
     @Override
-
     public void addCitiesEntity(CityEntity cityEntity) {
         em.persist(cityEntity);
     }
@@ -40,7 +40,7 @@ public class CityDAOBean implements CityDAOBeanLocal {
         List<Object[]> rows = query.getResultList();
         List<CityStatistics> result = new ArrayList<>(rows.size());
         for (Object[] row : rows) {
-            CityStatistics cityStatistics =new CityStatistics();
+            CityStatistics cityStatistics = new CityStatistics();
             cityStatistics.setName((row[0].toString()));
             cityStatistics.setNumber(Integer.parseInt(row[1].toString()));
             result.add(cityStatistics);

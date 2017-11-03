@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-
 public class CountryDAOBean implements CountryDAOBeanLocal {
 
     @PersistenceContext(name = "statistics")
@@ -42,7 +41,7 @@ public class CountryDAOBean implements CountryDAOBeanLocal {
         List<Object[]> rows = query.getResultList();
         List<CountryStatistics> result = new ArrayList<>(rows.size());
         for (Object[] row : rows) {
-            CountryStatistics countryStatistics =new CountryStatistics();
+            CountryStatistics countryStatistics = new CountryStatistics();
             countryStatistics.setName((row[0].toString()));
             countryStatistics.setNumber(Integer.parseInt(row[1].toString()));
             result.add(countryStatistics);
