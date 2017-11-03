@@ -1,10 +1,8 @@
 package infoshareKurs.web;
 
-
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
 import org.apache.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.servlet.RequestDispatcher;
@@ -13,10 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.text.html.HTML;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 
 @WebServlet("/portal/countryStat")
@@ -29,7 +25,7 @@ public class CountryStatServlet extends HttpServlet {
 
         final org.apache.log4j.Logger logger = LogManager.getLogger(CountryStatServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         try {
             bikeParsing.parseData();
             Map<String, Integer> countryStats = new TreeMap<>();
@@ -48,7 +44,7 @@ public class CountryStatServlet extends HttpServlet {
             for (Map.Entry<String, Integer> country : countryStats.entrySet()) {
                 String countryName = country.getKey();
                 Integer stationsCount = country.getValue();
-                places.add(new CityPlace(countryName,stationsCount));
+                places.add(new CityPlace(countryName, stationsCount));
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             logger.warn("bład parsowania pliku");

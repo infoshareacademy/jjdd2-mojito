@@ -3,6 +3,7 @@ package infoshareKurs.web;
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
 import infoshareKurs.Place;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class CityStationsServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(CityStationsServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+        final BikeParsing bikeParsing = new BikeParsing( "data/nextbike-live.xml");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CityStationsPOST.jsp");
         try {
             bikeParsing.parseData();

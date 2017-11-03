@@ -1,7 +1,7 @@
 package infoshareKurs.web;
 
-
 import infoshareKurs.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -18,7 +18,6 @@ import java.io.IOException;
 @WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlaceGET.jsp");
@@ -34,14 +33,14 @@ public class NearestStationServlet extends HttpServlet {
 
         GeoLocation geoLocation = new GeoLocation();
         try {
-            req.getSession().setAttribute("formatEx",false);
+            req.getSession().setAttribute("formatEx", false);
             if (req.getParameter("latitiudeUser") != null && req.getParameter("longitudeUser") != null) {
                 geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
                 geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
             }
 
-            final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+            final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
             try {
                 bikeParsing.parseData();
@@ -64,9 +63,9 @@ public class NearestStationServlet extends HttpServlet {
             req.setAttribute("destinationStationName", nearestPlace.findNearestPlace(geoLocation));
 
             requestDispatcher.forward(req, resp);
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.warn("format exeption", e);
-            req.getSession().setAttribute("formatEx",true);
+            req.getSession().setAttribute("formatEx", true);
             req.getRequestDispatcher("/nearestPlaceGET.jsp").forward(req, resp);
         }
     }

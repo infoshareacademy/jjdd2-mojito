@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class FindPlaceServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
         GeoLocation geoLocation = new GeoLocation();
 
@@ -71,7 +70,7 @@ public class FindPlaceServlet extends HttpServlet {
         for (Place place : placelist) {
             String cityName = place.getCity();
 
-            if(distinctCityNames.contains(cityName)){
+            if (distinctCityNames.contains(cityName)) {
                 continue;
             }
 
