@@ -25,7 +25,10 @@
                 <a class="nav-link" href="countryStat">Ilości stacji rowerowych w państwach.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cityStat">Ilości stacji rowerowych w miastach</a>
+                <a class="nav-link" href="cityStat">Ilości stacji rowerowych w miastach.</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Statistics">Najczęściej wyszukiwane miasta.</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout">Wylogowanie</a>
@@ -33,4 +36,3 @@
         </ul>
     </div>
 </nav>
-
