@@ -4,9 +4,11 @@
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
-<jsp:include page="shared/burgermenu.jsp"/>
-<div style="margin-top:15%;">
+<jsp:include page="shared/body.jsp"/>
+<div>
     <div class="text-center">
+        <div class="text-center">
+
         <div class="text-center">
             <h1 class="text-white text-center align-middle"> Wpisz nazwę interesującego Cię miasta. </h1>
             <form action="city_stations" method="post">

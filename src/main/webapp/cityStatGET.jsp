@@ -6,9 +6,9 @@
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
-<jsp:include page="shared/burgermenu.jsp"/>
-<div style="margin-top:5%;">
-    <div class="text-center">
+<jsp:include page="shared/body.jsp"/>
+<div>
+    <div style="margin-top:15%;" class="text-center;">
         <div class="row justify-content-md-center">
             <div class="col-5">
                 <table class="table table-striped mt-4 table-inverse table-hover">

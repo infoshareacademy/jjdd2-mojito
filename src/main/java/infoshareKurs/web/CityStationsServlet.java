@@ -48,6 +48,9 @@ public class CityStationsServlet extends HttpServlet {
 
         boolean done = false;
         req.setAttribute("userCity",req.getParameter("userCity"));
+
+        Integer markerId = 0;
+        req.setAttribute("markerId",String.valueOf(markerId));
         while (!done) {
             int i = 0;
 
@@ -67,7 +70,6 @@ public class CityStationsServlet extends HttpServlet {
             if (i == 0) {
                 done = true;
             }
-            requestDispatcher.forward(req, resp);
 
             List<String> distinctCityNames = new ArrayList<>();
             for (Place place : allPlaces) {
@@ -80,6 +82,7 @@ public class CityStationsServlet extends HttpServlet {
                 distinctCityNames.add(cityName);
                 statistics.add(cityName);
             }
+            requestDispatcher.forward(req, resp);
         }
     }
 }

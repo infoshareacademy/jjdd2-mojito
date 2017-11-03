@@ -1,0 +1,13 @@
+.nav-pills .nav-link.active, .show>.nav-pills .nav-link {
+    color:#fff;
+    background:rgb(234, 83, 35);
+
+}
+a{
+    color: rgba(0,0,0,0.87);
+}
+.logout{
+    float:right;
+    padding:15px;
+    color:#fff;
+}

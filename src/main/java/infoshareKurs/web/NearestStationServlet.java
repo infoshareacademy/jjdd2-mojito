@@ -1,6 +1,5 @@
 package infoshareKurs.web;
 
-
 import infoshareKurs.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/portal/nearestStation")
 public class NearestStationServlet extends HttpServlet {
@@ -55,7 +55,7 @@ public class NearestStationServlet extends HttpServlet {
             Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
             String toPlace = "";
             toPlace = new StringBuilder()
-                    .append(String.valueOf(foundedPlace.getLatitiudePlace()))
+                    .append(String.valueOf(foundedPlace.getLatitudePlace()))
                     .append(",")
                     .append(String.valueOf(foundedPlace.getLongitudePlace())).toString();
 
@@ -64,10 +64,10 @@ public class NearestStationServlet extends HttpServlet {
             req.setAttribute("destination", toPlace);
             req.setAttribute("destinationStationName", foundedPlace.getName());
 
-            requestDispatcher.forward(req, resp);
-
             String cityName = foundedPlace.getCity();
             statistics.add(cityName);
+
+            requestDispatcher.forward(req, resp);
 
         }catch (Exception e) {
             logger.warn("format exeption", e);

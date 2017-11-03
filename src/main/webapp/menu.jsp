@@ -4,8 +4,9 @@
     <jsp:include page="/shared/head.jsp"/>
 </head>
 <body class="bg-dark">
-<div style="margin-top:15%">
-<div class="text-center">
+ <jsp:include page="shared/body.jsp"/>
+<div>
+    <div style="margin-top:15%;" class="text-center">
 <div class="list-group d-inline-flex p-2 ">
   <span class="btn btn-secondary btn-lg"
         class="list-group-item list-group-item-action active">

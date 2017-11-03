@@ -28,3 +28,4 @@ public class CityPlace {
         this.numOfPlaces = numOfPlaces;
     }
 }
+

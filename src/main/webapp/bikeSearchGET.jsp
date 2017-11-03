@@ -3,9 +3,9 @@
 <head>
     <jsp:include page="shared/head.jsp"/>
 </head>
-<body class="bg-dark">
-<div style="margin-top:15%;">
-    <div class="text-center">
+<body class="bg-dark" style="background: radial-gradient(#5e5d67de , #26262e);; opacity: 0.9;">
+<div>
+    <div style="margin-top:15%;" class="text-center">
         <h1 class="text-white ">Witaj w wyszukiwarce stacji rowerowych. </h1>
         <h2 class="text-white ">Prześlij plik xml. </h2>
         <form action="bikeSearch" method="post" enctype="multipart/form-data">
