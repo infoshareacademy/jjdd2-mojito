@@ -46,9 +46,13 @@ public class CityStatServlet extends HttpServlet {
 
             List<CityPlace> places = new ArrayList<>();
             req.setAttribute("places", places);
-
+            Integer i = 0;
             for (City city : bikeParsing.getCityList()) {
+                i++;
                 places.add(new CityPlace(city.getName(), city.getPlaceList().size()));
+                if(i++>100){
+                    break;
+                }
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
