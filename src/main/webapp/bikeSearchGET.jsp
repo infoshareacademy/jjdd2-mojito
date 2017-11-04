@@ -7,12 +7,7 @@
 <div>
     <div style="margin-top:15%;" class="text-center">
         <h1 class="text-white ">Witaj w wyszukiwarce stacji rowerowych. </h1>
-        <h2 class="text-white ">Prześlij plik xml. </h2>
-        <form action="bikeSearch" method="post" enctype="multipart/form-data">
-            <div class="row justify-content-md-center">
-                <input type="file" class="col-3 form-control" name="userFile" style="text-align: center !important;">
-                <button class="btn btn-secondary btn-lg" type="submit">Załaduj plik</button></div>
-        </form>
+        <h2 class="text-white ">Trwa ładowanie pliku z danymi. </h2>
     </div>
     </div>
 </body>
