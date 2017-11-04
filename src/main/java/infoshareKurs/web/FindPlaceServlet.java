@@ -64,8 +64,6 @@ public class FindPlaceServlet extends HttpServlet {
 
         req.setAttribute("places", placelist);
 
-        requestDispatcher.forward(req, resp);
-
         List<String> distinctCityNames = new ArrayList<>();
         for (Place place : placelist) {
             String cityName = place.getCity();
@@ -77,5 +75,6 @@ public class FindPlaceServlet extends HttpServlet {
             distinctCityNames.add(cityName);
             statistics.add(cityName);
         }
+        requestDispatcher.forward(req, resp);
     }
 }
