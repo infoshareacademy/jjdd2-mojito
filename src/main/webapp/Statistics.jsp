@@ -21,8 +21,8 @@
                     <table class="table table-striped mt-4 table-inverse table-hover">
                         <c:forEach items="${places}" var="place">
                             <tr>
-                                <td>${place.name}</td>
-                                <td>${place.numOfPlaces}</td>
+                                <td>${place.getName()}</td>
+                                <td>${place.getNumber()}</td>
                             </tr>
                         </c:forEach>
                         </tbody>
