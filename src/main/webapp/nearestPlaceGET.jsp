@@ -86,7 +86,7 @@
                     var selectedMode = document.getElementById('mode').value;
                     directionsService.route({
                         origin: {lat: pos.lat, lng: pos.lng},  // Haight.
-                        destination: {lat: 53.768, lng: 12.511},  // Ocean Beach.
+                        destination: {lat: 52.3485329, lng: 20.9418336},  // Ocean Beach.
                         // Note that Javascript allows us to access the constant
                         // using square brackets and a string value as its
                         // "property."
