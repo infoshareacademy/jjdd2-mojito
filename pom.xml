@@ -27,7 +27,6 @@
     </build>
     <name>MohitoBikeProject</name>
     <packaging>war</packaging>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
