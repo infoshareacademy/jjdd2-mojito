@@ -21,6 +21,6 @@
 
 <body>
 
-WYSŁANE!!!
+Wiadomość ze statystykami została wysłana na adres: mojitobikeproject@gmail.com !!!
 </body>
 </html>

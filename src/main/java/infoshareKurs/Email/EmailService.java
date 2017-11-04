@@ -1,20 +1,17 @@
 package infoshareKurs.Email;
 
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
 public class EmailService {
 
-    private String eMailAdress;
-    private String pass;
-    private String smtpAdress;
-    private Integer port;
-    private Session session;
+    private final String eMailAdress;
+    private final String pass;
+    private final String smtpAdress;
+    private final Integer port;
+    private final Session session;
 
     public EmailService(String eMailAdress, String pass, String smtpAdress, Integer port) {
         this.eMailAdress = eMailAdress;
@@ -36,6 +33,7 @@ public class EmailService {
                     }
                 });
     }
+//TODO metoda ktora bierze dane z bazy danch lub sesji = content jako lista stringow
 
     public void send(String recipient, String subject, String content) throws MessagingException {
         Message message = new MimeMessage(session);
@@ -44,16 +42,7 @@ public class EmailService {
                 InternetAddress.parse(recipient));
         message.setSubject(subject);
         message.setText(content);
-//        Multipart mp = new MimeMultipart();
-//        MimeBodyPart htmlPart = new MimeBodyPart();
-//        htmlPart.setContent(message, "text/html");
-//        mp.addBodyPart(htmlPart);
-//        message.setContent(mp);
         Transport.send(message);
-    }
-
-    public void setContent() {
-
     }
 }
 
