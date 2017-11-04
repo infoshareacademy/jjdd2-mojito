@@ -35,7 +35,7 @@ public class NearestPlaceFinderTest {
         geoLocation.setLatitiudeUser(43.294980746124);
         geoLocation.setLongitudeUser(17.018170952797);
 
-        String result = nearestPlaceFinder.findNearestPlace(geoLocation);
+        Place result = nearestPlaceFinder.findNearestPlace(geoLocation);
 
         //then
         assertEquals("place2", result);

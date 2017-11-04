@@ -20,8 +20,6 @@ public class StatCountry {
 
         BikeParsing bikeParsing = new BikeParsing(config.getBikeDataPath());
         logger.error("blad parsowania pliku xml");
-//    private TestLogger logger;
-
 
         try {
             bikeParsing.parseData();
