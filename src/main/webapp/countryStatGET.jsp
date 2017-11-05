@@ -3,13 +3,14 @@
 
 <html>
 <head>
+
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
 <jsp:include page="shared/body.jsp"/>
 <div class="col-3">
     <div class="tab-content" id="v-pills-tabContent">
-            <div class="text-center">
+            <div style="height:800px; overflow-y: scroll;" class="text-center ">
                 <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>
@@ -31,7 +32,7 @@
     </div>
     <div class="col-7">
         <div class="row justify-content-md-center">
-            <div id="regions_div" style="width: 100%; height: 900px;"></div>
+            <div id="regions_div" style="width: 100%; height: 990px;"></div>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
                 google.charts.load('current', {
