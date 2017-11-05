@@ -5,6 +5,7 @@ import infoshareKurs.database.beans.CityDAOBeanLocal;
 import infoshareKurs.database.beans.CountryDAOBeanLocal;
 import infoshareKurs.database.entities.CityEntity;
 import infoshareKurs.database.entities.CountryEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -78,18 +79,18 @@ public class FindPlaceServlet extends HttpServlet {
 
         List<String> distinctCityNames = new ArrayList<>();
         for (Place place : placelist) {
-            String cityName = place.getCity();
+            String cityName = StringUtils.stripAccents(place.getCity());
 
             if (distinctCityNames.contains(cityName)) {
                 continue;
             }
             distinctCityNames.add(cityName);
             CityEntity cityEntity = new CityEntity();
-            cityEntity.setName(place.getCity());
+            cityEntity.setName(cityName);
             cityEntity.setNumber(1);
             cityDAOBeanLocal.addCitiesEntity(cityEntity);
         }
-        
+
         requestDispatcher.forward(req, resp);
     }
 }
