@@ -2,10 +2,14 @@ package infoshareKurs.web;
 
 import infoshareKurs.*;
 
+import infoshareKurs.database.beans.CountryDAOBeanLocal;
+import infoshareKurs.database.entities.CountryEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +24,12 @@ import java.util.List;
 @WebServlet("/portal/country_stations")
 public class CountryStationsServlet extends HttpServlet {
 
+    @Inject
+    GetContryStatistics getContryStatistics;
+
+    @Inject
+    CountryDAOBeanLocal countryDAOBeanLocal;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CountryStationsGet.jsp");
@@ -31,7 +41,7 @@ public class CountryStationsServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(CountryStationsServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing( "data/nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CountryStationsPost.jsp");
 
@@ -56,10 +66,19 @@ public class CountryStationsServlet extends HttpServlet {
                         places.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
+                    if (i == 1) {
+                        String countryName = StringUtils.stripAccents(city.getCountryName());
+                        CountryEntity countryEntity = new CountryEntity();
+                        countryEntity.setName(countryName);
+                        countryEntity.setNumber(1);
+                        countryDAOBeanLocal.addCountriesEntity(countryEntity);
+                    }
+                    done = true;
                 }
-                done = true;
+
+                req.setAttribute("places", places);
+
             }
-            req.setAttribute("places", places);
             if (i == 0) {
                 logger.info("nie znaleziono kraju w bazie danych ");
                 done = true;

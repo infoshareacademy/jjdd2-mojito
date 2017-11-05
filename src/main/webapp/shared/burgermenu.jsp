@@ -28,7 +28,9 @@
                 <a class="nav-link" href="cityStat">Ilości stacji rowerowych w miastach.</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Statistics">Najczęściej wyszukiwane miasta.</a>
+                <a class="nav-link" href="CityStatistics">Najczęściej wyszukiwane miasta.</a>
+            </li> <li class="nav-item">
+                <a class="nav-link" href="CountryStatistics">Najczęściej wyszukiwane państwa.</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout">Wylogowanie</a>

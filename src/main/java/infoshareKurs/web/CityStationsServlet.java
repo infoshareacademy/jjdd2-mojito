@@ -2,9 +2,13 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
+import infoshareKurs.GetCityStatistics;
 import infoshareKurs.Place;
-import infoshareKurs.Statistics;
 
+import infoshareKurs.database.beans.CityDAOBeanLocal;
+import infoshareKurs.database.entities.CityEntity;
+import infoshareKurs.database.entities.CountryEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -27,7 +31,10 @@ public class CityStationsServlet extends HttpServlet {
     final Logger logger = LogManager.getLogger(CityStationsServlet.class);
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
+
+    @Inject
+    CityDAOBeanLocal cityDAOBeanLocal;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,9 +57,10 @@ public class CityStationsServlet extends HttpServlet {
         String userCity = req.getParameter("userCity");
         logger.info("szukam stacji dla miasta {}, encoded in {}", userCity, req.getCharacterEncoding());
         req.setAttribute("userCity", userCity);
+//        req.setAttribute("userCity", req.getParameter("userCity"));
 
         Integer markerId = 0;
-        req.setAttribute("markerId",String.valueOf(markerId));
+        req.setAttribute("markerId", String.valueOf(markerId));
         while (!done) {
             int i = 0;
 
@@ -65,6 +73,14 @@ public class CityStationsServlet extends HttpServlet {
                         allPlaces.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
+                    if (i == 1) {
+                        String cityName = StringUtils.stripAccents(city.getName());
+                        CityEntity cityEntity = new CityEntity();
+                        cityEntity.setName(cityName);
+                        cityEntity.setNumber(1);
+                        cityDAOBeanLocal.addCitiesEntity(cityEntity);
+                    }
+                    done = true;
                 }
             }
             req.setAttribute("places", allPlaces);
@@ -72,18 +88,6 @@ public class CityStationsServlet extends HttpServlet {
 
             if (i == 0) {
                 done = true;
-            }
-
-            List<String> distinctCityNames = new ArrayList<>();
-            for (Place place : allPlaces) {
-                String cityName = place.getCity();
-
-                if(distinctCityNames.contains(cityName)){
-                    continue;
-                }
-
-                distinctCityNames.add(cityName);
-                statistics.add(cityName);
             }
             requestDispatcher.forward(req, resp);
         }

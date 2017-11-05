@@ -2,6 +2,9 @@ package infoshareKurs.web;
 
 import infoshareKurs.*;
 
+import infoshareKurs.database.beans.CityDAOBeanLocal;
+import infoshareKurs.database.entities.CityEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -20,7 +23,11 @@ import java.io.IOException;
 public class NearestStationServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
+
+    @Inject
+    CityDAOBeanLocal cityDAOBeanLocal;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,9 +72,12 @@ public class NearestStationServlet extends HttpServlet {
             req.setAttribute("destLng", destLng);
             req.setAttribute("destination", destination);
             req.setAttribute("destinationStationName", foundedPlace.getName());
-
-            String cityName = foundedPlace.getCity();
-            statistics.add(cityName);
+            
+            String cityName = StringUtils.stripAccents(foundedPlace.getCity());
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setName(cityName);
+            cityEntity.setNumber(1);
+            cityDAOBeanLocal.addCitiesEntity(cityEntity);
 
             requestDispatcher.forward(req, resp);
         }
