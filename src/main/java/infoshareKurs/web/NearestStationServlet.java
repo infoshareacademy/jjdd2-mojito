@@ -39,9 +39,13 @@ public class NearestStationServlet extends HttpServlet {
         try {
             req.getSession().setAttribute("formatEx", false);
             if (req.getParameter("latitiudeUser") != null && req.getParameter("longitudeUser") != null) {
-                geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+                String userlat = req.getParameter("latitiudeUser");
+                System.out.println(userlat);
+                String userLng = req.getParameter("longitudeUser");
+                System.out.println(userLng);
+                geoLocation.setLatitiudeUser(Double.parseDouble(userlat));
 
-                geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+                geoLocation.setLongitudeUser(Double.parseDouble(userLng));
             }
 
             final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
@@ -53,11 +57,13 @@ public class NearestStationServlet extends HttpServlet {
             }
             NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
             Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
-            String destLat = (String.valueOf(foundedPlace.getLatitudePlace()));
-            String destLng = (String.valueOf(foundedPlace.getLongitudePlace()));
+            Double destLat = foundedPlace.getLatitudePlace();
+            System.out.println(destLat);
+            Double destLng = foundedPlace.getLongitudePlace();
+            System.out.println(destLng);
 
-            req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
-            req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
+
+
             req.setAttribute("destLat", destLat);
             req.setAttribute("destLng", destLng);
             req.setAttribute("destinationStationName", foundedPlace.getName());
