@@ -1,6 +1,6 @@
 package infoshareKurs.web;
 
-import infoshareKurs.Statistics;
+import infoshareKurs.GetCityStatistics;
 import infoshareKurs.database.CityStatistics;
 import infoshareKurs.database.beans.CityDAOBeanLocal;
 import infoshareKurs.database.entities.CityEntity;
@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet("/portal/Statistics")
+@WebServlet("/portal/GetCityStatistics")
 public class StatisticsServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
 
     @Inject
     CityDAOBeanLocal cityDAOBeanLocal;
@@ -28,9 +28,9 @@ public class StatisticsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher
-                ("/Statistics.jsp");
+                ("/GetCityStatistics.jsp");
 
-        for (Map.Entry<String, Integer> stats : statistics.getStats().entrySet()) {
+        for (Map.Entry<String, Integer> stats : getCityStatistics.getStats().entrySet()) {
             String cityName = stats.getKey();
             Integer stationsCount = stats.getValue();
             CityEntity cityEntity = new CityEntity();
@@ -39,7 +39,7 @@ public class StatisticsServlet extends HttpServlet {
             cityDAOBeanLocal.addCitiesEntity(cityEntity);
         }
 
-        statistics.getStats().clear();
+        getCityStatistics.getStats().clear();
 
         List<CityStatistics> places = cityDAOBeanLocal.cityQueryList();
 
