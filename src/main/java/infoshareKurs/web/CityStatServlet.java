@@ -2,7 +2,6 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
-import infoshareKurs.StatCountry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,7 +29,7 @@ public class CityStatServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(CityStatServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing(System.getProperty("java.io.tmpdir") + "/plik");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
         try {
             bikeParsing.parseData();
@@ -48,9 +46,13 @@ public class CityStatServlet extends HttpServlet {
 
             List<CityPlace> places = new ArrayList<>();
             req.setAttribute("places", places);
-
+            Integer i = 0;
             for (City city : bikeParsing.getCityList()) {
+                i++;
                 places.add(new CityPlace(city.getName(), city.getPlaceList().size()));
+                if(i++>100){
+                    break;
+                }
             }
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
