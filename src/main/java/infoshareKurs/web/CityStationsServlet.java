@@ -69,30 +69,38 @@ public class CityStationsServlet extends HttpServlet {
                         allPlaces.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
-                    if (i == 0) {
+                    if (i == 1) {
                         CityEntity cityEntity = new CityEntity();
                         cityEntity.setName(city.getName());
                         cityEntity.setNumber(1);
                         cityDAOBeanLocal.addCitiesEntity(cityEntity);
                     }
-                }
-                if (i == 0) {
                     done = true;
                 }
-//
-//            List<String> distinctCityNames = new ArrayList<>();
-//            for (Place place : allPlaces) {
-//                String cityName = place.getCity();
-//
-//                if(distinctCityNames.contains(cityName)){
-//                    continue;
-//                }
-//
-//                distinctCityNames.add(cityName);
-//                getCityStatistics.add(cityName);
-//            }
-                requestDispatcher.forward(req, resp);
+
             }
+            req.setAttribute("places", allPlaces);
+            if (i == 0) {
+                done = true;
+            }
+            requestDispatcher.forward(req, resp);
         }
     }
 }
+
+
+//
+//                    for (Place place : city.getPlaceList()) {
+//                    allPlaces.add(place);
+//                    logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
+//                    }
+//                    }
+//                    }
+//                    req.setAttribute("places", allPlaces);
+//
+//                    if (i == 0) {
+//                    done = true;
+//                    }
+//
+//
+//        requestDispatcher.forward(req, resp);

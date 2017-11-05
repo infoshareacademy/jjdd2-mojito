@@ -1,6 +1,10 @@
 package infoshareKurs.web;
 
 import infoshareKurs.*;
+import infoshareKurs.database.beans.CityDAOBeanLocal;
+import infoshareKurs.database.beans.CountryDAOBeanLocal;
+import infoshareKurs.database.entities.CityEntity;
+import infoshareKurs.database.entities.CountryEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -15,13 +19,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet("/portal/FindPlaceServlet")
 public class FindPlaceServlet extends HttpServlet {
 
     @Inject
     GetCityStatistics getCityStatistics;
+
+    @Inject
+    CityDAOBeanLocal cityDAOBeanLocal;
+
+    @Inject
+    CountryDAOBeanLocal countryDAOBeanLocal;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -72,9 +84,21 @@ public class FindPlaceServlet extends HttpServlet {
                 continue;
             }
 
-            distinctCityNames.add(cityName);
-            getCityStatistics.add(cityName);
         }
+        Set<String> distinctCity =new HashSet<>();
+        for (Place place:placelist
+             ) {
+            if (place.getCity().equals(null)){continue;}
+            distinctCity.add(place.getCity());
+        }
+
+        for (String place:distinctCity
+             ) {CityEntity cityEntity = new CityEntity();
+            cityEntity.setName(place);
+            cityEntity.setNumber(1);
+            cityDAOBeanLocal.addCitiesEntity(cityEntity);
+        }
+
         requestDispatcher.forward(req, resp);
     }
 }

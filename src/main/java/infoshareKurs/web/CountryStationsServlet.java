@@ -40,7 +40,7 @@ public class CountryStationsServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(CountryStationsServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing( "data/nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CountryStationsPost.jsp");
 
@@ -65,35 +65,23 @@ public class CountryStationsServlet extends HttpServlet {
                         places.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
-                    if( i==1){
+                    if (i == 1) {
                         CountryEntity countryEntity = new CountryEntity();
                         countryEntity.setName(city.getCountryName());
                         countryEntity.setNumber(1);
-                        countryDAOBeanLocal.addCountriesEntity(countryEntity);}
-                done = true;
+                        countryDAOBeanLocal.addCountriesEntity(countryEntity);
+                    }
+                    done = true;
+                }
+
+                req.setAttribute("places", places);
+
             }
-
-
-            req.setAttribute("places", places);
-
             if (i == 0) {
                 logger.info("nie znaleziono kraju w bazie danych ");
                 done = true;
             }
-
-
-//            List<String> distinctCountryNames = new ArrayList<>();
-//            for (Place place : places) {
-//                String countryName = place.getCity();
-//
-//                if(distinctCountryNames.contains(countryName)){
-//                    continue;
-//                }
-//
-//                distinctCountryNames.add(countryName);
-//                getContryStatistics.add(countryName);
-//            }
             requestDispatcher.forward(req, resp);
         }
     }
-}}
+}
