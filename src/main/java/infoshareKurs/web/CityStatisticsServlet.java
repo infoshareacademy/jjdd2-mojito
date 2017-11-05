@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet("/portal/GetCityStatistics")
-public class StatisticsServlet extends HttpServlet {
+@WebServlet("/portal/CityStatistics")
+public class CityStatisticsServlet extends HttpServlet {
 
     @Inject
     GetCityStatistics getCityStatistics;
@@ -28,7 +28,7 @@ public class StatisticsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher
-                ("/GetCityStatistics.jsp");
+                ("/CityStatistics.jsp");
 
         for (Map.Entry<String, Integer> stats : getCityStatistics.getStats().entrySet()) {
             String cityName = stats.getKey();

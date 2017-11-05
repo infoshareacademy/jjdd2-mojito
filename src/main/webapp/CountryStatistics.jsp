@@ -14,7 +14,7 @@
                 <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>
-                        <th>Miasto</th>
+                        <th>Państwo</th>
                         <th><span class="float-right">Liczba wyświetleń</th>
                     </tr>
                     </thead>

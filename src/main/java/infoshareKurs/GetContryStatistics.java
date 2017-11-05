@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Singleton
-public class GetCityStatistics {
+public class GetContryStatistics {
 
     private Map<String, Integer> stats = new HashMap<>();
 

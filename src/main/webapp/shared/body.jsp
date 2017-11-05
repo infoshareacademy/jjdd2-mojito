@@ -11,7 +11,8 @@
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="FindPlaceServlet" role="tab" aria-controls="v-pills-settings" aria-selected="false">4.Wyszukanie stacji rowerowej w danymo obszarze.</a>
                 <a class="nav-link" style=" padding:15px 10px ;border-radius: 0;"  href="countryStat" role="tab" aria-controls="v-pills-settings" aria-selected="false">5.Wyświetl stacje rowerowe w państwach.</a>
                 <a class="nav-link" style=" padding:15px 10px ;border-radius: 0;"  href="cityStat" role="tab" aria-controls="v-pills-settings" aria-selected="false">6.Wyświetl stacje rowerowe w miastach</a>
-                <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="Statistics" role="tab" aria-controls="v-pills-settings" aria-selected="false">7.Najczęściej wyszukiwane miasta.</a>
+                <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="CityStatistics" role="tab" aria-controls="v-pills-settings" aria-selected="false">7.Najczęściej wyszukiwane miasta.</a>
+                <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="CountryStatistics" role="tab" aria-controls="v-pills-settings" aria-selected="false">8.Najczęściej wyszukiwane państwa.</a>
 
             </div>
             <div class="logout"><a>klik</a></div>

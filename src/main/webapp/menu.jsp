@@ -24,8 +24,10 @@
         5.Wyświetl stacje rowerowe w państwach.</a>
     <a href="cityStat" class="list-group-item list-group-item-action">
         6.Wyświetl stacje rowerowe w miastach</a>
-    <a href="Statistics" class="list-group-item list-group-item-action">
+    <a href="CityStatistics" class="list-group-item list-group-item-action">
         7.Najczęściej wyszukiwane miasta.</a>
+    <a href="CountryStatistics" class="list-group-item list-group-item-action">
+        8.Najczęściej wyszukiwane państwa.</a>
 </div>
 </div>
 </div>

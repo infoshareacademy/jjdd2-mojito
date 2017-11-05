@@ -1,9 +1,9 @@
 package infoshareKurs.web;
 
-import infoshareKurs.GetCityStatistics;
-import infoshareKurs.database.CityStatistics;
-import infoshareKurs.database.beans.CityDAOBeanLocal;
-import infoshareKurs.database.entities.CityEntity;
+import infoshareKurs.GetContryStatistics;
+import infoshareKurs.database.CountryStatistics;
+import infoshareKurs.database.beans.CountryDAOBeanLocal;
+import infoshareKurs.database.entities.CountryEntity;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -13,35 +13,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
-@WebServlet("/portal/GetCityStatistics")
-public class CityStatisticsServlet extends HttpServlet {
-
-    @Inject
-    GetCityStatistics getCityStatistics;
+@WebServlet("/portal/CountryStatistics")
+public class CountryStatisticsServlet extends HttpServlet {
 
     @Inject
-    CityDAOBeanLocal cityDAOBeanLocal;
+    GetContryStatistics getContryStatistics;
+
+    @Inject
+    CountryDAOBeanLocal countryDAOBeanLocal;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher
-                ("/GetCityStatistics.jsp");
+                ("/CountryStatistics.jsp");
 
-        for (Map.Entry<String, Integer> stats : getCityStatistics.getStats().entrySet()) {
-            String cityName = stats.getKey();
+        for (Map.Entry<String, Integer> stats : getContryStatistics.getStats().entrySet()) {
+            String countryName = stats.getKey();
             Integer stationsCount = stats.getValue();
-            CityEntity cityEntity = new CityEntity();
-            cityEntity.setName(cityName);
-            cityEntity.setNumber(stationsCount);
-            cityDAOBeanLocal.addCitiesEntity(cityEntity);
+            CountryEntity countryEntity = new CountryEntity();
+            countryEntity.setName(countryName);
+            countryEntity.setNumber(stationsCount);
+            countryDAOBeanLocal.addCountriesEntity(countryEntity);
         }
 
-        getCityStatistics.getStats().clear();
+        getContryStatistics.getStats().clear();
 
-        List<CityStatistics> places = cityDAOBeanLocal.cityQueryList();
+        List<CountryStatistics> places = countryDAOBeanLocal.countryQueryList();
 
         req.setAttribute("places", places);
 

@@ -20,7 +20,7 @@ import java.io.IOException;
 public class NearestStationServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,7 +65,7 @@ public class NearestStationServlet extends HttpServlet {
             req.setAttribute("destinationStationName", foundedPlace.getName());
 
             String cityName = foundedPlace.getCity();
-            statistics.add(cityName);
+            getCityStatistics.add(cityName);
 
             requestDispatcher.forward(req, resp);
         }

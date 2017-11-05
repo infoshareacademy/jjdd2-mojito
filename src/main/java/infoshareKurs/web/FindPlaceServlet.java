@@ -21,7 +21,7 @@ import java.util.List;
 public class FindPlaceServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -73,7 +73,7 @@ public class FindPlaceServlet extends HttpServlet {
             }
 
             distinctCityNames.add(cityName);
-            statistics.add(cityName);
+            getCityStatistics.add(cityName);
         }
         requestDispatcher.forward(req, resp);
     }

@@ -2,9 +2,12 @@ package infoshareKurs.web;
 
 import infoshareKurs.BikeParsing;
 import infoshareKurs.City;
+import infoshareKurs.GetCityStatistics;
 import infoshareKurs.Place;
-import infoshareKurs.Statistics;
 
+import infoshareKurs.database.beans.CityDAOBeanLocal;
+import infoshareKurs.database.entities.CityEntity;
+import infoshareKurs.database.entities.CountryEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -25,7 +28,10 @@ import java.util.List;
 public class CityStationsServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
+
+    @Inject
+    CityDAOBeanLocal cityDAOBeanLocal;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,7 +44,7 @@ public class CityStationsServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(CityStationsServlet.class);
 
-        final BikeParsing bikeParsing = new BikeParsing( "data/nextbike-live.xml");
+        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CityStationsPOST.jsp");
         try {
             bikeParsing.parseData();
@@ -47,10 +53,10 @@ public class CityStationsServlet extends HttpServlet {
         }
 
         boolean done = false;
-        req.setAttribute("userCity",req.getParameter("userCity"));
+        req.setAttribute("userCity", req.getParameter("userCity"));
 
         Integer markerId = 0;
-        req.setAttribute("markerId",String.valueOf(markerId));
+        req.setAttribute("markerId", String.valueOf(markerId));
         while (!done) {
             int i = 0;
 
@@ -63,26 +69,30 @@ public class CityStationsServlet extends HttpServlet {
                         allPlaces.add(place);
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
+                    if (i == 0) {
+                        CityEntity cityEntity = new CityEntity();
+                        cityEntity.setName(city.getName());
+                        cityEntity.setNumber(1);
+                        cityDAOBeanLocal.addCitiesEntity(cityEntity);
+                    }
                 }
-            }
-            req.setAttribute("places", allPlaces);
-
-            if (i == 0) {
-                done = true;
-            }
-
-            List<String> distinctCityNames = new ArrayList<>();
-            for (Place place : allPlaces) {
-                String cityName = place.getCity();
-
-                if(distinctCityNames.contains(cityName)){
-                    continue;
+                if (i == 0) {
+                    done = true;
                 }
-
-                distinctCityNames.add(cityName);
-                statistics.add(cityName);
+//
+//            List<String> distinctCityNames = new ArrayList<>();
+//            for (Place place : allPlaces) {
+//                String cityName = place.getCity();
+//
+//                if(distinctCityNames.contains(cityName)){
+//                    continue;
+//                }
+//
+//                distinctCityNames.add(cityName);
+//                getCityStatistics.add(cityName);
+//            }
+                requestDispatcher.forward(req, resp);
             }
-            requestDispatcher.forward(req, resp);
         }
     }
 }
