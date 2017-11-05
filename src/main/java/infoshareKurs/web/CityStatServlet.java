@@ -31,28 +31,49 @@ public class CityStatServlet extends HttpServlet {
 
         final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
+        Comparator<City> CityComparatorByQuantity = new Comparator<City>() {
+            public int compare(City c1, City c2) {
+                if (c1.getPlaceList().size() < c2.getPlaceList().size()) {
+                    return 1;
+                } else if (c1.getPlaceList().size() > c2.getPlaceList().size()) {
+                    return -1;
+                }
+                return c1.getName().compareTo(c2.getName());
+            }
+        };
+
+        Comparator<City> CityComparatorByName = new Comparator<City>() {
+            public int compare(City c1, City c2) {
+                return c1.getName().compareTo(c2.getName());
+            }
+        };
+
         try {
             bikeParsing.parseData();
-            Collections.sort(bikeParsing.getCityList(), new Comparator<City>() {
-                public int compare(City c1, City c2) {
-                    if (c1.getPlaceList().size() < c2.getPlaceList().size()) {
-                        return 1;
-                    } else if (c1.getPlaceList().size() > c2.getPlaceList().size()) {
-                        return -1;
-                    }
-                    return c1.getName().compareTo(c2.getName());
-                }
-            });
+            List<City> cities = bikeParsing.getCityList();
+
+            String orderBy = req.getParameter("orderBy");
+
+            if(orderBy != null && orderBy.equals("name")){
+                Collections.sort(cities, CityComparatorByName);
+            } else {
+                Collections.sort(cities, CityComparatorByQuantity);
+            }
 
             List<CityPlace> places = new ArrayList<>();
-            req.setAttribute("places", places);
 
-            for (City city : bikeParsing.getCityList()) {
+            for (City city : cities) {
                 places.add(new CityPlace(city.getName(), city.getPlaceList().size()));
             }
+
+            req.setAttribute("places", places);
+            req.setAttribute("orderBy", orderBy);
+
         } catch (
                 ParserConfigurationException | SAXException | IOException e) {
             logger.error("blad parsowania pliku");
+        } catch (Exception e){
+            logger.error(e.getMessage());
         }
 
         requestDispatcher.forward(req, resp);

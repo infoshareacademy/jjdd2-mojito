@@ -8,9 +8,12 @@
 <body class="bg-dark">
 <jsp:include page="shared/body.jsp"/>
 <div>
+
     <div style="margin-top:15%;" class="text-center;">
         <div class="row justify-content-md-center">
             <div class="col-5">
+                <a class="btn btn-success" href="cityStat">Wg ilości stacji</a>
+                <a class="btn btn-primary" href="cityStat?orderBy=name">Alfabetycznie</a>
                 <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>

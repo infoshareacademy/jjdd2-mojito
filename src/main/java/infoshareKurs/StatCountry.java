@@ -12,6 +12,8 @@ public class StatCountry {
     final static Logger logger = LogManager.getLogger();
     public Map<String, Integer> getCityStat() {
 
+
+
         Map<String, Integer> cityStats = new TreeMap<>();
 
         Configuration config = ConfigurationLoader.getConfiguration();
