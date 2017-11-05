@@ -10,8 +10,8 @@
 <jsp:include page="shared/body.jsp"/>
 <div class="col-3">
     <div class="tab-content" id="v-pills-tabContent">
-            <div class="text-center scrollit">
-                <table style="Height:800px" class="table table-striped mt-4 table-inverse table-hover">
+            <div style="height:800px; overflow-y: scroll;" class="text-center ">
+                <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>
                         <th>Kraj</th>
