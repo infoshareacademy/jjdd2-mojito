@@ -53,15 +53,13 @@ public class NearestStationServlet extends HttpServlet {
             }
             NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
             Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
-            String toPlace = "";
-            toPlace = new StringBuilder()
-                    .append(String.valueOf(foundedPlace.getLatitudePlace()))
-                    .append(",")
-                    .append(String.valueOf(foundedPlace.getLongitudePlace())).toString();
+            String destLat = (String.valueOf(foundedPlace.getLatitudePlace()));
+            String destLng = (String.valueOf(foundedPlace.getLongitudePlace()));
 
             req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
             req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
-            req.setAttribute("destination", toPlace);
+            req.setAttribute("destLat", destLat);
+            req.setAttribute("destLng", destLng);
             req.setAttribute("destinationStationName", foundedPlace.getName());
 
             String cityName = foundedPlace.getCity();

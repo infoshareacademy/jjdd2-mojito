@@ -28,12 +28,24 @@
         </span>
                 <div id="map"></div>
                 <script>
-                    function initMap() {
+                    function initMap(id) {
+                        if(id){
+                            var element = document.getElementById(id);
+                            var lat = parseFloat(element.getAttribute("lat"));
+                            var long = parseFloat(element.getAttribute("long"));
+                        }
+                        else{
+                            var lat = ${places[0].latitudePlace}
+                            var long = ${places[0].longitudePlace}
+                        }
+
+
                         var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 12,
-                            center: {lat:${places[0].latitudePlace}, lng: ${places[0].longitudePlace}}
+                            zoom: id ? 20 : 14,
+                            center: {lat:lat, lng: long}
+
                         });
-                        <c:forEach items="${places}" var="place">
+                        <c:forEach items="${places}" varStatus="loop"  var="place">
                         var marker = new google.maps.Marker({
                             position: {lat: ${place.latitudePlace}, lng: ${place.longitudePlace}},
                             map: map
@@ -45,9 +57,9 @@
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg8P2obHgXkAFdbW_sUlNpl_8qL8w3nZ8&callback=initMap">
                 </script>
             </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <jsp:include page="shared/rightMenu.jsp"></jsp:include>
 <div class="row justify-content-md-center">
@@ -59,9 +71,9 @@
                 <th>Miasto</th>
             </tr>
             </thead>
-            <c:forEach items="${places}" var="place">
+            <c:forEach items="${places}" varStatus="loop" var="place">
                 <tr>
-                    <td>${place.name}</td>
+                    <td id="${loop.index}" lat="${place.latitudePlace}" long="${place.longitudePlace}" class="tableButton">${place.name}</td>
                     <td>${place.city}</td>
                 </tr>
             </c:forEach>
@@ -69,5 +81,16 @@
         </table>
     </div>
 </div>
+<script>
+    <c:forEach items="${places}" varStatus="loops"  var="place">
+    var id = document.getElementById(${loops.index});
+    id.onclick = function(e) {
+        var index = ${loops.index};
+        (function(index){
+            initMap(index)
+        }(index))
+    };
+    </c:forEach>
+</script>
 </body>
 </html>
