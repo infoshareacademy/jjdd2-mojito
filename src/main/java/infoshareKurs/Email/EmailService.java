@@ -33,7 +33,7 @@ public class EmailService {
                     }
                 });
     }
-//TODO metoda ktora bierze dane z bazy danch lub sesji = content jako lista stringow
+
 
     public void send(String recipient, String subject, String content) throws MessagingException {
         Message message = new MimeMessage(session);
