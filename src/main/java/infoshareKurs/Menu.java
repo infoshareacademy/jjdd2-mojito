@@ -11,7 +11,7 @@ public class Menu {
 
         Configuration config = ConfigurationLoader.getConfiguration();
 
-        System.setProperty("log4j.configurationFile", "log4j.xml");
+        System.setProperty("log4j.configurationFile", "log4j2.xml");
 
         Logger logger = LogManager.getLogger(config.getLogPath());
         logger.info("This is logger with file appender");

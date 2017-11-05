@@ -24,6 +24,8 @@ import java.util.List;
 @WebServlet("/portal/city_stations")
 public class CityStationsServlet extends HttpServlet {
 
+    final Logger logger = LogManager.getLogger(CityStationsServlet.class);
+
     @Inject
     Statistics statistics;
 
@@ -35,9 +37,6 @@ public class CityStationsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        final Logger logger = LogManager.getLogger(CityStationsServlet.class);
-
         final BikeParsing bikeParsing = new BikeParsing( "data/nextbike-live.xml");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/CityStationsPOST.jsp");
         try {
@@ -47,7 +46,10 @@ public class CityStationsServlet extends HttpServlet {
         }
 
         boolean done = false;
-        req.setAttribute("userCity",req.getParameter("userCity"));
+        req.setCharacterEncoding("UTF-8");
+        String userCity = req.getParameter("userCity");
+        logger.info("szukam stacji dla miasta {}, encoded in {}", userCity, req.getCharacterEncoding());
+        req.setAttribute("userCity", userCity);
 
         Integer markerId = 0;
         req.setAttribute("markerId",String.valueOf(markerId));
@@ -57,7 +59,7 @@ public class CityStationsServlet extends HttpServlet {
             List<Place> allPlaces = new ArrayList<>();
 
             for (City city : bikeParsing.getCityList()) {
-                if (city.getName().equals(req.getParameter("userCity"))) {
+                if (city.getName().equals(userCity)) {
                     i++;
                     for (Place place : city.getPlaceList()) {
                         allPlaces.add(place);
@@ -66,6 +68,7 @@ public class CityStationsServlet extends HttpServlet {
                 }
             }
             req.setAttribute("places", allPlaces);
+            logger.error("wyświetlanie nazwy znalezionego miasta - czy ma polskie znaki");
 
             if (i == 0) {
                 done = true;

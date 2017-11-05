@@ -3,6 +3,7 @@
 
 <html>
 <head>
+
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
