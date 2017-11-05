@@ -39,11 +39,6 @@ public class CityStatisticsServlet extends HttpServlet {
             cityDAOBeanLocal.addCitiesEntity(cityEntity);
         }
 
-//        CityEntity cityEntity=new CityEntity();
-//        cityEntity.setName("ŁÓdŹŻĆ");
-//        cityEntity.setNumber(10);
-//        cityDAOBeanLocal.addCitiesEntity(cityEntity);
-
         getCityStatistics.getStats().clear();
 
         List<CityStatistics> places = cityDAOBeanLocal.cityQueryList();

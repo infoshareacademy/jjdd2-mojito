@@ -4,6 +4,7 @@ import infoshareKurs.*;
 
 import infoshareKurs.database.beans.CountryDAOBeanLocal;
 import infoshareKurs.database.entities.CountryEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -66,8 +67,9 @@ public class CountryStationsServlet extends HttpServlet {
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                     if (i == 1) {
+                        String countryName = StringUtils.stripAccents(city.getCountryName());
                         CountryEntity countryEntity = new CountryEntity();
-                        countryEntity.setName(city.getCountryName());
+                        countryEntity.setName(countryName);
                         countryEntity.setNumber(1);
                         countryDAOBeanLocal.addCountriesEntity(countryEntity);
                     }

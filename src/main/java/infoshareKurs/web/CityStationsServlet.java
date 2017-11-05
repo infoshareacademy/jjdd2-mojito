@@ -8,6 +8,7 @@ import infoshareKurs.Place;
 import infoshareKurs.database.beans.CityDAOBeanLocal;
 import infoshareKurs.database.entities.CityEntity;
 import infoshareKurs.database.entities.CountryEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -70,8 +71,9 @@ public class CityStationsServlet extends HttpServlet {
                         logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
                     }
                     if (i == 1) {
+                        String cityName = StringUtils.stripAccents(city.getName());
                         CityEntity cityEntity = new CityEntity();
-                        cityEntity.setName(city.getName());
+                        cityEntity.setName(cityName);
                         cityEntity.setNumber(1);
                         cityDAOBeanLocal.addCitiesEntity(cityEntity);
                     }
@@ -87,20 +89,3 @@ public class CityStationsServlet extends HttpServlet {
         }
     }
 }
-
-
-//
-//                    for (Place place : city.getPlaceList()) {
-//                    allPlaces.add(place);
-//                    logger.debug("wypisanie stacji rowerowych znajdujacych sie danym kraju");
-//                    }
-//                    }
-//                    }
-//                    req.setAttribute("places", allPlaces);
-//
-//                    if (i == 0) {
-//                    done = true;
-//                    }
-//
-//
-//        requestDispatcher.forward(req, resp);
