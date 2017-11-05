@@ -11,8 +11,8 @@
 
     </Appenders>
     <Loggers>
-        <Root level="info">
-            <AppenderRef ref="Async"/>
+        <Root level="debug">
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>
