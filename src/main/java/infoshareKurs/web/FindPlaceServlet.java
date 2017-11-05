@@ -83,22 +83,13 @@ public class FindPlaceServlet extends HttpServlet {
             if (distinctCityNames.contains(cityName)) {
                 continue;
             }
-
-        }
-        Set<String> distinctCity =new HashSet<>();
-        for (Place place:placelist
-             ) {
-            if (place.getCity().equals(null)){continue;}
-            distinctCity.add(place.getCity());
-        }
-
-        for (String place:distinctCity
-             ) {CityEntity cityEntity = new CityEntity();
-            cityEntity.setName(place);
+            distinctCityNames.add(cityName);
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setName(place.getCity());
             cityEntity.setNumber(1);
             cityDAOBeanLocal.addCitiesEntity(cityEntity);
         }
-
+        
         requestDispatcher.forward(req, resp);
     }
 }
