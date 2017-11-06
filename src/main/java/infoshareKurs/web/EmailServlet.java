@@ -1,7 +1,10 @@
 package infoshareKurs.web;
 
 import infoshareKurs.Email.EmailService;
-import infoshareKurs.Statistics;
+
+import infoshareKurs.GetCityStatistics;
+import infoshareKurs.database.CityStatistics;
+import infoshareKurs.database.beans.CityDAOBeanLocal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,10 +25,14 @@ import java.util.Map;
 @WebServlet("/portal/Email")
 public class EmailServlet extends HttpServlet {
 
-    private final Logger logger = LogManager.getLogger("log4j-burst-filter");
+    @Inject
+    GetCityStatistics getCityStatistics;
 
     @Inject
-    Statistics statistics;
+    CityDAOBeanLocal cityDAOBeanLocal;
+
+    private final Logger logger = LogManager.getLogger("log4j-burst-filter");
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,10 +52,14 @@ public class EmailServlet extends HttpServlet {
                     .getRequestDispatcher("/EmailDoPost.jsp");
 
             StringBuilder sb = new StringBuilder();
-            for (Map.Entry<String, Integer> stats : statistics.getStats().entrySet()) {
-                String cityName = stats.getKey();
-                Integer stationsCount = stats.getValue();
+            List<CityStatistics> places = cityDAOBeanLocal.cityQueryList();
+
+            for (CityStatistics city : places
+                    ) {
+                String cityName = city.getName();
+                Integer stationsCount = city.getNumber();
                 sb.append(cityName + " - " + stationsCount + "\n");
+
             }
 
             email.send("mojitobikeproject@gmail.com",

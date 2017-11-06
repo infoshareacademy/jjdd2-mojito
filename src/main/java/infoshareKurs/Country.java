@@ -3,6 +3,10 @@ package infoshareKurs;
 
 public class Country {
 
+    public String getName() {
+        return name;
+    }
+
     private String name;
 
     private Double latitude;
@@ -14,7 +18,6 @@ public class Country {
         this.longitude = longitude;
         this.name = country;
     }
-
     public static class FilePath {
         public String getFilePath() {
             return filePath;
