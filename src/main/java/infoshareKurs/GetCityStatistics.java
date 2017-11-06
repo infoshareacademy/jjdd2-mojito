@@ -1,13 +1,11 @@
 package infoshareKurs;
 
-import infoshareKurs.web.FindPlaceServlet;
-
 import javax.ejb.Singleton;
 import java.util.HashMap;
 import java.util.Map;
 
 @Singleton
-public class Statistics {
+public class GetCityStatistics {
 
     private Map<String, Integer> stats = new HashMap<>();
 

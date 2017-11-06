@@ -2,6 +2,9 @@ package infoshareKurs.web;
 
 import infoshareKurs.*;
 
+import infoshareKurs.database.beans.CityDAOBeanLocal;
+import infoshareKurs.database.entities.CityEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -20,7 +23,11 @@ import java.io.IOException;
 public class NearestStationServlet extends HttpServlet {
 
     @Inject
-    Statistics statistics;
+    GetCityStatistics getCityStatistics;
+
+    @Inject
+    CityDAOBeanLocal cityDAOBeanLocal;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,9 +46,11 @@ public class NearestStationServlet extends HttpServlet {
         try {
             req.getSession().setAttribute("formatEx", false);
             if (req.getParameter("latitiudeUser") != null && req.getParameter("longitudeUser") != null) {
-                geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
+                String userlat = req.getParameter("latitiudeUser");
+                String userLng = req.getParameter("longitudeUser");
+                geoLocation.setLatitiudeUser(Double.parseDouble(userlat));
 
-                geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
+                geoLocation.setLongitudeUser(Double.parseDouble(userLng));
             }
 
             final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
@@ -53,19 +62,22 @@ public class NearestStationServlet extends HttpServlet {
             }
             NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
             Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
-            String toPlace = "";
-            toPlace = new StringBuilder()
-                    .append(String.valueOf(foundedPlace.getLatitudePlace()))
-                    .append(",")
-                    .append(String.valueOf(foundedPlace.getLongitudePlace())).toString();
+            Double destLat = foundedPlace.getLatitudePlace();
+            Double destLng = foundedPlace.getLongitudePlace();
 
+            String destination = destLat+","+destLng;
             req.setAttribute("longitudeUser", req.getParameter("latitiudeUser"));
             req.setAttribute("latitiudeUser", req.getParameter("longitudeUser"));
-            req.setAttribute("destination", toPlace);
+            req.setAttribute("destLat", destLat);
+            req.setAttribute("destLng", destLng);
+            req.setAttribute("destination", destination);
             req.setAttribute("destinationStationName", foundedPlace.getName());
-
-            String cityName = foundedPlace.getCity();
-            statistics.add(cityName);
+            
+            String cityName = StringUtils.stripAccents(foundedPlace.getCity());
+            CityEntity cityEntity = new CityEntity();
+            cityEntity.setName(cityName);
+            cityEntity.setNumber(1);
+            cityDAOBeanLocal.addCitiesEntity(cityEntity);
 
             requestDispatcher.forward(req, resp);
         }
