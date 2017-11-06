@@ -32,6 +32,7 @@ public class NearestStationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlaceGET.jsp");
+        req.getSession().setAttribute("formatEx", false);
         requestDispatcher.forward(req, resp);
     }
 
@@ -40,11 +41,11 @@ public class NearestStationServlet extends HttpServlet {
 
         final Logger logger = LogManager.getLogger(NearestStationServlet.class);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlacePOST.jsp");
-
-        GeoLocation geoLocation = new GeoLocation();
         try {
             req.getSession().setAttribute("formatEx", false);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/nearestPlacePOST.jsp");
+
+            GeoLocation geoLocation = new GeoLocation();
             if (req.getParameter("latitiudeUser") != null && req.getParameter("longitudeUser") != null) {
                 String userlat = req.getParameter("latitiudeUser");
                 String userLng = req.getParameter("longitudeUser");
@@ -55,11 +56,9 @@ public class NearestStationServlet extends HttpServlet {
 
             final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
-            try {
-                bikeParsing.parseData();
-            } catch (ParserConfigurationException | SAXException | IOException e) {
-                logger.error("błąd parsowania pliku xml");
-            }
+
+            bikeParsing.parseData();
+
             NearestPlaceFinder nearestPlace = new NearestPlaceFinder(bikeParsing.getCityList());
             Place foundedPlace = nearestPlace.findNearestPlace(geoLocation);
             Double destLat = foundedPlace.getLatitudePlace();

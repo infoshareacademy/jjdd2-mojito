@@ -21,9 +21,6 @@
                 <br>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="logout" role="tab" aria-controls="v-pills-settings" aria-selected="false">Wyloguj</a>
 
             </div>

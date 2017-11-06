@@ -10,7 +10,7 @@
 <jsp:include page="shared/body.jsp"/>
 <div class="col-3">
     <div class="tab-content" id="v-pills-tabContent">
-            <div style="height:800px; overflow-y: scroll;" class="text-center ">
+            <div style="height:985px; overflow-y: scroll;" class="text-center ">
                 <table class="table table-striped mt-4 table-inverse table-hover">
                     <thead class="thead-inverse">
                     <tr>

@@ -48,49 +48,59 @@ public class FindPlaceServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
 
         final Logger logger = LogManager.getLogger(FindPlaceServlet.class);
-
-        final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
-
-        GeoLocation geoLocation = new GeoLocation();
-
-        geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
-
-        geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
-
-        double distance = Double.parseDouble(req.getParameter("choosenRadius"));
-
         try {
-            bikeParsing.parseData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            logger.error("błąd parsowania pliku xml");
 
-        }
+            req.getSession().setAttribute("formatEx", false);
 
-        PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
+            final BikeParsing bikeParsing = new BikeParsing("data/nextbike-live.xml");
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
+            GeoLocation geoLocation = new GeoLocation();
 
-        List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
-        if (placelist.size() == 0) {
-            requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
-        }
+            geoLocation.setLatitiudeUser(Double.parseDouble(req.getParameter("latitiudeUser")));
 
-        req.setAttribute("places", placelist);
+            geoLocation.setLongitudeUser(Double.parseDouble(req.getParameter("longitudeUser")));
 
-        List<String> distinctCityNames = new ArrayList<>();
-        for (Place place : placelist) {
-            String cityName = StringUtils.stripAccents(place.getCity());
+            double distance = Double.parseDouble(req.getParameter("choosenRadius"));
 
-            if (distinctCityNames.contains(cityName)) {
-                continue;
+            try {
+                bikeParsing.parseData();
+            } catch (ParserConfigurationException | SAXException | IOException e) {
+                logger.error("błąd parsowania pliku xml");
+
             }
-            distinctCityNames.add(cityName);
-            CityEntity cityEntity = new CityEntity();
-            cityEntity.setName(cityName);
-            cityEntity.setNumber(1);
-            cityDAOBeanLocal.addCitiesEntity(cityEntity);
-        }
 
-        requestDispatcher.forward(req, resp);
+            PlaceFinder placeFinder = new PlaceFinder(bikeParsing.getCityList());
+
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
+
+            List<Place> placelist = placeFinder.findPlace(geoLocation, distance);
+            if (placelist.size() == 0) {
+                requestDispatcher = req.getRequestDispatcher("/findplacePOST.jsp");
+            }
+
+            req.setAttribute("places", placelist);
+
+            List<String> distinctCityNames = new ArrayList<>();
+            for (Place place : placelist) {
+                String cityName = StringUtils.stripAccents(place.getCity());
+
+                if (distinctCityNames.contains(cityName)) {
+                    continue;
+                }
+                distinctCityNames.add(cityName);
+                CityEntity cityEntity = new CityEntity();
+                cityEntity.setName(cityName);
+                cityEntity.setNumber(1);
+                cityDAOBeanLocal.addCitiesEntity(cityEntity);
+            }
+
+            requestDispatcher.forward(req, resp);
+
+            }
+             catch(Exception e){
+                logger.warn("format exeption", e);
+                req.getSession().setAttribute("formatEx", true);
+                req.getRequestDispatcher("/findplaceGET.jsp").forward(req, resp);
+        }
     }
 }

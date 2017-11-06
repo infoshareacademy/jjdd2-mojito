@@ -6,7 +6,7 @@
     <jsp:include page="shared/head.jsp"/>
 </head>
 <body class="bg-dark">
-<jsp:include page="shared/burgermenu.jsp"/>
+<jsp:include page="shared/body.jsp"/>
 <div style="margin-top:5%;">
     <div class="text-center">
         <div class="row justify-content-md-center">
@@ -18,7 +18,6 @@
                         <th><span class="float-right">Liczba wyświetleń</th>
                     </tr>
                     </thead>
-                    <table class="table table-striped mt-4 table-inverse table-hover">
                         <c:forEach items="${places}" var="place">
                             <tr>
                                 <td>${place.getName()}</td>
