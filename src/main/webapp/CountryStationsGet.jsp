@@ -12,7 +12,7 @@
             <form action="country_stations" method="post">
                 <input type="text" name="userCountry">
                 <button type="submit">Znajdź</button>
-                <div class="col-6"><img src="https://ctbike.pl/media/products/f786f6a194ca55e387da885eca48fe11/images/thumbnail/big_bikecityguidemountedphone02.jpg?lm=1453882550" alt="Mountain View" width="1500" height="880">
+                <div class="col-6"><img src="http://rowery.rzeszow.pl/wp-content/uploads/2015/08/stacja-naprawy-rower%C3%B3w-rzesz%C3%B3w.jpg" alt="Mountain View" width="1500" height="880">
                 </div>
             </form>
         </div>
