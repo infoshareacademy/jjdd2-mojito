@@ -8,7 +8,7 @@
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;" href="nearestStation" role="tab" aria-controls="v-pills-profile" aria-selected="false">Wyszukanie najbliższej stacji rowerowej.</a>
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="country_stations" role="tab" aria-controls="v-pills-messages" aria-selected="false">Wyszukanie stacji w danym kraju.</a>
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="city_stations" role="tab" aria-controls="v-pills-settings" >Wyszukanie stacji w danym mieście.</a>
-                <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="FindPlaceServlet" role="tab" aria-controls="v-pills-settings" aria-selected="false">Wyszukanie stacji rowerowej w danymo obszarze.</a>
+                <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="FindPlaceServlet" role="tab" aria-controls="v-pills-settings" aria-selected="false">Wyszukanie stacji rowerowej w danym obszarze.</a>
                 <a class="nav-link" style=" padding:15px 10px ;border-radius: 0;"  href="countryStat" role="tab" aria-controls="v-pills-settings" aria-selected="false">Wyświetl stacje rowerowe w państwach.</a>
                 <a class="nav-link" style=" padding:15px 10px ;border-radius: 0;"  href="cityStat" role="tab" aria-controls="v-pills-settings" aria-selected="false">Wyświetl stacje rowerowe w miastach</a>
                 <a class="nav-link" style=" padding:15px 10px; border-radius: 0;"  href="CityStatistics" role="tab" aria-controls="v-pills-settings" aria-selected="false">Najczęściej wyszukiwane miasta.</a>
