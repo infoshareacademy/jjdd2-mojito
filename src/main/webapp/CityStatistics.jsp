@@ -16,7 +16,7 @@
                     <thead class="thead-inverse">
                     <tr>
                         <th>Miasto</th>
-                        <th><span class="float-right">Liczba wyświetleń</th>
+                        <th>Liczba wyświetleń</th>
                     </tr>
                     </thead>
                         <c:forEach items="${places}" var="place">

@@ -60,7 +60,7 @@
     </div>
 </div>
 <jsp:include page="shared/rightMenu.jsp"></jsp:include>
-<div class="row justify-content-md-center">
+<div style="height:985px; overflow-y: scroll;" class="row justify-content-md-center">
     <div>
         <table class="table table-striped mt-4 table-inverse table-hover">
             <thead class="thead-inverse">
